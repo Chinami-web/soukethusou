@@ -1,0 +1,66 @@
+@use 'foundation'as *;
+
+.top-plan {
+    border-top: 1px solid $color-theme;
+    border-bottom: 1px solid $color-theme;
+
+}
+.top-plan__container_title{
+    font-size: prem(17);
+
+    line-height: 1.65;
+    color: $color-theme;
+    font-weight: 400;
+    text-align: center;
+
+    @include mq("md") {
+        line-height: 1.72;
+        font-size: prem(32);
+    }
+}
+
+.top-plan__container_title-text{
+    font-size: prem(17);
+    line-height: 1.65;
+    font-weight: 400;
+    @include mq("md") {
+        line-height: 1.72;
+        font-size: prem(32);
+    }
+}
+.top-plan .l-inner {
+    display: flex;
+}
+.top-plan__container{
+    padding-top: prem(83);
+    padding-bottom: prem(66);
+
+    @include mq("md") {
+        padding-top: prem(124);
+        padding-bottom: prem(122);
+    }
+
+}
+.top-plan {
+    position: relative;
+}
+.top-plan .plan-card{
+    margin-top: prem(66);
+    @include mq("md") {
+        margin-top: prem(80);
+    }
+
+}
+
+.top-plan.is-drawer-open {
+    z-index: 3;
+}
+
+.top-plan__container {
+    width: 100%;
+
+    @include mq("md") {
+        $left-title-width: prem(95) * 2 + prem(25) * 2.19;
+        max-width: calc(100% - #{$left-title-width} - 1px + #{$padding-pc});
+    }
+}

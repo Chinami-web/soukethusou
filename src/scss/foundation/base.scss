@@ -1,0 +1,119 @@
+﻿@use 'variables' as *;
+@use 'mixin' as *;
+@use 'functions' as *;
+
+html {
+  @if $break-flg == 0 {
+    // 375px以下
+    @media (max-width: 375px) {
+      font-size: vw(375, strip-unit($base-font-size));
+    }
+
+    // 375px〜767px
+    & {
+      font-size: $base-font-size;
+    }
+
+    // 768px〜inner
+    @include mq("md") {
+      font-size: vw(strip-unit($inner), strip-unit($base-font-size));
+    }
+
+    // inner以上
+    @media (min-width: $inner) {
+      font-size: $base-font-size;
+    }
+  } @else {
+    // inner以上
+    font-size: $base-font-size;
+
+    // 768px〜inner
+    @media (max-width: $inner) {
+      font-size: vw(strip-unit($inner), strip-unit($base-font-size));
+    }
+
+    // 375px〜767px
+    @include mq("md") {
+      font-size: $base-font-size;
+    }
+
+    // 375px以下
+    @media (max-width: 375px) {
+      font-size: vw(375, strip-unit($base-font-size));
+    }
+  }
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $regular;
+  color: $color-black;
+  background-color: $color-white;
+  font-size: $base-font-size;
+  letter-spacing: 0.12em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  position: relative;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  line-height: calc(30 / 15);
+
+  @include mq("md") {
+    line-height: 2.65;
+    font-size: prem(17);
+  }
+}
+
+body.is-fixed {
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  a:hover {
+    @if $break-flg ==0 {
+        @include mq("md") {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+
+      @else {
+        opacity: 0.8;
+        cursor: pointer;
+        @include mq("md") {
+          opacity: 1;
+        }
+      }
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+.height-low{
+  line-height: calc(17 / 30);
+}
+.mincho{
+  font-family: $font-family-mincho;
+}
+.heisei{
+  font-family: $font-family-heisei;
+}
+.pc-only{
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+.sp-only{
+  display: block;
+  @include mq("md") {
+    display: none;
+  }
+}

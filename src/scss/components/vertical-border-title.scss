@@ -1,0 +1,38 @@
+@use 'foundation'as *;
+.vertical-border-title{
+    font-size: prem(16);
+    font-family: $font-family-heisei;
+    font-weight: $regular;
+    line-height: 2.19;
+    color: $color-theme;
+    position: relative;
+    display: flex;
+    align-items: center;
+    writing-mode: vertical-rl;
+    margin-inline: auto;
+    gap: 12px;
+    @include mq("md"){
+        font-size: prem(25);
+        line-height: calc(35 / 25);
+        letter-spacing: 0.2em;
+        gap: 20px;
+    }
+    > span:first-child {
+        position: relative;
+        z-index: 1;
+    }
+    .single-border {
+        width: 1px;
+        background: $color-theme;
+        height: 42px;
+        @include mq("md"){
+            height: 110px;
+        }
+    }
+    .single-border::after {
+        top: 100%;
+        right:-4px;
+    }
+}
+
+

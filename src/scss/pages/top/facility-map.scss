@@ -1,0 +1,194 @@
+@use 'foundation'as *;
+
+.facility-map__container {
+    display: grid;
+    grid-template-areas:
+        "description"
+        "notion"
+        "button"
+        "map"
+        "selling"
+    ;
+
+    @include mq("md") {
+        grid-template-areas:
+            "description description"
+            "notion notion"
+            "button map"
+            "selling map"
+        ;
+        grid-template-columns: 1fr 3.5fr;
+        max-width: prem(1441);
+        margin-inline: auto;
+    }
+}
+
+.facility-map__description-wrapper {
+    margin-top: prem(26);
+    grid-area: description;
+    z-index: 10;
+
+    @include mq("md") {
+        max-width: 75%;
+        margin-top: prem(42);
+    }
+
+}
+
+.facility-map__description {
+    font-size: prem(14);
+    line-height: 1.57;
+    letter-spacing: 0.15em;
+    color: $color-theme;
+
+    @include mq("md") {
+        font-size: prem(32);
+        letter-spacing: 0.1em;
+        margin-top: prem(37);
+
+    }
+}
+
+.facility-map__notion-wrapper {
+    grid-area: notion;
+}
+
+.facility-map__button-wrapper {
+    margin-top: prem(47);
+    grid-area: button;
+    text-align: center;
+    z-index: 10;
+    @include mq("md") {
+        text-align: left;
+    }
+}
+
+.facility-map__selling-wrapper {
+    grid-area: selling;
+    z-index: 10;
+}
+
+.facility-map__selling {
+    padding-left: prem(20);
+    font-size: prem(17);
+    line-height: 1.65;
+    letter-spacing: 0.15em;
+    border-left: 1px solid $color-theme;
+    font-family: $font-family-heisei;
+    margin-top: prem(19);
+
+    @include mq("md") {
+        margin-top: 0;
+        position: absolute;
+        font-size: prem(32);
+        transform: translateX(50%);
+    }
+}
+
+.facility-map__selling span {
+    color: $color-theme;
+    display: block;
+    font-size: prem(20);
+    @include mq("md") {
+        font-size: prem(35);
+    }
+
+}
+
+.facility-map {
+    grid-area: map;
+    position: relative;
+    max-width: 1171px;
+    margin: 0 auto;
+    width: 100%;
+    width: 150%;
+    transform: translateX(-30%);
+    @include mq("md") {
+        width: 159%;
+        margin-top: prem(-150);
+        transform: translateX(-5%);
+    }
+}
+
+.facility-map__bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    position: relative;
+}
+
+.facility-pin {
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: clamp(3.375rem, -0.75rem + 6.51vw, 7.5rem);
+    transition: transform 0.2s ease, filter 0.2s ease;
+    display: block;
+    z-index: 0;
+    text-align: center;
+}
+
+.facility-pin__label {
+    font-family: $font-family-heisei;
+    color: $color-white;
+    font-size: prem(10);
+    font-weight: $regular;
+    text-align: center;
+    border-radius: 3px;
+    background: $color-theme;
+    display: inline-block;
+    left: 50%;
+    transform: translateY(50%);
+    padding: prem(3) prem(6);
+    line-height: 1.2;
+    white-space: nowrap;
+    @include mq("md") {
+        border-radius: 5px;
+        line-height: 1;
+        padding: prem(10) prem(0);
+        font-size: prem(18);
+        width: 100%;
+    }
+}
+
+.facility-pin img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+}
+
+.facility-pin__img {
+    position: relative;
+    z-index: -1;
+}
+
+.facility-pin__img::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 3px);
+    height: calc(100% + 3px);
+    border: 3px solid $color-theme;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    background-color: $color-theme;
+    @include mq("md"){
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+    }
+}
+
+.facility-pin:hover,
+.facility-pin:focus-visible {
+    transform: translate(-50%, -50%) scale(1.08);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+    outline: none;
+}

@@ -1,0 +1,16 @@
+@use 'foundation'as *;
+
+.left-title{
+    font-size: prem(16);
+    font-family: $font-family-mincho;
+    font-weight: $regular;
+    padding-block: prem(21);
+    line-height: 2.19;
+    color: $color-theme;
+    border-right: 1px solid $color-theme;
+    @include mq("md"){
+        padding-inline: prem(95);
+        writing-mode: vertical-rl;
+        font-size: prem(25);
+    }
+}

@@ -1,0 +1,30 @@
+﻿@use "sass:math";
+@use "sass:meta";
+@use 'variables' as *;
+
+/*****************************************
+ * 謨ｰ蛟､縺九ｉ蜊倅ｽ阪ｒ蜿悶ｊ髯､縺十n * 蜿りソn * https: //css-tricks.com/snippets/sass/
+******************************************/
+@function strip-unit($number) {
+  @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+/*****************************************
+ * px竊池em縺ｮ險育ｮ予n * 蜿りソn * https: //webdou.net/sass-rem/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+@function prem($pixels) {
+  @return math.div($pixels , strip-unit($base-font-size)) * 1rem;
+}
+
+/*****************************************
+ * vw縺ｮ險育ｮ予n * 蜿りソn * https://webdou.net/sass-vw/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+@function vw($screen-size, $pixels) {
+  @return math.div($pixels , $screen-size) * 100vw;
+}
+

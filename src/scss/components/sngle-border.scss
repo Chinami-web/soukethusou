@@ -1,0 +1,25 @@
+@use 'foundation'as *;
+
+.single-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    border-top: 1px solid $color-theme;
+}
+
+.single-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 1px solid $color-theme;
+    border-radius: 100%;
+    background-color: $color-white;
+}
+
+

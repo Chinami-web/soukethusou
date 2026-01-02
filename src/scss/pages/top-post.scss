@@ -1,0 +1,88 @@
+﻿@use 'foundation' as *;
+
+.top-post__inner {
+  margin: 5% 5% 0 5%;
+}
+
+.top-post .splide {
+
+}
+
+.top-post .splide__slide {
+  display: block;
+  width: 100%;
+}
+
+.top-post .splide__slide a {
+  display: block;
+  aspect-ratio: 600 / 400;
+}
+
+.top-post .splide__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-post .splide__pagination {
+  bottom: -2em;
+}
+
+.top-post .splide__pagination__page.is-active {
+  background-color: blue;
+}
+
+// swiper逕ｨ
+.top-post .swiper {
+  padding-bottom: 20px;
+}
+
+.top-post .swiper-slide {
+  display: block;
+  width: 100%;
+  aspect-ratio: 600 / 300;
+}
+
+.top-post .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-post .swiper-pagination {
+  bottom: 0;
+}
+
+.top-post .swiper-button-prev,
+.top-post .swiper-button-next {
+  text-rendering: initial;
+}
+
+//縲slick逕ｨ
+.top-post .slick-track {
+  display: block;
+  width: 100%;
+}
+
+.top-post .slick-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.top-post .slick-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 600 / 300;
+  object-fit: cover;
+}
+.top-post .slick-next,
+.top-post .slick-prev {
+  background: gray;
+}
+
+

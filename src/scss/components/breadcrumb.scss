@@ -1,0 +1,10 @@
+﻿@use 'foundation' as *;
+
+.breadcrumb {
+  padding: prem(16) 0;
+}
+.breadcrumb a {
+  color: $color-theme;
+}
+
+

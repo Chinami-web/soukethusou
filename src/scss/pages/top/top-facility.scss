@@ -1,0 +1,11 @@
+@use 'foundation'as *;
+
+.top-facility {
+  border-top: 1px solid $color-theme;
+}
+
+.top-facility .l-inner {
+  width: fit-content;
+  margin: 0 auto;
+  max-width: 100%;
+}

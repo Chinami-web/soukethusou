@@ -1,0 +1,29 @@
+@use 'foundation'as *;
+.border-title{
+    font-size: prem(16);
+    font-family: $font-family-heisei;
+    font-weight: $regular;
+    line-height: 2.19;
+    color: $color-theme;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include mq("md"){
+        font-size: prem(25);
+        line-height: calc(35 / 25);
+        letter-spacing: 0.2em;
+    }
+    > span:first-child {
+        position: relative;
+        z-index: 1;
+        padding-right: 16px;
+    }
+    .main-border {
+        flex: 1;
+        position: relative;
+        left: auto;
+        width: auto;
+        margin-left: 16px;
+    }
+}
+

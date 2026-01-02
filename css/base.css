@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*****************************************
+ * 謨ｰ蛟､縺九ｉ蜊倅ｽ阪ｒ蜿悶ｊ髯､縺十n * 蜿りソn * https: //css-tricks.com/snippets/sass/
+******************************************/
+/*****************************************
+ * px竊池em縺ｮ險育ｮ予n * 蜿りソn * https: //webdou.net/sass-rem/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+/*****************************************
+ * vw縺ｮ險育ｮ予n * 蜿りソn * https://webdou.net/sass-vw/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+@media (max-width: 375px) {
+  html {
+    font-size: 4vw;
+  }
+}
+html {
+  font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 0.8021390374vw;
+  }
+}
+@media (min-width: 1870px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  position: relative;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  body {
+    line-height: 2.65;
+    font-size: 1.1333333333rem;
+  }
+}
+
+body.is-fixed {
+  overflow: hidden;
+}
+
+@media screen and (hover: hover) and (min-width: 768px) {
+  a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+.height-low {
+  line-height: 0.5666666667;
+}
+
+.mincho {
+  font-family: "Sawarabi Mincho", sans-serif;
+}
+
+.heisei {
+  font-family: "DFPHSMincho", sans-serif;
+}
+
+/*# sourceMappingURL=base.css.map */

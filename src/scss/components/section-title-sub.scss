@@ -1,0 +1,14 @@
+@use 'foundation'as *;
+.section-title-sub{
+    font-size: prem(20);
+    font-family: $font-family-heisei;
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    font-weight: $regular;
+    @include mq("md"){
+        font-size: prem(32);
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+    }
+
+}
