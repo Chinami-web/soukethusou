@@ -1,0 +1,135 @@
+@use 'foundation'as *;
+
+.top-about {
+    padding-top: prem(54);
+    padding-bottom: prem(92);
+    border-bottom: 1px solid $color-theme;
+    position: relative;
+    overflow: hidden;
+
+    @include mq("md") {
+        padding-top: prem(180);
+        padding-bottom: prem(236);
+    }
+
+
+}
+.top-about::before,
+.top-about::after {
+        content: '';
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+.top-about::before{
+    background-image: url(../images/common/bk01.png);
+    width: prem(109);
+    height: prem(374);
+    bottom: 5%;
+    left: 0;
+    z-index: 1;
+    @include mq("md"){
+        width: prem(424);
+        height: prem(1488);
+        bottom: 10%;
+        left: 0;
+    }
+}
+.top-about::after{
+    background-image: url(../images/common/bk02SP.png);
+    width: prem(123);
+    height: prem(331);
+    bottom: 15%;
+    right: -7%;
+    z-index: -1;
+    @include mq("md"){
+        background-image: url(../images/common/bk02.png);
+        width: prem(940);
+        height: prem(632);
+        top: 22%;
+        right: 0;
+    }
+}
+
+.top-about__container {
+    display: grid;
+    grid-template-areas:
+        "main-title sub-title"
+        "main-title text"
+        "main-title btn"
+    ;
+    column-gap: prem(10);
+    @include mq("md") {
+        max-width: calc(100% - (950 / 1970 * 100%));
+        column-gap: prem(55);
+        margin-inline: auto;
+    }
+}
+
+.top-about__main-title {
+    grid-area: main-title;
+}
+
+.top-about__sub-title {
+    grid-area: sub-title;
+    font-size: prem(20);
+    padding-top: prem(20);
+    position: relative;
+    letter-spacing: 0.1em;
+    width: fit-content;
+
+    @include mq(md) {
+        width: 100%;
+        padding-top: prem(42);
+        line-height: 1.72;
+        font-size: prem(32);
+    }
+}
+
+.top-about__text {
+    grid-area: text;
+    margin-top: prem(29);
+
+    @include mq("md") {
+        margin-top: prem(54);
+    }
+}
+
+.top-about__btn {
+    grid-area: btn;
+    margin-top: prem(60);
+
+    @include mq("md") {
+        margin-top: prem(80);
+    }
+}
+
+.top-about__image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: prem(74);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+    @include mq("md") {
+        margin-top: prem(247);
+    }
+}
+
+
+.top-about__image img {
+    object-fit: cover;
+    height: auto;
+    @include mq("md"){
+    }
+}
+.top-plan__btn{
+    z-index: -1;
+    position: relative;
+    text-align: center;
+    margin-top: prem(40);
+    @include mq("md"){
+        margin-top: prem(111);
+    }
+}
+

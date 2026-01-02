@@ -1,0 +1,39 @@
+@use './foundation' as *;
+
+.section-title__wrapper {
+  text-align: center;
+  }
+
+.section-title {
+  font-size: prem(16);
+  color: $color-theme;
+  font-family: $font-family-mincho;
+  font-weight: $regular;
+  @include mq("md"){
+    font-size: prem(25);
+  }
+}
+.section-title--big{
+  font-size: prem(20);
+  @include mq("md"){
+    font-size: prem(32);
+
+  }
+
+}
+.section-title__text{
+font-size: prem(20);
+line-height: 1.6;
+letter-spacing: 0.15em;
+@include mq("md"){
+  font-size: prem(35);
+  line-height: 1.72;
+  letter-spacing: 0.1em;
+}
+}
+.section-title__text--small{
+  font-size: prem(17);
+  @include mq("md"){
+    font-size: prem(20);
+  }
+}

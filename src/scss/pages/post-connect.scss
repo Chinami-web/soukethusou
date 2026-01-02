@@ -1,0 +1,21 @@
+﻿@use 'foundation' as *;
+
+.post-connect {
+  margin-top: prem(16);
+}
+.post-connect__title {
+  font-size: prem(24);
+  color: $color-theme;
+}
+.post-connect__items {
+  display: grid;
+  gap: prem(50);
+  margin-top: prem(16);
+  @include mq('md') {
+    row-gap: prem(40);
+    column-gap: prem(20);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+

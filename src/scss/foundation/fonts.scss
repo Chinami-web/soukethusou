@@ -1,0 +1,19 @@
+@use "sass:math";
+
+// DFPHSMincho-W3
+// 注意: フォントファイルは自前で用意してください（ライセンス要確認）。
+// 推奨配置:
+//   src/fonts/DFPHSMincho-W3.woff2
+//   src/fonts/DFPHSMincho-W3.woff
+// gulpで src/fonts -> assets/fonts にコピーする想定です。
+@font-face {
+  font-family: "DFPHSMincho";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url("../fonts/dfhsmincho-w3-winp-rksj-h.woff2") format("woff2"),
+    url("../fonts/dfhsmincho-w3-winp-rksj-h.woff") format("woff");
+}
+
+

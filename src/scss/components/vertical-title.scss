@@ -1,0 +1,12 @@
+@use 'foundation' as *;
+.vertical-title {
+    color: #624349;
+    writing-mode: vertical-rl;
+    font-weight: $regular;
+    font-size: prem(15);
+    line-height: 1.6;
+    letter-spacing: 14px;
+    @include mq("md"){
+        font-size: prem(25);
+    }
+}

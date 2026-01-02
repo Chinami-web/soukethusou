@@ -1,0 +1,9 @@
+@use 'foundation'as *;
+.features {
+    padding-top: prem(86);
+    @include mq("md"){
+        padding-top: prem(186);
+    }
+}
+
+
