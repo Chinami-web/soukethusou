@@ -29,7 +29,9 @@
     }
 }
 .top-plan .l-inner {
-    display: flex;
+    @include mq("md"){
+        display: flex;
+    }
 }
 .top-plan__container{
     padding-top: prem(83);

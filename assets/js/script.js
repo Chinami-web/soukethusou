@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
           rewind: true,    // true:スライダーの終わりまで行ったときに、先頭に巻き戻す(type:fadeの時使用)
           arrows: true,    // true:矢印ボタンを表示
           perPage: 1,      // 中央1枚
-          fixedWidth: '64%', // 中央を大きく確保
+          fixedWidth: '60%', // 中央を大きく確保
           pagination: false,
           breakpoints: {   // レスポンシブデザインのブレークポイントを指定（指定したpx以下の場合）
             767: {
@@ -125,14 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
           arrows: false,
           pagination: false,
           perPage: 3,
-          focus: 'center',
-          padding: '8%',
-          gap: '24px',
+          paddingLeft: '80px',
+          gap: '40px',
           breakpoints: {
             767: {
               perPage: 1,
               padding: '0',
-              gap: '12px'
             }
           }
         }
@@ -244,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // カードの高さの50%の位置に設定
           arrows.forEach(arrow => {
              arrow.style.top = height / 2 + 'px';
-             let transform = 'translateY(-50%)';
+             let transform = 'translateY(-21%)';
              if (arrow.classList.contains('splide__arrow--prev')) {
                  transform += ' rotate(180deg)';
              }
@@ -585,6 +583,49 @@ jQuery(function ($) {
         }
       });
     }
+  });
+
+  // モーダル制御
+  jQuery(function($) {
+    const $modal = $('#movie-modal');
+    const $video = $('#modal-video');
+    const $thumbnails = $('.movie-modal__thumbnail');
+
+    // 開く
+    $('#mv-modal').on('click', function() {
+        $modal.addClass('is-open');
+        $modal.animate({ opacity: 1 }, 300);
+        // デフォルト動画（最初のサムネイルの動画）をセットして停止状態で表示
+        const defaultSrc = $thumbnails.first().data('src');
+        $video.find('source').attr('src', defaultSrc);
+        $video[0].load();
+
+        $thumbnails.removeClass('is-active');
+        $thumbnails.first().addClass('is-active');
+    });
+
+    // 閉じる
+    $('.movie-modal__close, .movie-modal__overlay').on('click', function() {
+        $modal.animate({ opacity: 0 }, 300, function() {
+             $modal.removeClass('is-open');
+             $video[0].pause();
+             $video[0].currentTime = 0;
+        });
+    });
+
+    // 動画切り替え
+    $thumbnails.on('click', function() {
+        // クリックされたのがすでにアクティブな場合は何もしない
+        if ($(this).hasClass('is-active')) return;
+
+        const src = $(this).data('src');
+        $thumbnails.removeClass('is-active');
+        $(this).addClass('is-active');
+
+        $video.find('source').attr('src', src);
+        $video[0].load();
+        $video[0].play();
+    });
   });
 
 });
