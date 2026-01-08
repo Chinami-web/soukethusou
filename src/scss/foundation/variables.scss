@@ -10,14 +10,14 @@ $breakpoints: null;
     "sm": "screen and (min-width: 400px)",
     "md": "screen and (min-width: 768px)",
     "lg": "screen and (min-width: 1000px)",
-    "xl": "screen and (min-width: 1200px)"
+    "xl": "screen and (min-width: 1400px)"
   );
 } @else {
   $breakpoints: (
     "sm": "screen and (max-width: 399px)",
     "md": "screen and (max-width: 767px)",
     "lg": "screen and (max-width: 999px)",
-    "xl": "screen and (max-width: 1199px)"
+    "xl": "screen and (max-width: 1399px)"
   );
 }
 
@@ -47,6 +47,5 @@ $color-theme-right: #D1C2C5;
 $color-white: #fff;
 $main-gradient:linear-gradient(180deg, #957B80 52.88%, #B59F94 100%);
 
-// PC時のFV左ナビ分のオフセット（必要に応じて調整）
-$fv-nav-width: 280px;
+
 
