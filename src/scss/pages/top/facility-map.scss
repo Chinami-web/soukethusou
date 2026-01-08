@@ -17,9 +17,14 @@
             "button map"
             "selling map"
         ;
-        grid-template-columns: 1fr 3.5fr;
-        max-width: prem(1441);
+        grid-template-columns: 1fr 2.5fr;
+        grid-template-rows: auto auto auto 1fr auto;
         margin-inline: auto;
+    }
+    @include mq("xl") {
+        max-width: prem(1441);
+        grid-template-columns: 1fr 3.5fr;
+
     }
 }
 
@@ -44,13 +49,20 @@
     @include mq("md") {
         font-size: prem(32);
         letter-spacing: 0.1em;
-        margin-top: prem(37);
+        margin-top: prem(7);
+        line-height: 1.67;
+        margin-top: prem(0);
+
+
 
     }
 }
 
 .facility-map__notion-wrapper {
     grid-area: notion;
+    margin-top: prem(40);
+    z-index: 1;
+
 }
 
 .facility-map__button-wrapper {
@@ -60,12 +72,17 @@
     z-index: 10;
     @include mq("md") {
         text-align: left;
+
     }
 }
 
 .facility-map__selling-wrapper {
     grid-area: selling;
     z-index: 10;
+    @include mq("md"){
+        display: flex;
+        align-items: center;
+    }
 }
 
 .facility-map__selling {
@@ -81,7 +98,8 @@
         margin-top: 0;
         position: absolute;
         font-size: prem(32);
-        transform: translateX(50%);
+        transform: translateX(62%);
+
     }
 }
 
@@ -104,10 +122,14 @@
     width: 150%;
     transform: translateX(-30%);
     @include mq("md") {
+        width: 100%;
+        margin-top: prem(-100);
+        transform: translateX(0%);
+    }
+    @include mq("xl") {
         width: 159%;
         margin-top: prem(-150);
-        transform: translateX(-5%);
-    }
+        transform: translateX(-5%);    }
 }
 
 .facility-map__bg {

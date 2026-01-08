@@ -2,7 +2,6 @@
 
 .main-card {
   position: relative;
-  padding-inline: prem(10);
   padding-bottom: prem(56);
 }
 
@@ -21,6 +20,28 @@
   position: relative;
   padding: prem(16);
   height: 100%;
+  box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.15000000596046448);
+  ;
+  border-radius: 20px;
+  border: 1px solid $color-theme;
+  position: relative;
+  @include mq("md") {
+    padding: prem(26) prem(26) prem(52) prem(26);
+    gap: prem(20);
+    min-height: prem(640);
+    width: calc(100% / 3) !important;
+  }
+}
+
+.main-card__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: $color-theme;
 }
 
 .main-card__content {
@@ -59,12 +80,21 @@
   display: grid;
   row-gap: prem(10);
   align-content: start;
+  margin-top: prem(0);
+
 }
 
 .main-card__name {
   font-size: prem(18);
   letter-spacing: 0.08em;
   color: $color-black;
+  line-height: 1;
+}
+
+.main-card__name-mark {
+  font-size: prem(14);
+  line-height: 1;
+  color: $color-theme;
 }
 
 .main-card__address {
@@ -73,21 +103,34 @@
   color: $color-theme;
   padding-top: prem(8);
   border-top: 1px solid $color-theme-right;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
+
 }
 
 .main-card__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: prem(8);
+  gap: prem(5);
+
+  @include mq("md") {
+    gap: prem(14);
+  }
 }
 
 .main-card__tag {
   background-color: $color-theme;
   color: $color-white;
-  font-size: prem(12);
+  font-size: prem(11);
   letter-spacing: 0.05em;
-  padding: prem(6) prem(12);
+  padding: prem(8) prem(12);
   line-height: 1.4;
+
+  @include mq("md") {
+    font-size: prem(15);
+  }
 }
 
 .main-card__footer {
@@ -100,34 +143,47 @@
 
 .main-card__button-wrapper {
   text-align: center;
+  margin-top: prem(16);
+
 }
+
 .main-card__label {
   position: absolute;
-  top: prem(12);
-  right: prem(12);
+  top: 0;
+  right: 0;
   writing-mode: vertical-rl;
   background: $main-gradient;
   color: $color-white;
   font-family: $font-family-heisei;
-  font-size: prem(13);
-  letter-spacing: 0.08em;
+  font-size: prem(14);
+  letter-spacing: 0.3em;
   padding: prem(12) prem(6);
   display: flex;
   align-items: center;
   gap: prem(6);
   justify-content: center;
+  border-radius: 0 0 0 40px;
+  font-weight: 300;
+
+  @include mq("md") {
+    font-size: prem(17);
+  }
 }
 
 .main-card__label-mark {
   font-size: prem(12);
   line-height: 1;
 }
-.main-card__label-text{
+
+.main-card__label-text {
   display: block;
-writing-mode: vertical-rl;
-text-orientation: upright;
-font-feature-settings: "vert";
+  writing-mode: vertical-rl;
 }
+
+.main-card__label-long-vowel {
+  font-family: $font-family-base;
+}
+
 #main-card-slider .splide__track {
   padding-block: prem(12);
 }
@@ -157,9 +213,11 @@ font-feature-settings: "vert";
 
 .main-card__counter {
   display: none;
-  @include mq("md"){
+
+  @include mq("md") {
     display: block;
-    font-size: prem(12);
+    font-size: prem(27);
+    font-weight: $bold;
     letter-spacing: 0.08em;
     color: $color-theme;
   }
@@ -167,11 +225,15 @@ font-feature-settings: "vert";
 
 .main-card__nav {
   display: none;
-  @include mq("md"){
+
+  @include mq("md") {
     display: flex;
     align-items: center;
     justify-content: end;
     gap: prem(14);
+    margin-top: prem(16);
+    font-weight: $bold;
+
   }
 }
 
@@ -193,14 +255,18 @@ font-feature-settings: "vert";
 }
 
 .main-card__nav-prev::before {
+  font-size: prem(20);
+
   content: "＜";
 }
 
 .main-card__nav-pause::before {
-  content: "||";
+  font-size: prem(20);
+  content: "| |";
 }
 
 .main-card__nav-next::before {
+  font-size: prem(20);
   content: "＞";
 }
 
@@ -226,18 +292,14 @@ font-feature-settings: "vert";
     padding-block: prem(28);
   }
 
-  .main-card__item {
-    padding: prem(26);
-    gap: prem(20);
-    min-height: prem(640);
-  }
+
 
   .main-card__content {
     gap: prem(20);
   }
 
   .main-card__hero img {
-    aspect-ratio: 777 / 443;
+    aspect-ratio: 570 / 368;
   }
 
   .main-card__thumbs {
@@ -246,14 +308,6 @@ font-feature-settings: "vert";
 
   .main-card__name {
     font-size: prem(24);
-  }
-
-  .main-card__address {
-    font-size: prem(16);
-  }
-
-  .main-card__tag {
-    font-size: prem(13);
   }
 
 
@@ -270,6 +324,7 @@ font-feature-settings: "vert";
   .main-card__pagination {
     inset-inline: prem(20);
     bottom: prem(0);
+    display: flex;
   }
 
   .main-card__nav-btn {

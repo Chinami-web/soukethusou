@@ -5,8 +5,8 @@
     position: relative;
     overflow: hidden;
     @include mq("md"){
-        padding-top: prem(176);
-        padding-bottom: prem(223);
+        padding-top: prem(215);
+        padding-bottom: prem(261);
     }
 }
 .top-philosophy::before{
@@ -23,7 +23,7 @@
     @include mq("md"){
         width: prem(228);
         height: prem(830);
-        bottom: 0;
+        bottom: 9%;
         right: -2%;
         z-index: 1;
     }

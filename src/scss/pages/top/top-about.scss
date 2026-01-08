@@ -20,6 +20,7 @@
         position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
+        z-index: -1;
 }
 .top-about::before{
     background-image: url(../images/common/bk01.png);
@@ -47,7 +48,7 @@
         width: prem(940);
         height: prem(632);
         top: 22%;
-        right: 0;
+        right: -115px;
     }
 }
 
@@ -112,7 +113,7 @@
     margin-left: calc(50% - 50vw);
     margin-right: 0;
     @include mq("md") {
-        margin-top: prem(247);
+        margin-top: prem(230);
     }
 }
 

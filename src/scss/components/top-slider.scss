@@ -1,0 +1,65 @@
+@use 'foundation'as *;
+
+.top-staff-slider {
+  max-width: 100%;
+  margin-top: prem(37);
+
+  @include mq("md") {
+    margin-top: prem(124);
+    
+    overflow: hidden;
+    $left-title-width: prem(95) * 2 + prem(25) * 2.19;
+    max-width: calc(100% - 1px + #{$padding-pc});
+    margin-right: calc(-1 * #{$padding-pc});
+
+}}
+
+.top-staff-slider__list {
+  display: flex;
+  width: fit-content;
+}
+
+.top-staff-slider__list:nth-of-type(1) {
+  animation: loop-slider-right 60s linear infinite;
+}
+
+.top-staff-slider__list:nth-of-type(2) {
+  // 2個目は左へ (0から左へ移動)
+  animation: loop-slider-left 60s linear infinite;
+}
+
+.top-staff-slider__item {
+  flex: 0 0 auto;
+  width:82px;
+  @include mq("md"){
+    width: 220px;
+  }
+}
+
+.top-staff-slider__image {
+  margin: 0;
+}
+
+.top-staff-slider__image img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+@keyframes loop-slider-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes loop-slider-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

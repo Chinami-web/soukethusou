@@ -1,16 +1,37 @@
 @use 'foundation'as *;
 
-.left-title{
+.left-title {
     font-size: prem(16);
     font-family: $font-family-mincho;
     font-weight: $regular;
-    padding-block: prem(21);
+    padding-block: prem(87);
     line-height: 2.19;
     color: $color-theme;
-    border-right: 1px solid $color-theme;
-    @include mq("md"){
-        padding-inline: prem(95);
+    position: relative;
+    text-align: center;
+    @include mq("md") {
+        border-right: 1px solid $color-theme;
+        padding-right: prem(95);
+        padding-left: prem(75);
+        letter-spacing: 0.4em;
         writing-mode: vertical-rl;
         font-size: prem(25);
+        text-align: left;
+    }
+}
+
+.left-title::before {
+    content: "";
+    display: block;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+
+    height: 1px;
+    background-color: $color-theme;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include mq("md"){
+        display: none;
     }
 }

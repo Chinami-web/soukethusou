@@ -1,0 +1,13 @@
+@use 'foundation'as *;
+
+.top-info {
+    padding-top: prem(54);
+    padding-bottom: prem(92);
+    border-bottom: 1px solid $color-theme;
+    position: relative;
+
+    @include mq("md") {
+        padding-top: prem(180);
+        padding-bottom: prem(236);
+    }
+}

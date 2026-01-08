@@ -14,7 +14,7 @@
     @include mq("md"){
         font-size: prem(25);
         line-height: calc(35 / 25);
-        letter-spacing: 0.2em;
+        letter-spacing: 0.4em;
         gap: 20px;
     }
     > span:first-child {

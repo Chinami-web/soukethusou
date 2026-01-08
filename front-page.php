@@ -20,6 +20,9 @@
                 <a class="mv__nav-item-link" href="#">東上セレモの想結葬</a>
               </li>
               <li class="mv__nav-item">
+                <a class="mv__nav-item-link" href="#">プラン・費用</a>
+              </li>
+              <li class="mv__nav-item">
                 <a class="mv__nav-item-link" href="#">葬儀場を探す</a>
               </li>
               <li class="mv__nav-item">
@@ -49,7 +52,7 @@
       </div>
       <div class="mv__title-wrap">
         <h2 class="mv__main-title mincho">想いが生きる、最期の時間</h2>
-        <p class="mv__sub-title">― 手と手でつなぐ、心からの「ありがとう」を ―</p>
+        <p class="mv__sub-title mincho">― 手と手でつなぐ、心からの「ありがとう」を ―</p>
         <p class="mv__text pc-only">
           地域と歩んで60年。信用と信頼に支えられ、選ばれ続ける葬儀社。<br>
           心に寄り添い、故人の想いを家族とともにかたちにする。<br>
@@ -59,6 +62,11 @@
         <video autoplay muted loop playsinline preload="auto">
           <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/mv.mp4" type="video/mp4" fetchpriority="high">
         </video>
+      </div>
+      <div class="mv__modal" id="mv-modal">
+        <figure class="mv__modal-icon">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play.png" alt="play movie" width="141" height="141">
+        </figure>
       </div>
     </div>
   </section>
@@ -273,7 +281,7 @@
             <ul class="plan-card__list splide__list">
               <li class="plan-card__item splide__slide">
                 <figure class="plan-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image09.jpg" alt="葬儀プラン・費用案内の画像"
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plan/image01.jpg" alt="葬儀プラン・費用案内の画像"
                     width="777"
                     height="449"
                     loading="lazy">
@@ -290,7 +298,7 @@
                   </p>
                   <div class="plan-card__title-price heisei">
                     <p>
-                    484,000円
+                      484,000円
                       <span>
                         (税別)
                       </span>
@@ -339,23 +347,23 @@
               </li>
               <li class="plan-card__item splide__slide">
                 <figure class="plan-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image09.jpg" alt="葬儀プラン・費用案内の画像"
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plan/image02.jpg" alt="葬儀プラン・費用案内の画像"
                     width="777"
                     height="449"
                     loading="lazy">
                 </figure>
                 <div class="plan-card__title-wrapper">
                   <span class="plan-card__title-subtitle">
-                    想結葬の家族葬
+                    想結葬の一日葬
                   </span>
                   <h3 class="plan-card__title-text heisei">
-                    家族葬プラン
+                    一日葬プラン
                   </h3>
                   <p class="plan-card__title-description">
-                    家族、親族を中心としたお葬式
+                    通夜をせず、告別式と火葬を一日で行うお葬式 
                   </p>
                   <div class="plan-card__title-price heisei">
-                    484,000円
+                    492,000円
                     <span>
                       (税別)
                     </span>
@@ -365,11 +373,81 @@
                   <div class="plan-card__list">
                     <ul class="plan-card__list-items">
                       <li class="plan-card__list-item">
-                        白木祭壇を中心に、両側に生花を飾る伝統的な設え。厳かな雰囲気を大切にしたい方へ。
+                        ご家族や親しい方々と落ち着いた雰囲気の中で、しっかりとお別れの時間をお過ごしいただけます。
                       </li>
                       <li class="plan-card__list-item">
-                        ご年配の親族が多く、格式を重視される方。昔ながらのスタイルを希望されるご家族に。
+                        通夜がないため準備や移動の負担を抑えられ、一日で儀式を終えられる点が大きなメリットです。
                       </li>
+                      <li class="plan-card__list-item">
+                        伝統的な白木祭壇、故人の個性に合わせた花祭壇をお選びいただくことも可能です。 
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="plan-card__btn pc-only">
+                    <a class="button button-solid" href="#">
+                      <span></span>
+                      <span></span>
+                      プラン詳細をみる
+                    </a>
+                  </div>
+                </div>
+                <div class="plan-card__drawer">
+                  <div class="plan-card__drawer-wrapper">
+                    <p class="plan-card__drawer-text">
+                      含まれるもの
+                    </p>
+                  </div>
+                  <div class="plan-card__drawer-content">
+                    <ul class="plan-card__icon-list">
+                      <?php
+                      $icon_numbers = [1, 2, 4, 5, 6, 7, 9, 12, 14, 16, 17, 23, 25, 26, 28, 31, 32, 33, 34, 35];
+                      foreach ($icon_numbers as $i): ?>
+                        <li class="plan-card__icon-item">
+                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
+                        </li>
+                      <?php endforeach; ?>
+                    </ul>
+                  </div>
+                </div>
+                <div class="plan-card__label">
+                  <span>○</span>
+                  一日葬
+                </div>
+              </li>
+              <li class="plan-card__item splide__slide">
+                <figure class="plan-card__img">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plan/image03.jpg" alt="葬儀プラン・費用案内の画像"
+                    width="777"
+                    height="449"
+                    loading="lazy">
+                </figure>
+                <div class="plan-card__title-wrapper">
+                  <span class="plan-card__title-subtitle">
+                    想結葬の一般葬
+                  </span>
+                  <h3 class="plan-card__title-text heisei">
+                    一般葬プラン
+                  </h3>
+                  <p class="plan-card__title-description">
+                    多くの方々と故人を偲ぶ伝統的な葬儀
+                  </p>
+                  <div class="plan-card__title-price heisei">
+                    1,293,000円 <span>
+                      (税別)
+                    </span>
+                  </div>
+                </div>
+                <div class="plan-card__body">
+                  <div class="plan-card__list">
+                    <ul class="plan-card__list-items">
+                      <li class="plan-card__list-item">
+                        通夜・告別式を通じて、伝統的な儀式として丁寧に故人をお見送りできます。 
+                      </li>
+                      <li class="plan-card__list-item">
+                        花祭壇のデザインをお選びいただけるため、故人の個性や想いに合わせたお別れができます。
+                      </li>
+                      <li class="plan-card__list-item">
+                        親族や友人ゆかりの方々と共に、「しっかりと見送ってあげたい」そんな方におすすめです。 </li>
                     </ul>
                   </div>
                   <div class="plan-card__btn pc-only">
@@ -398,29 +476,28 @@
                 </div>
                 <div class="plan-card__label">
                   <span>○</span>
-                  家族葬
+                  一般葬
                 </div>
               </li>
               <li class="plan-card__item splide__slide">
                 <figure class="plan-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image09.jpg" alt="葬儀プラン・費用案内の画像"
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plan/image04.jpg" alt="葬儀プラン・費用案内の画像"
                     width="777"
                     height="449"
                     loading="lazy">
                 </figure>
                 <div class="plan-card__title-wrapper">
                   <span class="plan-card__title-subtitle">
-                    想結葬の家族葬
+                    想結葬の火葬式
                   </span>
                   <h3 class="plan-card__title-text heisei">
-                    家族葬プラン
+                    火葬式プラン
                   </h3>
                   <p class="plan-card__title-description">
-                    家族、親族を中心としたお葬式
+                    火葬だけのシンプルなお見送り
                   </p>
                   <div class="plan-card__title-price heisei">
-                    484,000円
-                    <span>
+                    222,000円 <span>
                       (税別)
                     </span>
                   </div>
@@ -429,10 +506,13 @@
                   <div class="plan-card__list">
                     <ul class="plan-card__list-items">
                       <li class="plan-card__list-item">
-                        白木祭壇を中心に、両側に生花を飾る伝統的な設え。厳かな雰囲気を大切にしたい方へ。
+                        ごく親しい家族だけで、静かに故人との最期の時間をお過ごしいただけます。
                       </li>
                       <li class="plan-card__list-item">
-                        ご年配の親族が多く、格式を重視される方。昔ながらのスタイルを希望されるご家族に。
+                        費用やご家族の負担をできるだけ抑えたい方、参列を家族だけにしたい方に選ばれています。
+                      </li>
+                      <li class="plan-card__list-item">
+                        儀式にこだわらない方でも、手続きを最小限にし、無理のない形でお別れいただけます。
                       </li>
                     </ul>
                   </div>
@@ -445,14 +525,14 @@
                   </div>
                 </div>
                 <div class="plan-card__drawer">
-                  <61div class="plan-card__drawer-wrapper">
+                  <div class="plan-card__drawer-wrapper">
                     <p class="plan-card__drawer-text">
                       含まれるもの
                     </p>
-                  </61div>
+                  </div>
                   <div class="plan-card__drawer-content">
                     <ul class="plan-card__icon-list">
-                      <?php for ($i = 1; $i <= 23; $i++): ?>
+                      <?php for ($i = 1; $i <= 27; $i++): ?>
                         <li class="plan-card__icon-item">
                           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
                         </li>
@@ -462,7 +542,7 @@
                 </div>
                 <div class="plan-card__label">
                   <span>○</span>
-                  家族葬
+                  火葬式
                 </div>
               </li>
             </ul>
@@ -605,6 +685,8 @@
           </a>
         </div>
       </div>
+    </div>
+    <div class="top-main-card">
       <?php
       $facility_query = new WP_Query(
         array(
@@ -626,6 +708,8 @@
                 $slide_id = get_post_field('post_name', $post_id);
                 $label = get_post_meta($post_id, 'facility_label', true);
                 $label_text = $label ? $label : 'プライベートホール';
+                // 伸ばし棒（ー）を含む部分をspanで囲む
+                $label_text = preg_replace('/([ー]+)/u', '<span class="main-card__label-long-vowel">$1</span>', $label_text);
                 $address = get_post_meta($post_id, 'facility_address', true);
                 $address_text = $address ? $address : '';
                 $tags_raw = get_post_meta($post_id, 'facility_tags', true);
@@ -669,7 +753,7 @@
                       </div>
                     <?php endif; ?>
                     <div class="main-card__info">
-                      <p class="main-card__name heisei">○ <?php the_title(); ?></p>
+                      <p class="main-card__name heisei"><span class="main-card__name-mark">○</span> <?php the_title(); ?></p>
                       <?php if ($address_text): ?>
                         <p class="main-card__address"><?php echo esc_html($address_text); ?></p>
                       <?php endif; ?>
@@ -685,14 +769,15 @@
                       <a class="button button-solid" href="<?php the_permalink(); ?>">
                         <span></span>
                         <span></span>
-                        施設一覧をみる
+                        ホール詳細
+
                       </a>
                     </div>
                   </div>
                   <p class="main-card__label">
                     <span class="main-card__label-mark">○</span>
                     <span class="main-card__label-text">
-                      <?php echo esc_html($label_text); ?>
+                      <?php echo wp_kses($label_text, array('span' => array('class' => array()))); ?>
                     </span>
                   </p>
                 </li>
@@ -718,10 +803,12 @@
 
 
   <!-- ギャラリー -->
-  <?php get_template_part('parts/project/top-gallery'); ?>
+    <?php get_template_part('parts/project/top-gallery'); ?>
+
+
 
   <section class="comparison">
-    <div class="l-inner comparison__inner">
+    <div class="l-inner">
       <div class="section-title__wrapper comparison__title__wrapper">
         <h2 class="section-title section-title--big">
           そのお葬式、誰が寄り添いますか？
@@ -731,82 +818,85 @@
         </p>
         <span class="main-border"></span>
       </div>
-      <div class="comparison__content">
-        <div class="comparison__content-heading-wrapper">
-          <span class="comparison__content-heading-text heisei comparison__content-heading-text--left">
-            ネット<br>
-            仲介葬儀
-          </span>
-          <span class="comparison__content-heading-text comparison__content-heading-text--right">
-            <figure class="comparison__content-heading-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-b02.png" alt="ネット 仲介葬儀">
-            </figure>
-          </span>
-        </div>
-        <div class="comparison__content-label">
-          <div class="comparison__content-label-text">
-            <span>スタッフ</span>
-          </div>
-          <div class="comparison__content-label-text">
-            <span>寄り添い</span>
-          </div>
-          <div class="comparison__content-label-text">
-            <span>地域性</span>
-          </div>
-          <div class="comparison__content-label-text">
-            <span>式場</span>
-          </div>
-          <div class="comparison__content-label-text">
-            <span>金額</span>
-          </div>
-        </div>
-        <div class="comparison__content-text-wrapper">
-          <div class="comparison__content-text">
-            <span>
-              委託スタッフで対応品質に差<br>
-              担当がころころ変わることも
+      <div class="comparison__content-wrapper">
+        <span class="main-border"></span>
+        <div class="comparison__content">
+          <div class="comparison__content-heading-wrapper">
+            <span class="comparison__content-heading-text heisei comparison__content-heading-text--left">
+              ネット<br>
+              仲介葬儀
+            </span>
+            <span class="comparison__content-heading-text comparison__content-heading-text--right">
+              <figure class="comparison__content-heading-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-b02.png" alt="ネット 仲介葬儀">
+              </figure>
             </span>
           </div>
-          <div class="comparison__content-text">
-            <span>
-              システマチックな対応になりがち
-            </span>
+          <div class="comparison__content-label">
+            <div class="comparison__content-label-text">
+              <span>スタッフ</span>
+            </div>
+            <div class="comparison__content-label-text">
+              <span>寄り添い</span>
+            </div>
+            <div class="comparison__content-label-text">
+              <span>地域性</span>
+            </div>
+            <div class="comparison__content-label-text">
+              <span>式場</span>
+            </div>
+            <div class="comparison__content-label-text">
+              <span>金額</span>
+            </div>
           </div>
-          <div class="comparison__content-text">
-            <span>
-              エリアごとの配慮が弱い
-            </span>
+          <div class="comparison__content-text-wrapper">
+            <div class="comparison__content-text">
+              <span>
+                委託スタッフで対応品質に差、<br class="pc-only">
+                担当がころころ変わることも
+              </span>
+            </div>
+            <div class="comparison__content-text">
+              <span>
+                システマチックな対応になりがち
+              </span>
+            </div>
+            <div class="comparison__content-text">
+              <span>
+                エリアごとの配慮が弱い
+              </span>
+            </div>
+            <div class="comparison__content-text">
+              <span>
+                提携先まかせの外注式場
+              </span>
+            </div>
+            <div class="comparison__content-text">
+              <span>
+                追加費用が多く、<br>
+                最終金額がわかりにくい。
+              </span>
+            </div>
           </div>
-          <div class="comparison__content-text">
-            <span>
-              提携先まかせの外注式場
-            </span>
-          </div>
-          <div class="comparison__content-text">
-            <span>
-              追加費用が多く、
-              最終金額がわかりにくい。
-            </span>
-          </div>
-        </div>
-        <div class="comparison__content-text-wrapper comparison__content-text-wrapper--right">
-          <div class="comparison__content-text">
-            <span>自社スタッフによる一貫対応
-              <br>
-              経験豊富なディレクターが対応
-            </span>
-          </div>
-          <div class="comparison__content-text">
-            <span>顔が見える、心で寄り添う葬儀</span>
-          </div>
-          <div class="comparison__content-text">
-            <span>地域文化や風習に詳しい</span>
-          </div>
-          <div class="comparison__content-text">
-            <span>地元・直営の会館と設備</span>
-          </div>
-          <div class="comparison__content-text">
-            <span>費用が明瞭で、総額が事前に把握しやすい。</span>
+          <div class="comparison__content-text-wrapper comparison__content-text-wrapper--right">
+            <div class="comparison__content-text">
+              <span>自社スタッフによる一貫対応
+                <br>
+                経験豊富なディレクターが対応
+              </span>
+            </div>
+            <div class="comparison__content-text">
+              <span>顔が見える、心で寄り添う葬儀</span>
+            </div>
+            <div class="comparison__content-text">
+              <span>地域文化や風習に詳しい</span>
+            </div>
+            <div class="comparison__content-text">
+              <span>地元・直営の会館と設備</span>
+            </div>
+            <div class="comparison__content-text">
+              <span>費用が明瞭で、総額が事前に把握しやすい。</span>
+            </div>
           </div>
         </div>
       </div>
@@ -814,7 +904,201 @@
     </div>
   </section>
 
+  <section class="top-staff">
+    <div class="l-inner">
+      <h2 class="left-title">
+        <span>スタッフ紹介</span>
+      </h2>
+      <div class="top-staff__container">
+        <div class="top-staff__container-wrapper">
+          <div class="top-staff__container-title-wrapper">
+            <h3 class="top-staff__container-title-main mincho">
+              「葬儀のプロ」が心に寄り添ってお手伝い
+            </h3>
+              <p class="top-staff__container-title-sub mincho">
+                東上セレモには「葬祭ディレクター」資格をもったスタッフが多数在籍。<br>
+                ご家族の不安や想いに、プロとして真摯に向き合います。
+              </p>
+          </div>
+          <figure class="top-staff__container-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/staff/image01.jpg" alt="スタッフ紹介" width="881" height="587" loading="lazy">
+          </figure>
+          <p class="top-staff__container-title-border mincho">
+            顔が見えるスタッフだからこそできる、責任と温かさ
+            <span class="main-border"></span>
+          </p>
+          <div class="top-staff__container-description">
+            <p class="top-staff__container-description-text">
+              あらゆるお葬式を知りつくした「葬祭ディレクター」が専従し、ご遺族をサポートいたします。<br>
+              お迎えからお葬式後のケアまで、すべてを知る担当者が寄り添います。<br>
+              東上セレモでは、顔の見える対応が信頼につながります。
+            </p>
+          </div>
+        </div>
+        <div class="top-staff-slider">
+          <ul class="top-staff-slider__list">
+            <?php for ($loop = 0; $loop < 2; $loop++): ?>
+              <?php for ($i = 1; $i <= 8; $i++): ?>
+                <li class="top-staff-slider__item">
+                  <figure class="top-staff-slider__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/staff/staff<?php echo sprintf('%02d', $i); ?>.jpg" alt="スタッフ紹介" width="220" height="312" loading="lazy">
+                  </figure>
+                </li>
+              <?php endfor; ?>
+            <?php endfor; ?>
+          </ul>
+          <ul class="top-staff-slider__list">
+            <?php for ($loop = 0; $loop < 2; $loop++): ?>
+              <?php for ($i = 9; $i <= 17; $i++): ?>
+                <li class="top-staff-slider__item">
+                  <figure class="top-staff-slider__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/staff/staff<?php echo sprintf('%02d', $i); ?>.jpg" alt="スタッフ紹介" width="220" height="312" loading="lazy">
+                  </figure>
+                </li>
+              <?php endfor; ?>
+            <?php endfor; ?>
+          </ul>
+        </div>
+        <div class="top-staff__btn">
+          <a class="button" href="#">
+            <span></span>
+            <span></span>
+            葬祭ディレクターの詳細
+          </a>
+        </div>
+      </div>
 
+    </div>
+  </section>
+
+  <section class="top-voice">
+    <div class="l-inner">
+      <div class="top-voice__container">
+        <figure class="top-voice__container-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/ribon.png" alt="想結葬の画像" width="161" height="110" loading="lazy">
+        </figure>
+        <div class="top-voice__container__title-wrapper">
+          <h3 class="top-voice__container__title heisei">
+            「ありがとう」を形にできた、あの日の記憶。
+            <span class="main-border"></span>
+          </h3>
+          <p class="top-voice__container_title-text heisei">
+            “心に残る時間でした”お葬式をされた方から届いた声
+          </p>
+        </div>
+        <p class="top-voice__container-description">
+          お葬式とは、故人の人生を想い、お送りすることです。<br>
+          ご家族がどんな気持ちでその時間を迎えるのか。それは一人ひとり違っていて当然です。<br>
+          東上セレモでは、“想結葬”というブランドを通じて、「その人らしさを大切にすること」「遺された方の心に寄り添うこと」を、何より大切にしています。ご家族の中には、「母のために、何かしてあげられた気がします」「あたたかい時間になったと、親族みんなで話しました」とお話しして下さる方もいらっしゃいました。ここでは、実際に東上セレモでお葬式をされた方々の声をご紹介します。
+        </p>
+
+        <?php
+        $voice_query = new WP_Query(array(
+          'post_type' => 'voice',
+          'posts_per_page' => 2,
+          'orderby' => 'date',
+          'order' => 'DESC',
+        ));
+        ?>
+        <?php if ($voice_query->have_posts()): ?>
+          <div class="top-voice__list">
+            <?php while ($voice_query->have_posts()): $voice_query->the_post();
+              $post_id = get_the_ID();
+              $voice_address = get_post_meta($post_id, 'voice_address', true);
+              $voice_customer_name = get_post_meta($post_id, 'voice_customer_name', true);
+
+              // タクソノミー
+              $voice_halls = get_the_terms($post_id, 'voice_hall');
+              $voice_hall_name = ($voice_halls && !is_wp_error($voice_halls)) ? $voice_halls[0]->name : '';
+
+              $voice_plans = get_the_terms($post_id, 'voice_plan');
+              $voice_plan_name = ($voice_plans && !is_wp_error($voice_plans)) ? $voice_plans[0]->name : '';
+
+              $thumb_id = get_post_thumbnail_id($post_id);
+              $thumb_url = $thumb_id ? get_the_post_thumbnail_url($post_id, 'large') : '';
+              $thumb_alt = $thumb_id ? get_post_meta($thumb_id, '_wp_attachment_image_alt', true) : '';
+
+              if (!$thumb_url) {
+                $thumb_url = get_template_directory_uri() . '/assets/images/common/logo-b.png';
+              }
+              if (!$thumb_alt) {
+                $thumb_alt = get_the_title();
+              }
+            ?>
+              <article class="top-voice__item">
+                <figure class="top-voice__img">
+                  <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr($thumb_alt); ?>" loading="lazy">
+                </figure>
+                <div class="top-voice__content">
+                  <h4 class="top-voice__title mincho"><?php the_title(); ?></h4>
+                  <div class="top-voice__text">
+                    <?php echo get_the_excerpt(); ?>
+                  </div>
+                  <div class="top-voice__meta">
+                    <div class="top-voice__info">
+                      <?php if ($voice_address): ?>
+                        <span class="top-voice__address"><?php echo esc_html($voice_address); ?></span>
+                      <?php endif; ?>
+                      <?php if ($voice_customer_name): ?>
+                        <span class="top-voice__name"> <?php echo esc_html($voice_customer_name); ?></span>
+                      <?php endif; ?>
+                      <?php if ($voice_hall_name): ?>
+                        <span class="top-voice__hall"> / <?php echo esc_html($voice_hall_name); ?></span>
+                      <?php endif; ?>
+                      <?php if ($voice_plan_name): ?>
+                        <span class="top-voice__plan"> / <?php echo esc_html($voice_plan_name); ?></span>
+                      <?php endif; ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="top-voice__link">詳細をみる &gt;</a>
+                  </div>
+                </div>
+              </article>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
+          </div>
+        <?php endif; ?>
+      </div>
+      <div class="top-voice__btn">
+        <a class="button" href="#">
+          <span></span>
+          <span></span>
+          もっと見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="top-info">
+    <div class="l-inner">
+      <div class="top-info__container01">
+        <figure class="top-info__container01-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image15.jpg" alt="想結葬の画像" width="856" height="571" loading="lazy">
+        </figure>
+        <div class="top-info__container01-text-wrapper">
+          <div class="top-info__container01-title-wrapper">
+            <h2 class="top-info__title heisei">
+              地域とつながる、想いを育む。<br>
+              想結葬のおもい<span class="main-border"></span>
+            </h2>
+            <p class="top-info__text heisei">
+              心が届く関係を─そんな私たちの取り組みをご紹介します。
+            </p>
+          </div>
+          <p class="top-info__description">
+            東上セレモは、葬儀だけで終わらない「つながり」を大切にしています。
+            地元の皆さまと共に、「ありがとう」や「想い出」を分かち合えるような、終活イベント・感謝祭・地域貢献・学校連携など、さまざまな取り組みを行っています。
+          </p>
+        </div>
+        <div class="top-info__btn">
+          <a class="button button-solid" href="#">
+            <span></span>
+            <span></span>
+            もっと見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -830,6 +1114,45 @@
   <?php get_template_part('parts/project/top-post-list'); ?>
 
   <?php get_template_part('parts/project/top-works-list'); ?>
+
+  <!-- モーダル -->
+
+  <div id="movie-modal" class="movie-modal">
+    <div class="movie-modal__overlay"></div>
+    <div class="movie-modal__content">
+      <button class="movie-modal__close" aria-label="閉じる">
+        <span class="movie-modal__close-icon"></span>
+      </button>
+      <div class="movie-modal__video-wrapper">
+        <video id="modal-video" controls playsinline>
+          <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/mv.mp4" type="video/mp4">
+        </video>
+      </div>
+      <ul class="movie-modal__thumbnails">
+        <li class="movie-modal__thumbnail is-active" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4">
+          <div class="movie-modal__thumbnail-overlay">
+            <span class="movie-modal__thumbnail-title">「祖母の手」篇</span>
+            <span class="movie-modal__thumbnail-play">▶</span>
+          </div>
+          <video muted playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/mv.mp4" type="video/mp4">
+          </video>
+        </li>
+        <li class="movie-modal__thumbnail" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4">
+          <div class="movie-modal__thumbnail-overlay">
+            <span class="movie-modal__thumbnail-title">「もう一度孫から」篇</span>
+            <span class="movie-modal__thumbnail-play">▶</span>
+          </div>
+          <video muted playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" type="video/mp4">
+          </video>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
 
 </main>
 

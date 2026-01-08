@@ -7,7 +7,7 @@
     border-radius: 20px;
     background-color: $color-white;
     position: relative;
-    padding-bottom: prem(70);
+    padding-bottom: prem(145);
     transition: z-index 0.3s;
 
     &.is-active {
@@ -208,7 +208,7 @@
 
 .plan-card__drawer-wrapper {
     background-color: $color-theme;
-    padding-block: prem(20);
+    padding-block: prem(40);
     cursor: pointer;
     position: relative;
     transition: background-color 0.3s;
@@ -217,8 +217,10 @@
     &:hover {
         opacity: 0.9;
     }
+}
 
-    &::after {
+
+.plan-card__drawer-wrapper::before {
         content: '';
         display: block;
         width: prem(15);
@@ -228,20 +230,34 @@
         transform: rotate(45deg);
         position: absolute;
         top: 40%;
-        right: prem(20);
+        left: 36%;
+        transition: transform 0.3s;
+        margin-top: prem(-5);
+    }
+.plan-card__drawer-wrapper::after {
+        content: '';
+        display: block;
+        width: prem(15);
+        height: prem(15);
+        border-right: 2px solid $color-white;
+        border-bottom: 2px solid $color-white;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 40%;
+        right: 36%;
         transition: transform 0.3s;
         margin-top: prem(-5);
     }
 
-    &.is-open {
+.plan-card__drawer-wrapper.is-open {
         border-radius: 0;
     }
 
-    &.is-open::after {
+.plan-card__drawer-wrapper.is-open::after,
+.plan-card__drawer-wrapper.is-open::before {
         transform: rotate(225deg);
         top: 50%;
     }
-}
 
 .plan-card__drawer-text {
     color: $color-white;
@@ -362,9 +378,12 @@
     background-position: center;
     transform: rotate(180deg) translateY(50%);
     left: prem(10);
-
+    width: prem(31);
+    height: prem(31);
     @include mq("md") {
-        left: prem(20);
+        left: prem(130);
+        width: prem(185);
+        height: prem(185);
     }
 }
 
@@ -375,8 +394,11 @@
     background-position: center;
     transform: translateY(-50%);
     right: prem(10);
-
+    width: prem(31);
+    height: prem(31);
     @include mq("md") {
-        right: prem(20);
+        right: prem(160);
+        width: prem(185);
+        height: prem(185);
     }
 }

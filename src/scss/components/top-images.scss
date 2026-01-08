@@ -5,7 +5,7 @@
     padding-bottom: prem(85);
     @include mq("md"){
         padding-top: prem(210);
-        padding-bottom: prem(205);
+        padding-bottom: prem(225);
     }
 }
 
@@ -22,10 +22,11 @@
     font-weight: $regular;
     margin-top: prem(-50);
     padding-left: 5%;
+    letter-spacing: 0.12em;
 
 
     @include mq("md"){
-        padding-left: 15%;
+        padding-left: 17%;
 
         font-size: prem(32);
         margin-top: prem(-200);
