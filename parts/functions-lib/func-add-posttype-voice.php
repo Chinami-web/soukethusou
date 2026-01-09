@@ -38,3 +38,6 @@ function soukessou_add_posttype_voice() {
 
 
 
+
+
+

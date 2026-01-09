@@ -41,6 +41,9 @@ get_template_part('parts/functions-lib/func-facility-meta');
 // （Event用）投稿の名称変更
 get_template_part('parts/functions-lib/func-add-posttype-post');
 
+// カテゴリー「お知らせ」「コラム」の自動作成
+get_template_part('parts/functions-lib/func-add-categories');
+
 // （Voice用）カスタム投稿タイプの設定
 get_template_part('parts/functions-lib/func-add-posttype-voice');
 // Voice用カスタムフィールド（ACFなし）
