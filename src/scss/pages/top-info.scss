@@ -8,6 +8,268 @@
 
     @include mq("md") {
         padding-top: prem(180);
-        padding-bottom: prem(236);
+        padding-bottom: prem(46);
     }
 }
+.top-info .l-inner{
+    display: grid;
+    grid-template-areas:
+    "container-01"
+    "container-02"
+    "container-03"
+    ;
+    position: relative;
+    @include mq("md"){
+        grid-template-areas:
+        "container-01 container-01"
+        "container-02 container-03"
+        ;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.top-info .l-inner::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height:1px;
+    background-color: $color-theme;
+    z-index: -1;
+}
+
+.top-info__container-01 {
+    grid-area: container-01;
+}
+.top-info__container-02 {
+    grid-area: container-02;
+}
+.top-info__container-03 {
+    grid-area: container-03;
+}
+.top-info__container-01 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: prem(72);
+    position: relative;
+    @include mq("md"){
+        grid-template-columns: 0.7fr 1fr;
+        column-gap: prem(129);
+        max-width: 94%;
+        margin-left: prem(-25);
+        padding-bottom: prem(113);
+
+    }
+}
+
+.top-info__container-01::before{
+    content: '';
+    position: absolute;
+    background-color: $color-theme;
+    width: 100vw;
+    height: 1px;
+    bottom: 0;
+}
+.top-info__container-01-image img{
+    aspect-ratio: 856/571;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.top-info__container-01-text-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.top-info__title {
+    font-size: prem(20);
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    color: $color-theme;
+    position: relative;
+    width: fit-content;
+    font-weight: $regular;
+    padding-bottom: prem(23);
+    @include mq("md"){
+        font-size: prem(32);
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+        padding-bottom: prem(32);
+
+    }
+}
+.top-info__title .main-border{
+    bottom: 0;
+    top: 100%;
+}
+
+
+
+.top-info__text {
+    margin-top: prem(28);
+    font-size: prem(17);
+
+    @include mq("md"){
+        margin-top: prem(31);
+        font-size: prem(20);
+
+    }
+
+
+}
+
+.top-info__description {
+    font-size: prem(15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    margin-top: prem(31);
+    @include mq("md"){
+        font-size: prem(17);
+        line-height: 2.65;
+        letter-spacing: 0.12em;
+        margin-top: prem(50);
+
+    }
+
+}
+
+.top-info__btn {
+    margin-top: auto;
+
+
+}
+
+.top-info__container-02{
+    @include mq("md"){
+        position: relative;
+    }
+}
+
+.top-info__container-02::before{
+    @include mq("md"){
+        content: '';
+        position: absolute;
+        background-color: $color-theme;
+        width: 1px;
+        height: 95%;
+        bottom: 0;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+.top-info__container-02,
+.top-info__container-03 {
+    padding-top: prem(62);
+    @include mq("md"){
+        padding-top: prem(58);
+    }
+
+
+}
+
+.top-info__container-02-text-wrapper,
+.top-info__container-03-text-wrapper {
+    text-align: center;
+
+}
+
+.top-info__container-02-title,
+.top-info__container-03-title {
+    color: $color-theme;
+    font-size: prem(20);
+    font-weight: $regular;
+    @include mq("md"){
+        font-size: prem(32);
+    }
+
+
+}
+.top-info__container-02-text-wrapper .top-info__text,
+.top-info__container-03-text-wrapper .top-info__text {
+    margin-top: prem(12);
+    @include mq("md"){
+        margin-top: prem(23);
+
+    }
+
+
+}
+
+
+
+.top-post-news__item {
+
+}
+
+.top-post-news__link {
+
+}
+
+.top-post-news__icon {
+
+}
+
+.top-post-news__category {
+
+}
+
+.top-post-news__date {
+
+}
+
+.top-post-news__title {
+
+}
+
+.top-info__btn {
+
+}
+
+.button {
+
+}
+
+.button-solid {
+
+}
+.top-info__container-03 {
+
+}
+
+.top-info__container-03-text-wrapper {
+
+}
+
+.top-info__container-03-title {
+
+}
+
+.heisei {
+
+}
+
+.top-info__text {
+
+}
+
+.top-info__container-03-image-wrapper {
+
+}
+
+.top-info__container-03-image {
+
+}
+
+.top-info__container-03-image-text {
+
+}
+
+.top-info__container-03-image-text-text {
+
+}
+
+

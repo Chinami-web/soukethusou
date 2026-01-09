@@ -96,3 +96,11 @@
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.button--wide{
+  padding-block: prem(22);
+  @include mq("md"){
+      width: prem(739);
+      padding-block: prem(62);
+  }
+}

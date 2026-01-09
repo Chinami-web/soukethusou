@@ -5,7 +5,7 @@
     border-bottom: 1px solid $color-theme;
 
 }
-.top-plan__container_title{
+.top-plan__container-title{
     font-size: prem(17);
 
     line-height: 1.65;
@@ -19,7 +19,7 @@
     }
 }
 
-.top-plan__container_title-text{
+.top-plan__container-title-text{
     font-size: prem(17);
     line-height: 1.65;
     font-weight: 400;
@@ -64,5 +64,40 @@
     @include mq("md") {
         $left-title-width: prem(95) * 2 + prem(25) * 2.19;
         max-width: calc(100% - #{$left-title-width} - 1px + #{$padding-pc});
+    }
+}
+
+.top-plan__left-title {
+    font-size: prem(16);
+    font-family: $font-family-mincho;
+    font-weight: $regular;
+    padding-block: prem(87);
+    line-height: 2.19;
+    color: $color-theme;
+    position: relative;
+    text-align: center;
+    @include mq("md") {
+        border-right: 1px solid $color-theme;
+        padding-right: prem(95);
+        padding-left: prem(75);
+        letter-spacing: 0.4em;
+        writing-mode: vertical-rl;
+        font-size: prem(25);
+        text-align: left;
+    }
+}
+
+.top-plan__left-title::before {
+    content: "";
+    display: block;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    height: 1px;
+    background-color: $color-theme;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include mq("md"){
+        display: none;
     }
 }

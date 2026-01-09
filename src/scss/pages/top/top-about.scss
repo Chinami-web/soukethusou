@@ -124,6 +124,53 @@
     @include mq("md"){
     }
 }
+
+.top-about__main-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    border-top: 1px solid $color-theme;
+}
+
+.top-about__main-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 1px solid $color-theme;
+    border-radius: 100%;
+    background-color: $color-white;
+}
+
+.top-about__main-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 1px solid $color-theme;
+    border-radius: 100%;
+    background-color: $color-white;
+}
+
+.top-about__vertical-title {
+    color: #624349;
+    writing-mode: vertical-rl;
+    font-weight: $regular;
+    font-size: prem(15);
+    line-height: 1.6;
+    letter-spacing: 14px;
+    @include mq("md"){
+        font-size: prem(25);
+    }
+}
 .top-plan__btn{
     z-index: -1;
     position: relative;
