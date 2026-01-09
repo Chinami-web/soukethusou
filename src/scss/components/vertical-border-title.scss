@@ -21,7 +21,7 @@
         position: relative;
         z-index: 1;
     }
-    .single-border {
+    .vertical-border-title__single-border {
         width: 1px;
         background: $color-theme;
         height: 42px;
@@ -29,7 +29,7 @@
             height: 110px;
         }
     }
-    .single-border::after {
+    .vertical-border-title__single-border::after {
         top: 100%;
         right:-4px;
     }

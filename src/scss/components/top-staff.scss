@@ -146,10 +146,4 @@ padding-bottom: prem(94);
     }
 
 }
-.top-staff__btn .button{
-    padding-block: prem(22);
-    @include mq("md"){
-        width: prem(739);
-        padding-block: prem(62);
-    }
-}
+

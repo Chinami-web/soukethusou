@@ -33,7 +33,7 @@
     border: 1px solid $color-theme;
 
     @include mq("md"){
-        padding-top: prem(100);
+        padding-top: prem(60);
         margin-top: prem(534);
         border-radius: 53px;
         width: 70%;
@@ -62,12 +62,16 @@
     }
 }
 
-.top-voice__container__title-wrapper {
+.top-voice__container-title-wrapper {
     max-width: prem(798);
     margin-inline: auto;
+    @include mq("md"){
+        margin-top: prem(46);
+
+    }
 }
 
-.top-voice__container__title {
+.top-voice__container-title {
     position: relative;
     font-size: prem(20);
     line-height: 1.6;
@@ -87,7 +91,7 @@
     }
 
 }
-.top-voice__container__title .main-border{
+.top-voice__container-title .main-border{
     top: 100%;
     bottom: 0;
     width: 52%;
@@ -102,7 +106,7 @@
 }
 
 
-.top-voice__container_title-text {
+.top-voice__container-title-text {
     color: $color-theme;
     font-size: prem(17);
     line-height: 1.65;
@@ -155,7 +159,13 @@ gap: prem(27);
 @include mq("md"){
     grid-template-columns: 0.4fr 1fr;
     gap: prem(44);
+    padding-bottom: prem(40);
+    border-bottom: 1px solid $color-theme;
+
 }
+}
+.top-voice__item:not(:first-child){
+    padding-top: prem(40);
 
 }
 
@@ -164,22 +174,47 @@ gap: prem(27);
 }
 
 .top-voice__content {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .top-voice__title {
+    font-size: prem(17);
+    line-height: 1.65;
+    letter-spacing: 0.15em;
+    font-weight: $regular;
+    color: $color-theme;
+
+    @include mq("md"){
+        font-size: prem(20);
+    }
+
 
 }
 
-.mincho {
-
-}
 
 .top-voice__text {
+font-size: prem(14);
+line-height: 1.71;
+letter-spacing: 0.1em;
+font-weight: $regular;
+margin-top: prem(10);
+
+@include mq("md"){
+    font-size: prem(17);
+    line-height: 1.67;
+}
 
 }
 
 .top-voice__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    @include mq("md"){
+        gap: prem(20);
+    }
 
 }
 
@@ -204,6 +239,38 @@ gap: prem(27);
 }
 
 .top-voice__link {
+    position: relative;
+    color: $color-theme;
+    border-bottom: 1px solid $color-theme;
+    width: prem(148);
+    text-align: center;
+    font-family: noto sans jp;
+}
+.top-voice__link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: prem(0);
+    width: prem(8);
+    height: prem(8);
+    border-top: prem(1) solid #000;
+    border-right: prem(1) solid #000;
+    transform: translateY(-50%) rotate(45deg);
+    transition: .3s;
+    color: $color-black;
+}
+.top-voice__link:hover::after {
+    @include mq("md"){
+        right: prem(15);
+    }
+}
+.top-voice__btn{
+    text-align: center;
+    margin-top: prem(61);
+
+    @include mq("md"){
+        margin-top: prem(182);
+    }
 
 }
 

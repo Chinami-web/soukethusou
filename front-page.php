@@ -74,11 +74,11 @@
   <section class="top-about">
     <div class="l-inner">
       <div class="top-about__container">
-        <div class="top-about__main-title vertical-title heisei">
+        <div class="top-about__main-title top-about__vertical-title vertical-title heisei">
           想結葬のおもい
         </div>
         <div class="top-about__sub-title heisei">
-          <span class="main-border"></span>
+          <span class="top-about__main-border main-border"></span>
           手と手でつなぐ、<br>
           想いのかたち「想結葬」
         </div>
@@ -132,7 +132,7 @@
           <div class="feature-list__content">
             <h3 class="feature-list__title heisei">
               人の心を大切に
-              <span class="single-border"></span>
+              <span class="feature-list__single-border single-border"></span>
             </h3>
             <p class="feature-list__text">
               故人を偲ぶ心とご遺族の想いを何よりも大切にしています。一人ひとりの想いに寄り添い、心に残る葬儀をお手伝いいたします。
@@ -149,7 +149,7 @@
           <div class="feature-list__content">
             <h3 class="feature-list__title heisei">
               顔の見えるサポート
-              <span class="single-border"></span>
+              <span class="feature-list__single-border single-border"></span>
             </h3>
             <p class="feature-list__text">
               お客様と向き合い、どんな小さなことでも直接お話しをしながら、丁寧にサポートいたします。安心して相談できる〝身近な存在”でありたいと願っています。
@@ -167,7 +167,7 @@
           <div class="feature-list__content">
             <h3 class="feature-list__title heisei">
               地域と「共」に
-              <span class="single-border"></span>
+              <span class="feature-list__single-border single-border"></span>
             </h3>
             <p class="feature-list__text">
               地域と共に歩む葬儀社として、地元の風習や文化を大切にしながら、日々信頼される身近な存在であり続けています。
@@ -184,7 +184,7 @@
           <div class="feature-list__content">
             <h3 class="feature-list__title heisei">
               わかりやすく安心な料金
-              <span class="single-border"></span>
+              <span class="feature-list__single-border single-border"></span>
             </h3>
             <p class="feature-list__text">
               お見積りはわかりやすくご提示。何がいくら掛かるかが直ぐ分かり、安心できる料金です。 </p>
@@ -201,7 +201,7 @@
           <div class="feature-list__content">
             <h3 class="feature-list__title heisei">
               心やすらぐ空間
-              <span class="single-border"></span>
+              <span class="feature-list__single-border single-border"></span>
             </h3>
             <p class="feature-list__text">
               1フロアに１つの式場のため、プライベートな空間で、心やすらぐ時間をお過ごしいただけます。
@@ -218,7 +218,7 @@
           <div class="feature-list__content">
             <h3 class="feature-list__title heisei">
               アフターケアも万全
-              <span class="single-border"></span>
+              <span class="feature-list__single-border single-border"></span>
             </h3>
             <p class="feature-list__text">
               お葬式が終わった後も法要や手続き、ご供養などを通じて、ご家族に安心を届けます。 </p>
@@ -234,26 +234,26 @@
     <div class="l-inner">
       <h2 class="border-title">
         <span>想結葬の考え方</span>
-        <span class="main-border"></span>
+        <span class="border-title__main-border main-border"></span>
       </h2>
       <div class="top-philosophy__container">
-        <h3 class="top-philosophy__container_title heisei">
+        <h3 class="top-philosophy__container-title heisei">
           想結葬は故人と家族、地域を結ぶ<br class="pc-only">
           新しいカタチのお葬式です。
         </h3>
-        <p class="top-philosophy__container_text">
+        <p class="top-philosophy__container-text">
           大切な人とのお別れの瞬間、言葉では伝えきれない想いがあります。東上セレモは、その想いをかたちにし、心からの「ありがとう」を届けるお手伝いをします。手を取り合い、寄り添う温もりが、最期の時間を優しく包み込みます。
         </p>
-        <div class="top-philosophy__container_logo">
-          <figure class="top-philosophy__logo-img">
+        <div class="top-philosophy__container-logo">
+          <figure class="top-philosophy__container-logo-img">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-b.png" alt="想結葬のロゴ"
               width="280"
               height="288"
               loading="lazy">
           </figure>
         </div>
-        <div class="top-philosophy__container_image">
-          <figure class="top-philosophy__image-img">
+        <div class="top-philosophy__container-image">
+          <figure class="top-philosophy__container-image-img">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/concept01.png" alt="想結葬の画像"
               width="764"
               height="644"
@@ -266,12 +266,12 @@
 
   <section class="top-plan">
     <div class="l-inner">
-      <h2 class="left-title">
+      <h2 class="top-plan__left-title left-title">
         <span>葬儀プラン・費用案内</span>
       </h2>
       <div class="top-plan__container">
-        <div class="top-plan__container_title">
-          <h3 class="top-plan__container_title-text mincho">
+        <div class="top-plan__container-title">
+          <h3 class="top-plan__container-title-text mincho">
             ご要望を伺って、想いをかたちにしたお葬式をご提案。<br>
             家族葬や一般葬、一日葬、火葬式など、幅広く対応いたします。
           </h3>
@@ -578,7 +578,7 @@
   <section class="top-facility">
     <div class="l-inner">
       <h2 class="vertical-border-title">
-        <span class="single-border"></span>
+        <span class="vertical-border-title__single-border single-border"></span>
         式場紹介
       </h2>
 
@@ -803,7 +803,7 @@
 
 
   <!-- ギャラリー -->
-    <?php get_template_part('parts/project/top-gallery'); ?>
+  <?php get_template_part('parts/project/top-gallery'); ?>
 
 
 
@@ -816,10 +816,10 @@
         <p class="section-title__text section-title__text--small">
           ネット仲介葬儀ではできない、東上セレモの「ちがい」
         </p>
-        <span class="main-border"></span>
+        <span class="comparison__main-border main-border"></span>
       </div>
       <div class="comparison__content-wrapper">
-        <span class="main-border"></span>
+        <span class="comparison__main-border main-border"></span>
         <div class="comparison__content">
           <div class="comparison__content-heading-wrapper">
             <span class="comparison__content-heading-text heisei comparison__content-heading-text--left">
@@ -906,7 +906,7 @@
 
   <section class="top-staff">
     <div class="l-inner">
-      <h2 class="left-title">
+      <h2 class="top-staff__left-title left-title">
         <span>スタッフ紹介</span>
       </h2>
       <div class="top-staff__container">
@@ -915,17 +915,17 @@
             <h3 class="top-staff__container-title-main mincho">
               「葬儀のプロ」が心に寄り添ってお手伝い
             </h3>
-              <p class="top-staff__container-title-sub mincho">
-                東上セレモには「葬祭ディレクター」資格をもったスタッフが多数在籍。<br>
-                ご家族の不安や想いに、プロとして真摯に向き合います。
-              </p>
+            <p class="top-staff__container-title-sub mincho">
+              東上セレモには「葬祭ディレクター」資格をもったスタッフが多数在籍。<br>
+              ご家族の不安や想いに、プロとして真摯に向き合います。
+            </p>
           </div>
           <figure class="top-staff__container-image">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/staff/image01.jpg" alt="スタッフ紹介" width="881" height="587" loading="lazy">
           </figure>
           <p class="top-staff__container-title-border mincho">
             顔が見えるスタッフだからこそできる、責任と温かさ
-            <span class="main-border"></span>
+            <span class="top-staff__container-title-border main-border"></span>
           </p>
           <div class="top-staff__container-description">
             <p class="top-staff__container-description-text">
@@ -960,7 +960,7 @@
           </ul>
         </div>
         <div class="top-staff__btn">
-          <a class="button" href="#">
+          <a class="button button--wide" href="#">
             <span></span>
             <span></span>
             葬祭ディレクターの詳細
@@ -977,12 +977,12 @@
         <figure class="top-voice__container-image">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/ribon.png" alt="想結葬の画像" width="161" height="110" loading="lazy">
         </figure>
-        <div class="top-voice__container__title-wrapper">
-          <h3 class="top-voice__container__title heisei">
+        <div class="top-voice__container-title-wrapper">
+          <h3 class="top-voice__container-title heisei">
             「ありがとう」を形にできた、あの日の記憶。
-            <span class="main-border"></span>
+            <span class="top-voice__main-border main-border"></span>
           </h3>
-          <p class="top-voice__container_title-text heisei">
+          <p class="top-voice__container-title-text heisei">
             “心に残る時間でした”お葬式をされた方から届いた声
           </p>
         </div>
@@ -1049,7 +1049,7 @@
                         <span class="top-voice__plan"> / <?php echo esc_html($voice_plan_name); ?></span>
                       <?php endif; ?>
                     </div>
-                    <a href="<?php the_permalink(); ?>" class="top-voice__link">詳細をみる &gt;</a>
+                    <a href="<?php the_permalink(); ?>" class="top-voice__link">詳細をみる</a>
                   </div>
                 </div>
               </article>
@@ -1059,7 +1059,7 @@
         <?php endif; ?>
       </div>
       <div class="top-voice__btn">
-        <a class="button" href="#">
+        <a class="button button--wide" href="#">
           <span></span>
           <span></span>
           もっと見る
@@ -1070,31 +1070,117 @@
 
   <section class="top-info">
     <div class="l-inner">
-      <div class="top-info__container01">
-        <figure class="top-info__container01-image">
+      <div class="top-info__container-01">
+        <figure class="top-info__container-01-image">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image15.jpg" alt="想結葬の画像" width="856" height="571" loading="lazy">
         </figure>
-        <div class="top-info__container01-text-wrapper">
-          <div class="top-info__container01-title-wrapper">
+        <div class="top-info__container-01-text-wrapper">
+          <div class="top-info__container-01-title-wrapper">
             <h2 class="top-info__title heisei">
               地域とつながる、想いを育む。<br>
-              想結葬のおもい<span class="main-border"></span>
+              <span class="top-info__main-border main-border"></span>
             </h2>
             <p class="top-info__text heisei">
               心が届く関係を─そんな私たちの取り組みをご紹介します。
             </p>
           </div>
           <p class="top-info__description">
-            東上セレモは、葬儀だけで終わらない「つながり」を大切にしています。
-            地元の皆さまと共に、「ありがとう」や「想い出」を分かち合えるような、終活イベント・感謝祭・地域貢献・学校連携など、さまざまな取り組みを行っています。
+            東上セレモは、葬儀だけで終わらない「つながり」を大切にしています。<br>
+            地元の皆さまと共に、「ありがとう」や「想い出」を分かち合えるような、終活イベント,感謝祭,地域貢献,学校連携など、さまざまな取り組みを行っています。
+          </p>
+          <div class="top-info__btn">
+            <a class="button button-solid" href="#">
+              <span></span>
+              <span></span>
+              地域との取り組みを見る
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="top-info__container-02">
+        <div class="top-info__container-02-text-wrapper">
+          <h2 class="top-info__container-02-title mincho">
+            コラム・お知らせ
+          </h2>
+          <p class="top-info__text heisei">
+            日々の活動や、終活・葬儀のヒントをお届けします。
           </p>
         </div>
-        <div class="top-info__btn">
-          <a class="button button-solid" href="#">
-            <span></span>
-            <span></span>
-            もっと見る
-          </a>
+          <ul class="top-post-news__list">
+            <?php
+            $category_ids = array();
+            $category_names = array('お知らせ', 'コラム');
+            foreach ($category_names as $cat_name) {
+              $cat = get_term_by('name', $cat_name, 'category');
+              if ($cat) {
+                $category_ids[] = $cat->term_id;
+              }
+            }
+            $post_query = new WP_Query(array(
+              'post_type' => 'post',
+              'posts_per_page' => 4,
+              'orderby' => 'date',
+              'order' => 'DESC',
+              'cat' => !empty($category_ids) ? implode(',', $category_ids) : '',
+            ));
+            ?>
+            <?php if ($post_query->have_posts()): ?>
+              <?php while ($post_query->have_posts()): $post_query->the_post(); ?>
+                <?php
+                $post_categories = get_the_category();
+                $category_name = '';
+                if (!empty($post_categories)) {
+                  $category_name = $post_categories[0]->name;
+                }
+                ?>
+                <li class="top-post-news__item">
+                  <a href="<?php the_permalink(); ?>" class="top-post-news__link">
+                    <div class="top-post-news__icon-wrapper">
+                      <span class="top-post-news__icon"></span>
+                    </div>
+                    <?php if ($category_name): ?>
+                      <span class="top-post-news__category"><?php echo esc_html($category_name); ?></span>
+                    <?php endif; ?>
+                    <time class="top-post-news__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">[<?php echo get_the_date('Y.m.d'); ?>]</time>
+                    <h3 class="top-post-news__title"><?php the_title(); ?></h3>
+                  </a>
+                </li>
+              <?php endwhile; ?>
+              <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+          </ul>
+          <div class="top-post-news__btn">
+            <a class="button button-solid" href="#">
+              <span></span>
+              <span></span>
+              お知らせ
+            </a>
+            <a class="button button-solid" href="#">
+              <span></span>
+              <span></span>
+              コラム
+            </a>
+          </div>
+      </div>
+      <div class="top-info__container-03">
+      <div class="top-info__container-03-text-wrapper">
+          <h2 class="top-info__container-03-title heisei">
+          事前相談
+          </h2>
+          <p class="top-info__text mincho">
+          “まだ先”と思っている今こそ、話しておきませんか？
+          </p>
+        </div>
+        <div class="top-info__container-03-image-wrapper">
+          <figure class="top-info__container-03-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image16.jpg" alt="想結葬の画像" width="856" height="571" loading="lazy">
+          </figure>
+          <div class="top-info__container-03-image-text">
+            <p class="top-info__container-03-image-text-text">
+            もしもの時、慌てないために。
+            ご自身の想いや希望を整理したり、ご家族と話し合うきっかけとして、事前相談や終活サポートをご利用いただく方が増えています。費用や流れ、準備しておくべきことなど、不安なことはすべてご相談ください。
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -1102,6 +1188,11 @@
 
 
 
+
+  <section class="top-post-news">
+    <div class="l-inner">
+    </div>
+  </section>
 
   <?php get_template_part('parts/project/top-post'); ?>
 

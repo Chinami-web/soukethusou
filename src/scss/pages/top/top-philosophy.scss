@@ -53,7 +53,7 @@
 
 }
 
-.top-philosophy__container_title {
+.top-philosophy__container-title {
     grid-area: title;
     font-size: prem(20);
     line-height:1.6;
@@ -69,7 +69,7 @@
 
     }
 }
-.top-philosophy__container_text {
+.top-philosophy__container-text {
     grid-area: text;
     margin-top: prem(24);
     @include mq("md"){
@@ -78,7 +78,7 @@
     }
 
 }
-.top-philosophy__container_logo{
+.top-philosophy__container-logo{
     @include mq("md"){
         padding-left: 20%;
     }
@@ -93,7 +93,7 @@
     }
 
 }
-.top-philosophy__logo-img{
+.top-philosophy__container-logo-img{
     margin-top: prem(27);
     max-width: 100%;
     @include mq("md"){
@@ -101,21 +101,21 @@
         max-width: prem(280);
     }
 }
-.top-philosophy__logo-img img{
+.top-philosophy__container-logo-img img{
     aspect-ratio: 280 / 288;
     height: auto;
     object-fit: cover;
     margin-inline: auto;
 }
 
-.top-philosophy__container_image {
+.top-philosophy__container-image {
     grid-area: image;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-.top-philosophy__container_image img{
+.top-philosophy__container-image img{
     aspect-ratio: 764 / 644;
     height: auto;
     object-fit: cover;
