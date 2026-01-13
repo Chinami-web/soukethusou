@@ -1,4 +1,5 @@
 @use 'foundation'as *;
+
 .comparison .l-inner{
     padding-left: prem(18);
     padding-right: prem(18);
@@ -15,11 +16,31 @@
 }
 
 .comparison {
-    padding-block: prem(40);
+    border-top: 1px solid $color-theme;
+    position: relative;
+    overflow: hidden;
+}
+.comparison::after{
+    content: '';
+    position: absolute;
+    background-image: url(../images/common/bk02.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -10%;
+    bottom: 0;
+    z-index: -1;
+    width:prem(237);
+    height:prem(232);
+    @include mq("md"){
+        width:prem(770);
+        height:prem(721);
+
+    }
+
 }
 
 .comparison__title__wrapper {
-    padding-top: prem(68);
+    padding-top: prem(76);
     padding-bottom: prem(28);
 
     @include mq("md") {
@@ -27,6 +48,12 @@
         padding-bottom: prem(77);
     }
 
+}
+.comparison__title__wrapper .section-title__text {
+    margin-top: prem(22);
+    @include mq("md") {
+        margin-top: prem(0);
+    }
 }
 
 .comparison__content {
@@ -207,4 +234,35 @@
 .comparison__content-text-wrapper--right {
     grid-area: item2;
     color: $color-theme;
+}
+.comparison__text {
+    font-size: prem(17);
+    line-height: 1.65;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: prem(62);
+    position: relative;
+    padding-bottom: prem(24);
+    max-width: 80%;
+    margin-inline: auto;
+
+
+    @include mq("md") {
+        font-size: prem(32);
+
+        margin-top: prem(70);
+        padding-bottom: prem(54);
+
+    }
+}
+.comparison__btn{
+    margin-top: prem(40);
+    text-align: center;
+    @include mq("md") {
+        margin-top: prem(54);
+    }
+}
+.comparison__text .main-border {
+    bottom: 0;
+    top: 100%;
 }

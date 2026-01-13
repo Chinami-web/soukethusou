@@ -3,7 +3,7 @@
 .button {
   display: inline-block;
   min-width: prem(275);
-  padding: prem(20) prem(40);
+  padding: prem(25) prem(40);
   font-size: prem(15);
   font-weight: 500;
   border: 1px solid $color-theme;
@@ -12,7 +12,7 @@
   border-radius: 0 5px 0 5px;
   line-height: 1;
   text-align: center;
-
+  transition: all 0.3s ease;
   @include mq("md") {
     padding: prem(29) prem(40);
     min-width: prem(336);
@@ -33,6 +33,7 @@
   right: 24px;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
+
 }
 .button-solid::after{
   background-image: url(../images/common/arrow-solid.png);
@@ -93,13 +94,16 @@
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   cursor: pointer;
+  color: $color-theme;
 }
 
 .button--wide{
-  padding-block: prem(22);
+  font-size: prem(15);
+  padding-block: prem(30);
   @include mq("md"){
+    font-size: prem(15);
       width: prem(739);
       padding-block: prem(62);
   }

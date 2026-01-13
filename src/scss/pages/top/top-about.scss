@@ -28,7 +28,7 @@
     height: prem(374);
     bottom: 5%;
     left: 0;
-    z-index: 1;
+    z-index: -1;
     @include mq("md"){
         width: prem(424);
         height: prem(1488);
@@ -74,10 +74,11 @@
 .top-about__sub-title {
     grid-area: sub-title;
     font-size: prem(20);
-    padding-top: prem(20);
+    padding-top: prem(25);
     position: relative;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     width: fit-content;
+    line-height: 1.6;
 
     @include mq(md) {
         width: 100%;
@@ -98,7 +99,7 @@
 
 .top-about__btn {
     grid-area: btn;
-    margin-top: prem(60);
+    margin-top: prem(30);
 
     @include mq("md") {
         margin-top: prem(80);

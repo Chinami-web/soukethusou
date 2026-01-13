@@ -15,30 +15,68 @@
     content: '';
     position: absolute;
     width: 100%;
-    height: prem(868);
+    height: prem(176);
     background-image: url(../images/top/image11.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
+    @include mq("md"){
+        height: prem(868);
+
+    }
 }
+
 
 .top-voice__container {
     margin-top: prem(121);
     padding-top: prem(28);
-
-
+    position: relative;
     background-color: $color-white;
     border-radius: 15px;
-    border: 1px solid $color-theme;
 
     @include mq("md"){
+        border-bottom: none;
         padding-top: prem(60);
         margin-top: prem(534);
         border-radius: 53px;
         width: 70%;
         max-width: prem(1269);
         margin-inline: auto;
+    }
+
+    // 上40%のみボーダーを表示し、その後は徐々に消す
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        border-top: 1px solid $color-theme;
+        border-left: 1px solid $color-theme;
+        border-right: 1px solid $color-theme;
+        border-radius: 15px 15px 0 0;
+        pointer-events: none;
+        @include mq("md"){
+            border-radius: 53px 53px 0 0;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        height: 20%;
+        pointer-events: none;
+        background:
+            linear-gradient(to bottom, $color-theme 0%, transparent 100%) left / 1px 100% no-repeat,
+            linear-gradient(to bottom, $color-theme 0%, transparent 100%) right / 1px 100% no-repeat;
+        @include mq("md"){
+            height: 15%;
+        }
     }
 }
 
@@ -133,9 +171,10 @@
     margin-inline: auto;
     font-size: prem(15);
     line-height: 2;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     margin-top: prem(36);
     @include mq("md"){
+        letter-spacing: 0.08em;
         max-width: 83%;
         margin-top: prem(82);
         font-size: prem(17);
@@ -144,10 +183,14 @@
     }
 }
 .top-voice__list {
-    max-width:90%;
     margin-inline: auto;
-    margin-top: prem(80);
+    margin-top: prem(40);
+    border-bottom: 1px solid $color-theme;
+    padding-bottom: prem(32);
     @include mq("md"){
+        padding-bottom: 0;
+        border-bottom: none;
+        max-width:90%;
         margin-top: prem(82);
     }
 }
@@ -155,7 +198,7 @@
 .top-voice__item {
 display: grid;
 grid-template-columns: 1fr;
-gap: prem(27);
+gap: prem(20);
 @include mq("md"){
     grid-template-columns: 0.4fr 1fr;
     gap: prem(44);
@@ -176,6 +219,7 @@ gap: prem(27);
 .top-voice__content {
     display: flex;
     flex-direction: column;
+
 }
 
 .top-voice__title {
@@ -208,11 +252,11 @@ margin-top: prem(10);
 }
 
 .top-voice__meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: auto;
     @include mq("md"){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         gap: prem(20);
     }
 
@@ -242,17 +286,29 @@ margin-top: prem(10);
     position: relative;
     color: $color-theme;
     border-bottom: 1px solid $color-theme;
-    width: prem(148);
-    text-align: center;
+    width: prem(125);
     font-family: noto sans jp;
+    display: block;
+    margin-left: auto;
+    margin-top: prem(19);
+    padding-left: prem(10);
+
+
+    @include mq("md"){
+        margin-top: 0;
+        width: prem(148);
+
+        text-align: center;
+
+    }
 }
 .top-voice__link::after {
     content: "";
     position: absolute;
     top: 50%;
-    right: prem(0);
-    width: prem(8);
-    height: prem(8);
+    right: prem(16);
+    width: prem(10);
+    height: prem(10);
     border-top: prem(1) solid #000;
     border-right: prem(1) solid #000;
     transform: translateY(-50%) rotate(45deg);
@@ -261,6 +317,9 @@ margin-top: prem(10);
 }
 .top-voice__link:hover::after {
     @include mq("md"){
+        width: prem(8);
+        height: prem(8);
+        right: 0;
         right: prem(15);
     }
 }

@@ -7,13 +7,12 @@
 }
 .top-plan__container-title{
     font-size: prem(17);
-
     line-height: 1.65;
     color: $color-theme;
     font-weight: 400;
-    text-align: center;
 
     @include mq("md") {
+        text-align: center;
         line-height: 1.72;
         font-size: prem(32);
     }
@@ -21,9 +20,11 @@
 
 .top-plan__container-title-text{
     font-size: prem(17);
-    line-height: 1.65;
+    line-height: 1.7;
+    letter-spacing: 0.15em;
     font-weight: 400;
     @include mq("md") {
+        letter-spacing: 0.1em;
         line-height: 1.72;
         font-size: prem(32);
     }
@@ -34,7 +35,7 @@
     }
 }
 .top-plan__container{
-    padding-top: prem(83);
+    padding-top: prem(60);
     padding-bottom: prem(66);
 
     @include mq("md") {
@@ -47,7 +48,7 @@
     position: relative;
 }
 .top-plan .plan-card{
-    margin-top: prem(66);
+    margin-top: prem(26);
     @include mq("md") {
         margin-top: prem(80);
     }
@@ -71,13 +72,15 @@
     font-size: prem(16);
     font-family: $font-family-mincho;
     font-weight: $regular;
-    padding-block: prem(87);
+    padding-block: prem(16);
     line-height: 2.19;
     color: $color-theme;
     position: relative;
     text-align: center;
+    letter-spacing: 0.2em;
     @include mq("md") {
         border-right: 1px solid $color-theme;
+        padding-block: prem(87);
         padding-right: prem(95);
         padding-left: prem(75);
         letter-spacing: 0.4em;

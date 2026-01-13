@@ -20,6 +20,11 @@
   <?php wp_body_open(); ?>
   <div id="page" class="site">
     <header class="header" id="header">
+      <div class="header__logo pc-only">
+        <a href="<?php echo esc_url(home_url('/')); ?>">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-w02.png" alt="想結葬">
+        </a>
+      </div>
       <div class="header__inner container">
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -48,7 +53,10 @@
         <div class="header__drawer-inner">
           <div class="header__drawer-logo">
             <a href="#">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-w.png" alt="東上セレモ">
+              <picture>
+                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-w.png" media="(min-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-w02.png" alt="想結葬">
+              </picture>
             </a>
           </div>
           <div class="header__drawer-nav-wrap">

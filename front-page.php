@@ -64,12 +64,23 @@
         </video>
       </div>
       <div class="mv__modal" id="mv-modal">
-        <figure class="mv__modal-icon">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play.png" alt="play movie" width="141" height="141">
-        </figure>
+        <picture class="mv__modal-icon">
+          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play.png" media="(min-width:768px)">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/playSP.png" alt="play movie" width="141" height="141">
+        </picture>
       </div>
     </div>
   </section>
+  <div class="mv__nav-btn-wrap sp-only">
+    <div class="mv__nav-btn">
+      <a class="mv__nav-btn-link" href="#">
+        <span>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/flower.png" alt="生花の依頼のこちら">
+        </span>
+        生花の依頼のこちら
+      </a>
+    </div>
+  </div>
 
   <section class="top-about">
     <div class="l-inner">
@@ -320,7 +331,7 @@
                     <a class="button button-solid" href="#">
                       <span></span>
                       <span></span>
-                      プラン詳細をみる
+                      全プランをみる
                     </a>
                   </div>
                 </div>
@@ -571,12 +582,35 @@
       </picture>
     </figure>
     <h2 class="top-images__title heisei">
-      地域から選ばれる、<br class="sp-only">あたたかな見送りのかたち
+      地域から選ばれる、あたたかな見送りのかたち
     </h2>
   </section>
 
   <section class="top-facility">
     <div class="l-inner">
+      <?php
+      // facility-pinの設定配列（両方のセクションで使用）
+      $facility_pins = array(
+        array('label' => '東松山', 'x' => '56.9%', 'y' => '22.0%', 'image' => 'higasimatuyama'),
+        array('label' => '川越', 'x' => '67.2%', 'y' => '31.2%', 'image' => 'kawagoe'),
+        array('label' => 'ふじみ野', 'x' => '70.6%', 'y' => '49.9%', 'image' => 'huzimino'),
+        array('label' => 'みずほ台', 'x' => '82.7%', 'y' => '34.0%', 'image' => 'mizuhodai'),
+        array('label' => '志木', 'x' => '84.8%', 'y' => '61.6%', 'image' => 'siki'),
+        array('label' => '朝霞', 'x' => '83.8%', 'y' => '81.8%', 'image' => 'asaka'),
+        array('label' => '新座', 'x' => '65.2%', 'y' => '91.5%', 'image' => 'niiza'),
+        array('label' => '所沢', 'x' => '50.3%', 'y' => '86.6%', 'image' => 'tokorozawa'),
+        array('label' => '入間', 'x' => '41.0%', 'y' => '67.9%', 'image' => 'iruma'),
+        array('label' => '狭山', 'x' => '38.0%', 'y' => '48.3%', 'image' => 'sayama'),
+        array('label' => '坂戸', 'x' => '48.8%', 'y' => '47.4%', 'image' => 'sakado'),
+        array('label' => '坂戸駅前', 'x' => '46.5%', 'y' => '25.4%', 'image' => 'sakadoekimae'),
+      );
+
+      // ラベルからimage（スライドID）へのマッピングを作成
+      $facility_label_image_map = array();
+      foreach ($facility_pins as $pin) {
+        $facility_label_image_map[$pin['label']] = $pin['image'];
+      }
+      ?>
       <h2 class="vertical-border-title">
         <span class="vertical-border-title__single-border single-border"></span>
         式場紹介
@@ -611,78 +645,50 @@
         </div>
         <div class="facility-map">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/map.png" alt="施設マップ" class="facility-map__bg" width="1171" height="738" loading="lazy">
-          <a href="#higasimatuyama" class="facility-pin" style="--x:56.9%; --y:22.0%;">
-            <span class="facility-pin__label">東松山</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/higasimatuyama.png" alt="東松山">
-            </figure>
-          </a>
-          <a href="#kawagoe" class="facility-pin" style="--x:67.2%; --y:31.2%;">
-            <span class="facility-pin__label">川越</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/kawagoe.png" alt="川越">
-            </figure>
-          </a>
-          <a href="#huzimino" class="facility-pin" style="--x:70.6%; --y:49.9%;">
-            <span class="facility-pin__label">ふじみ野</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/huzimino.png" alt="ふじみ野">
-            </figure>
-          </a>
-          <a href="#mizuhodai" class="facility-pin" style="--x:82.7%; --y:34.0%;">
-            <span class="facility-pin__label">みずほ台</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/mizuhodai.png" alt="みずほ台">
-            </figure>
-          </a>
-          <a href="#siki" class="facility-pin" style="--x:84.8%; --y:61.6%;">
-            <span class="facility-pin__label">志木</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/siki.png" alt="志木">
-            </figure>
-          </a>
-          <a href="#asaka" class="facility-pin" style="--x:83.8%; --y:81.8%;">
-            <span class="facility-pin__label">朝霞</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/asaka.png" alt="朝霞">
-            </figure>
-          </a>
-          <a href="#niiza" class="facility-pin" style="--x:65.2%; --y:91.5%;">
-            <span class="facility-pin__label">新座</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/niiza.png" alt="新座">
-            </figure>
-          </a>
-          <a href="#tokorozawa" class="facility-pin" style="--x:50.3%; --y:86.6%;">
-            <span class="facility-pin__label">所沢</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/tokorozawa.png" alt="所沢">
-            </figure>
-          </a>
-          <a href="#iruma" class="facility-pin" style="--x:41.0%; --y:67.9%;">
-            <span class="facility-pin__label">入間</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/iruma.png" alt="入間">
-            </figure>
-          </a>
-          <a href="#sayama" class="facility-pin" style="--x:38.0%; --y:48.3%;">
-            <span class="facility-pin__label">狭山</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/sayama.png" alt="狭山">
-            </figure>
-          </a>
-          <a href="#sakado" class="facility-pin" style="--x:48.8%; --y:47.4%;">
-            <span class="facility-pin__label">坂戸</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/sakado.png" alt="坂戸">
-            </figure>
-          </a>
-          <a href="#sakadoekimae" class="facility-pin" style="--x:46.5%; --y:25.4%;">
-            <span class="facility-pin__label">坂戸駅前</span>
-            <figure class="facility-pin__img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/sakadoekimae.png" alt="坂戸駅前">
-            </figure>
-          </a>
+          <?php
+          // 施設の投稿データを取得して、ラベルとスラッグのマッピングを作成
+          $facility_pin_query = new WP_Query(
+            array(
+              'post_type' => 'facility',
+              'posts_per_page' => -1,
+              'orderby' => 'menu_order',
+              'order' => 'ASC',
+            )
+          );
+          // ラベルから投稿スラッグへのマッピングを作成
+          $facility_label_to_slug_map = array();
+          if ($facility_pin_query->have_posts()) {
+            while ($facility_pin_query->have_posts()) {
+              $facility_pin_query->the_post();
+              $post_id = get_the_ID();
+              $facility_label = get_post_meta($post_id, 'facility_label', true);
+              $facility_slug = get_post_field('post_name', $post_id);
+              // ラベルが設定されている場合は、ラベルをキーとしてスラッグを保存
+              if ($facility_label) {
+                $facility_label_to_slug_map[trim($facility_label)] = $facility_slug;
+              }
+              // タイトルもキーとして保存（念のため）
+              $facility_title = get_the_title();
+              $facility_label_to_slug_map[trim($facility_title)] = $facility_slug;
+            }
+            wp_reset_postdata();
+          }
+
+          foreach ($facility_pins as $pin) {
+            $pin_label = $pin['label'];
+            // ラベルから投稿スラッグを取得（投稿スラッグをそのまま使用）
+            $pin_slug = isset($facility_label_to_slug_map[$pin_label]) ? $facility_label_to_slug_map[$pin_label] : $pin['image'];
+            $pin_href = '#' . esc_attr($pin_slug);
+          ?>
+            <a href="<?php echo $pin_href; ?>" class="facility-pin" style="--x:<?php echo esc_attr($pin['x']); ?>; --y:<?php echo esc_attr($pin['y']); ?>;" data-facility-slug="<?php echo esc_attr($pin_slug); ?>">
+              <span class="facility-pin__label"><?php echo esc_html($pin_label); ?></span>
+              <figure class="facility-pin__img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/<?php echo esc_attr($pin['image']); ?>.png" alt="<?php echo esc_attr($pin_label); ?>">
+              </figure>
+            </a>
+          <?php
+          }
+          ?>
         </div>
       </div>
     </div>
@@ -705,7 +711,10 @@
               <?php while ($facility_query->have_posts()): $facility_query->the_post(); ?>
                 <?php
                 $post_id = get_the_ID();
-                $slide_id = get_post_field('post_name', $post_id);
+                $post_slug = get_post_field('post_name', $post_id);
+                // 投稿スラッグをそのままスライドIDとして使用
+                $slide_id = $post_slug;
+
                 $label = get_post_meta($post_id, 'facility_label', true);
                 $label_text = $label ? $label : 'プライベートホール';
                 // 伸ばし棒（ー）を含む部分をspanで囲む
@@ -728,7 +737,8 @@
                   $hero_alt = get_the_title();
                 }
                 ?>
-                <li class="main-card__item splide__slide" id="<?php echo esc_attr($slide_id); ?>">
+                <li class="main-card__item splide__slide" id="<?php echo esc_attr($slide_id); ?>" data-original-id="<?php echo esc_attr($slide_id); ?>">
+                  <a class="main-card__link sp-only" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr(get_the_title() . 'の詳細ページへ'); ?>"></a>
                   <div class="main-card__content">
                     <figure class="main-card__hero">
                       <img src="<?php echo esc_url($hero); ?>" alt="<?php echo esc_attr($hero_alt); ?>" loading="lazy">
@@ -765,7 +775,7 @@
                         </div>
                       <?php endif; ?>
                     </div>
-                    <div class="main-card__button-wrapper">
+                    <div class="main-card__button-wrapper pc-only">
                       <a class="button button-solid" href="<?php the_permalink(); ?>">
                         <span></span>
                         <span></span>
@@ -811,12 +821,11 @@
     <div class="l-inner">
       <div class="section-title__wrapper comparison__title__wrapper">
         <h2 class="section-title section-title--big">
-          そのお葬式、誰が寄り添いますか？
+          そのお葬式、<br class="sp-only">誰が寄り添いますか？
         </h2>
         <p class="section-title__text section-title__text--small">
-          ネット仲介葬儀ではできない、東上セレモの「ちがい」
+          ネット仲介葬儀ではできない、<br class="sp-only">東上セレモの「ちがい」
         </p>
-        <span class="comparison__main-border main-border"></span>
       </div>
       <div class="comparison__content-wrapper">
         <span class="comparison__main-border main-border"></span>
@@ -900,20 +909,30 @@
           </div>
         </div>
       </div>
-
+      <div class="comparison__text heisei">
+        「安心して任せられるお葬式」をお望みなら、<br class="pc-only">地域に根ざす東上セレモへ。
+        <span class="main-border"></span>
+      </div>
+      <div class="comparison__btn">
+        <a class="button button-solid" href="#">
+          <span></span>
+          <span></span>
+          ネット葬儀社について
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="top-staff">
     <div class="l-inner">
       <h2 class="top-staff__left-title left-title">
-        <span>スタッフ紹介</span>
+        <span>自社スタッフ</span>
       </h2>
       <div class="top-staff__container">
         <div class="top-staff__container-wrapper">
           <div class="top-staff__container-title-wrapper">
             <h3 class="top-staff__container-title-main mincho">
-              「葬儀のプロ」が心に寄り添ってお手伝い
+              「葬儀のプロ」が心に<br class="sp-only">寄り添ってお手伝い
             </h3>
             <p class="top-staff__container-title-sub mincho">
               東上セレモには「葬祭ディレクター」資格をもったスタッフが多数在籍。<br>
@@ -925,7 +944,7 @@
           </figure>
           <p class="top-staff__container-title-border mincho">
             顔が見えるスタッフだからこそできる、責任と温かさ
-            <span class="top-staff__container-title-border main-border"></span>
+            <span class="main-border"></span>
           </p>
           <div class="top-staff__container-description">
             <p class="top-staff__container-description-text">
@@ -1106,69 +1125,69 @@
             日々の活動や、終活・葬儀のヒントをお届けします。
           </p>
         </div>
-          <ul class="top-post-news__list">
-            <?php
-            $category_ids = array();
-            $category_names = array('お知らせ', 'コラム');
-            foreach ($category_names as $cat_name) {
-              $cat = get_term_by('name', $cat_name, 'category');
-              if ($cat) {
-                $category_ids[] = $cat->term_id;
-              }
+        <ul class="top-post-news__list">
+          <?php
+          $category_ids = array();
+          $category_names = array('お知らせ', 'コラム');
+          foreach ($category_names as $cat_name) {
+            $cat = get_term_by('name', $cat_name, 'category');
+            if ($cat) {
+              $category_ids[] = $cat->term_id;
             }
-            $post_query = new WP_Query(array(
-              'post_type' => 'post',
-              'posts_per_page' => 4,
-              'orderby' => 'date',
-              'order' => 'DESC',
-              'cat' => !empty($category_ids) ? implode(',', $category_ids) : '',
-            ));
-            ?>
-            <?php if ($post_query->have_posts()): ?>
-              <?php while ($post_query->have_posts()): $post_query->the_post(); ?>
-                <?php
-                $post_categories = get_the_category();
-                $category_name = '';
-                if (!empty($post_categories)) {
-                  $category_name = $post_categories[0]->name;
-                }
-                ?>
-                <li class="top-post-news__item">
-                  <a href="<?php the_permalink(); ?>" class="top-post-news__link">
-                    <div class="top-post-news__icon-wrapper">
-                      <span class="top-post-news__icon"></span>
-                    </div>
-                    <?php if ($category_name): ?>
-                      <span class="top-post-news__category"><?php echo esc_html($category_name); ?></span>
-                    <?php endif; ?>
-                    <time class="top-post-news__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">[<?php echo get_the_date('Y.m.d'); ?>]</time>
-                    <h3 class="top-post-news__title"><?php the_title(); ?></h3>
-                  </a>
-                </li>
-              <?php endwhile; ?>
-              <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
-          </ul>
-          <div class="top-post-news__btn">
-            <a class="button button-solid" href="#">
-              <span></span>
-              <span></span>
-              お知らせ
-            </a>
-            <a class="button button-solid" href="#">
-              <span></span>
-              <span></span>
-              コラム
-            </a>
-          </div>
+          }
+          $post_query = new WP_Query(array(
+            'post_type' => 'post',
+            'posts_per_page' => 4,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'cat' => !empty($category_ids) ? implode(',', $category_ids) : '',
+          ));
+          ?>
+          <?php if ($post_query->have_posts()): ?>
+            <?php while ($post_query->have_posts()): $post_query->the_post(); ?>
+              <?php
+              $post_categories = get_the_category();
+              $category_name = '';
+              if (!empty($post_categories)) {
+                $category_name = $post_categories[0]->name;
+              }
+              ?>
+              <li class="top-post-news__item">
+                <a href="<?php the_permalink(); ?>" class="top-post-news__link">
+                  <div class="top-post-news__icon-wrapper">
+                    <span class="top-post-news__icon"></span>
+                  </div>
+                  <?php if ($category_name): ?>
+                    <span class="top-post-news__category"><?php echo esc_html($category_name); ?></span>
+                  <?php endif; ?>
+                  <time class="top-post-news__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">[<?php echo get_the_date('Y.m.d'); ?>]</time>
+                  <h3 class="top-post-news__title"><?php the_title(); ?></h3>
+                </a>
+              </li>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+          <?php endif; ?>
+        </ul>
+        <div class="top-post-news__btn">
+          <a class="button button-solid" href="#">
+            <span></span>
+            <span></span>
+            お知らせ
+          </a>
+          <a class="button button-solid" href="#">
+            <span></span>
+            <span></span>
+            コラム
+          </a>
+        </div>
       </div>
       <div class="top-info__container-03">
-      <div class="top-info__container-03-text-wrapper">
+        <div class="top-info__container-03-text-wrapper">
           <h2 class="top-info__container-03-title heisei">
-          事前相談
+            事前相談
           </h2>
           <p class="top-info__text mincho">
-          “まだ先”と思っている今こそ、話しておきませんか？
+            “まだ先”と思っている今こそ、<br class="sp-only">話しておきませんか？
           </p>
         </div>
         <div class="top-info__container-03-image-wrapper">
@@ -1177,34 +1196,48 @@
           </figure>
           <div class="top-info__container-03-image-text">
             <p class="top-info__container-03-image-text-text">
-            もしもの時、慌てないために。
-            ご自身の想いや希望を整理したり、ご家族と話し合うきっかけとして、事前相談や終活サポートをご利用いただく方が増えています。費用や流れ、準備しておくべきことなど、不安なことはすべてご相談ください。
+              もしもの時、慌てないために。<br>
+              ご自身の想いや希望を整理したり、ご家族と話し合うきっかけとして、事前相談や終活サポートをご利用いただく方が増えています。費用や流れ、準備しておくべきことなど、不安なことはすべてご相談ください。
             </p>
           </div>
+        </div>
+        <div class="top-info__container-03-btn">
+          <a class="button button-solid" href="#">
+            <span></span>
+            <span></span>
+            事前相談
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-
-
-
-  <section class="top-post-news">
+  <section class="top-contact">
+    <span class="single-border pc-only"></span>
     <div class="l-inner">
+      <h2 class="top-contact__section-title mincho">
+        お問い合わせ
+        <span class="single-border sp-only"></span>
+        <h2>
+          <div class="top-contact__sub-title mincho">
+            ご家族で話し合うための資料、<br class="sp-only">まず手元に置いてみませんか？
+          </div>
+          <p class="top-contact__text">
+            資料請求・お見積り・ご相談はすべて無料です。葬儀が初めての方にも、やさしく丁寧にご案内いたします。
+          </p>
+          <div class="top-contact__btn-list">
+            <a class="top-contact__btn" href="#">
+              資料請求
+            </a>
+            <a class="top-contact__btn" href="#">
+              見積り依頼
+            </a>
+            <a class="top-contact__btn" href="#">
+              事前相談
+            </a>
+          </div>
     </div>
   </section>
-
-  <?php get_template_part('parts/project/top-post'); ?>
-
-  <?php get_template_part('parts/project/top-works');
-  ?>
-
-
-
-
-  <?php get_template_part('parts/project/top-post-list'); ?>
-
-  <?php get_template_part('parts/project/top-works-list'); ?>
 
   <!-- モーダル -->
 

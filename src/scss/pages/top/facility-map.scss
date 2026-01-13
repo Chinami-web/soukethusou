@@ -9,8 +9,11 @@
         "map"
         "selling"
     ;
+    margin-top: prem(16);
 
     @include mq("md") {
+        margin-top: prem(0);
+
         grid-template-areas:
             "description description"
             "notion notion"
@@ -29,11 +32,10 @@
 }
 
 .facility-map__description-wrapper {
-    margin-top: prem(26);
     grid-area: description;
     z-index: 10;
-
     @include mq("md") {
+        margin-top: prem(26);
         max-width: 75%;
         margin-top: prem(42);
     }
@@ -60,18 +62,23 @@
 
 .facility-map__notion-wrapper {
     grid-area: notion;
-    margin-top: prem(40);
+    margin-top: prem(20);
     z-index: 1;
+    @include mq("md"){
+        margin-top: prem(40);
+    }
 
 }
 
 .facility-map__button-wrapper {
-    margin-top: prem(47);
+    margin-top: prem(27);
     grid-area: button;
     text-align: center;
     z-index: 10;
     @include mq("md") {
         text-align: left;
+        margin-top: prem(47);
+
 
     }
 }
@@ -120,7 +127,8 @@
     margin: 0 auto;
     width: 100%;
     width: 150%;
-    transform: translateX(-30%);
+    transform: translateX(-28%);
+    margin-top: prem(-4);
     @include mq("md") {
         width: 100%;
         margin-top: prem(-100);
@@ -210,7 +218,7 @@
 
 .facility-pin:hover,
 .facility-pin:focus-visible {
-    transform: translate(-50%, -50%) scale(1.08);
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+    transform: translate(-50%, -50%) scale(1.03);
     outline: none;
+    opacity: 1;
 }

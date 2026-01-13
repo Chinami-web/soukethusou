@@ -72,6 +72,7 @@
 .top-philosophy__container-text {
     grid-area: text;
     margin-top: prem(24);
+    letter-spacing: 0.08em;
     @include mq("md"){
         margin-top: prem(31);
 
@@ -84,9 +85,9 @@
     }
 }
 
-.top-philosophy__logo {
+.top-philosophy__container-logo {
     grid-area: logo;
-    margin-top: prem(58);
+    margin-top: prem(30);
     @include mq("md"){
         margin-top: prem(98);
 
@@ -95,8 +96,10 @@
 }
 .top-philosophy__container-logo-img{
     margin-top: prem(27);
-    max-width: 100%;
+    max-width: prem(164);
+    margin-inline: auto;
     @include mq("md"){
+        margin-inline: initial;
         margin-top: prem(93);
         max-width: prem(280);
     }
@@ -113,6 +116,11 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-top: prem(63);
+    @include mq("md"){
+        margin-top: prem(0);
+    }
+
 }
 
 .top-philosophy__container-image img{
