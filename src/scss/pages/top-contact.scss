@@ -1,0 +1,171 @@
+@use 'foundation'as *;
+
+.top-contact {
+    padding-top: prem(43);
+    padding-bottom: prem(63);
+    background-image: url(../images/common/contact-bgSP.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @include mq("md") {
+        background-image: url(../images/common/contact-bg.jpg);
+        padding-top: prem(117);
+        padding-bottom: prem(189);
+    }
+}
+
+.top-contact .single-border.pc-only {
+    bottom: 50%;
+    width: 5.6%;
+}
+
+.top-contact .single-border.pc-only::after {
+    background-color: transparent;
+}
+
+.top-contact__section-title {
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    line-height: 1.6;
+    color: #DCDCDC;
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+    @include mq("md") {
+        position: absolute;
+        left:6%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: prem(20);
+        font-size: prem(32);
+        line-height: 1.72;
+    }
+
+
+}
+.top-contact__section-title .single-border.sp-only {
+    border-top:1px solid #DCDCDC;
+    top: 50%;
+    left:-110%;
+    transform: translateY(-50%);
+}
+.top-contact__section-title .single-border.sp-only::after {
+    background-color: transparent;
+    right: -7px;
+}
+
+
+.top-contact__sub-title {
+    font-size: prem(17);
+    color: #DCDCDC;
+    text-align: center;
+    font-weight: 300;
+    margin-top: prem(23);
+    line-height: 1.7;
+    @include mq("md"){
+        font-size: prem(20);
+        margin-top: prem(0);
+
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+    }
+
+}
+
+.top-contact__text {
+    font-weight: 300;
+    text-align: center;
+    font-size: prem(15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    color: #DCDCDC;
+    margin-top: prem(20);
+
+    @include mq("md"){
+        font-size: prem(17);
+        line-height: 2.65;
+        letter-spacing: 0.12em;
+        margin-top: prem(13);
+    }
+}
+
+.top-contact__btn-list {
+    max-width:90%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: prem(20);
+    margin-top: prem(40);
+    @include mq("md"){
+        max-width:77%;
+        flex-direction: row;
+        max-width: prem(1080);
+        margin-top: prem(51);
+        gap: prem(96);
+    }
+}
+
+.top-contact__btn {
+    font-family: $font-family-mincho;
+    font-size: prem(17);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    line-height: 1.65;
+    color: $color-white;
+    border: 1px solid #ACACAC;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: prem(30);
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    @include mq("md"){
+        font-size: prem(25);
+        padding-block: prem(34);
+        line-height: 1.4;
+        letter-spacing: 0.1em;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+    }
+}
+
+.top-contact__btn:after {
+    content: '→';
+    top: 50%;
+    right: 8%;
+    font-size: prem(20);
+    position: absolute;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    line-height: 1.65;
+    color: $color-white;
+    transition: left 0.3s ease;
+    transform: translateY(-50%);
+
+    @include mq("md"){
+        font-size: prem(33);
+        top: initial;
+        right: initial;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.top-contact__btn:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-contact__btn:hover:after {
+    @include mq("md"){
+        left: 53%;
+    }
+}

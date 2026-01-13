@@ -58,7 +58,11 @@
 }
 
 .feature-list__content{
-    padding-bottom: prem(25);
+    padding-bottom: prem(35);
+    @include mq("md"){
+        padding-bottom: prem(25);
+
+    }
 }
 
 

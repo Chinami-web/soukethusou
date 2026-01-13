@@ -10,6 +10,7 @@
     align-items: center;
     writing-mode: vertical-rl;
     margin-inline: auto;
+    letter-spacing: 0.7em;
     gap: 12px;
     @include mq("md"){
         font-size: prem(25);

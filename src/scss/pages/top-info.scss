@@ -2,12 +2,12 @@
 
 .top-info {
     padding-top: prem(54);
-    padding-bottom: prem(92);
+    padding-bottom: prem(76);
     border-bottom: 1px solid $color-theme;
     position: relative;
 
     @include mq("md") {
-        padding-top: prem(180);
+        padding-top: prem(30);
         padding-bottom: prem(46);
     }
 }
@@ -51,8 +51,10 @@
     grid-template-columns: 1fr;
     padding-bottom: prem(72);
     position: relative;
+    margin-top: prem(46);
     @include mq("md"){
-        grid-template-columns: 0.7fr 1fr;
+        margin-top: 0;
+        grid-template-columns: 1.1fr 1fr;
         column-gap: prem(129);
         max-width: 94%;
         margin-left: prem(-25);
@@ -66,19 +68,29 @@
     position: absolute;
     background-color: $color-theme;
     width: 100vw;
+    margin-left: calc(50% - 50vw);
     height: 1px;
     bottom: 0;
 }
 .top-info__container-01-image img{
-    aspect-ratio: 856/571;
+    aspect-ratio: 340/227;
     height: 100%;
     object-fit: cover;
+    @include mq("md"){
+        aspect-ratio: 856/571;
+    }
 
 }
 
 .top-info__container-01-text-wrapper {
-    display: flex;
-    flex-direction: column;
+    margin-top: prem(26);
+
+    @include mq("md"){
+        padding-top: prem(26);
+        padding-bottom: prem(54);
+        display: flex;
+        flex-direction: column;
+    }
 
 }
 
@@ -93,7 +105,10 @@
     width: fit-content;
     font-weight: $regular;
     padding-bottom: prem(23);
+    max-width: 95%;
+    margin-inline: auto;
     @include mq("md"){
+        max-width: 100%;
         font-size: prem(32);
         line-height: 1.72;
         letter-spacing: 0.1em;
@@ -104,6 +119,9 @@
 .top-info__title .main-border{
     bottom: 0;
     top: 100%;
+    width: 88%;
+    left:50%;
+    transform: translateX(-50%);
 }
 
 
@@ -111,8 +129,12 @@
 .top-info__text {
     margin-top: prem(28);
     font-size: prem(17);
-
+    max-width: 88%;
+    margin-inline: auto;
+    text-align: center;
     @include mq("md"){
+        text-align: left;
+        max-width: 100%;
         margin-top: prem(31);
         font-size: prem(20);
 
@@ -125,7 +147,7 @@
     font-size: prem(15);
     line-height: 2;
     letter-spacing: 0.08em;
-    margin-top: prem(31);
+    margin-top: prem(25);
     @include mq("md"){
         font-size: prem(17);
         line-height: 2.65;
@@ -137,7 +159,13 @@
 }
 
 .top-info__btn {
-    margin-top: auto;
+    text-align: center;
+    margin-top: prem(40);
+    @include mq("md"){
+        margin-top: 0;
+        text-align: left;
+        margin-top: auto;
+    }
 
 
 }
@@ -167,8 +195,12 @@
     @include mq("md"){
         padding-top: prem(58);
     }
-
-
+}
+.top-info__container-03 {
+    padding-top: prem(92);
+    @include mq("md"){
+        padding-top: prem(58);
+    }
 }
 
 .top-info__container-02-text-wrapper,
@@ -176,6 +208,16 @@
     text-align: center;
 
 }
+.top-info__container-03-text-wrapper {
+    border-top: 1px solid $color-theme;
+    padding-top: prem(80);
+
+    @include mq("md"){
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
 
 .top-info__container-02-title,
 .top-info__container-03-title {
@@ -190,86 +232,61 @@
 }
 .top-info__container-02-text-wrapper .top-info__text,
 .top-info__container-03-text-wrapper .top-info__text {
-    margin-top: prem(12);
-    @include mq("md"){
-        margin-top: prem(23);
-
-    }
-
-
+    margin-top: prem(0);
+    max-width: 100%;
+    text-align: center;
 }
 
-
-
-.top-post-news__item {
-
-}
-
-.top-post-news__link {
-
-}
-
-.top-post-news__icon {
-
-}
-
-.top-post-news__category {
-
-}
-
-.top-post-news__date {
-
-}
-
-.top-post-news__title {
-
-}
-
-.top-info__btn {
-
-}
-
-.button {
-
-}
-
-.button-solid {
-
-}
-.top-info__container-03 {
-
-}
-
-.top-info__container-03-text-wrapper {
-
-}
-
-.top-info__container-03-title {
-
-}
-
-.heisei {
-
-}
-
-.top-info__text {
-
-}
 
 .top-info__container-03-image-wrapper {
+    margin-top: prem(15);
+    @include mq("md"){
+        display: grid;
+        grid-template-columns: 0.75fr 1fr;
+        max-width: 86%;
+        margin-inline: auto;
+        margin-top: prem(46);
+        gap: prem(33);
+    }
 
 }
 
 .top-info__container-03-image {
+    border: 1px solid $color-theme;
+    padding: prem(11);
+    height: fit-content;
+    display: flex;
+    margin-block: auto;
+    @include mq("md"){
+
+    }
 
 }
 
+.top-info__container-03-image img{
+    aspect-ratio: 306/204;
+    object-fit: cover;
+    height: auto;
+}
 .top-info__container-03-image-text {
+    margin-top: prem(24);
+
+    @include mq("md"){
+        font-size: prem(16);
+        margin-top: prem(0);
+
+        line-height: 2.63;
+        letter-spacing: 0.12em;
+    }
 
 }
 
-.top-info__container-03-image-text-text {
-
+.top-info__container-03-btn{
+    margin-top: prem(40);
+    text-align: center;
+    @include mq("md"){
+        margin-top: prem(70);
+    }
 }
 
 

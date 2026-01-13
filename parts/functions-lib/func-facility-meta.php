@@ -28,6 +28,30 @@ function soukessou_render_facility_meta($post)
     2 => get_post_meta($post->ID, 'facility_thumb_2', true),
     3 => get_post_meta($post->ID, 'facility_thumb_3', true),
   );
+
+  // 詳細ページ用のカスタムフィールド
+  $main_image_id = get_post_meta($post->ID, 'facility_main_image', true);
+  $message_image_id = get_post_meta($post->ID, 'facility_message_image', true);
+  $message_text = get_post_meta($post->ID, 'facility_message_text', true);
+  $gallery_ids = get_post_meta($post->ID, 'facility_gallery', true);
+  $map_image_id = get_post_meta($post->ID, 'facility_map_image', true);
+  $tel = get_post_meta($post->ID, 'facility_tel', true);
+  $access_text = get_post_meta($post->ID, 'facility_access_text', true);
+  $google_map = get_post_meta($post->ID, 'facility_google_map', true);
+
+  $main_image_src = $main_image_id ? wp_get_attachment_image_url($main_image_id, 'medium') : '';
+  $message_image_src = $message_image_id ? wp_get_attachment_image_url($message_image_id, 'medium') : '';
+  $map_image_src = $map_image_id ? wp_get_attachment_image_url($map_image_id, 'medium') : '';
+
+  // ギャラリー画像IDの配列を処理
+  $gallery_ids_array = array();
+  if ($gallery_ids) {
+    if (is_array($gallery_ids)) {
+      $gallery_ids_array = $gallery_ids;
+    } else {
+      $gallery_ids_array = array_filter(array_map('trim', explode(',', $gallery_ids)));
+    }
+  }
   ?>
   <div style="display:grid; gap:12px;">
     <div>
@@ -68,6 +92,105 @@ function soukessou_render_facility_meta($post)
       </div>
     <?php endfor; ?>
     <p style="color:#555;">サムネイル（main-card__hero）は「アイキャッチ画像」を利用します。</p>
+
+    <hr style="margin:20px 0; border:none; border-top:2px solid #ddd;">
+    <h3 style="margin:0 0 12px 0; font-size:16px;">詳細ページ用フィールド</h3>
+
+    <div style="border:1px solid #ddd; padding:10px;">
+      <label>メイン画像（facility_main_image）</label><br>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <input type="hidden" name="facility_main_image" id="facility_main_image" value="<?php echo esc_attr($main_image_id); ?>">
+        <button class="button facility-image-select" data-target="facility_main_image">画像を選択</button>
+        <button class="button facility-image-clear" data-target="facility_main_image">クリア</button>
+      </div>
+      <div class="facility-image-preview" id="facility_main_image_preview" style="margin-top:8px;">
+        <?php if ($main_image_src): ?>
+          <img src="<?php echo esc_url($main_image_src); ?>" style="max-width:150px; height:auto;">
+        <?php else: ?>
+          <span style="color:#777;">未選択</span>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <div style="border:1px solid #ddd; padding:10px;">
+      <label>部長からのメッセージ - 人物画像（facility_message_image）</label><br>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <input type="hidden" name="facility_message_image" id="facility_message_image" value="<?php echo esc_attr($message_image_id); ?>">
+        <button class="button facility-image-select" data-target="facility_message_image">画像を選択</button>
+        <button class="button facility-image-clear" data-target="facility_message_image">クリア</button>
+      </div>
+      <div class="facility-image-preview" id="facility_message_image_preview" style="margin-top:8px;">
+        <?php if ($message_image_src): ?>
+          <img src="<?php echo esc_url($message_image_src); ?>" style="max-width:150px; height:auto;">
+        <?php else: ?>
+          <span style="color:#777;">未選択</span>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <div>
+      <label for="facility_message_text">部長からのメッセージ - テキスト（facility_message_text）</label><br>
+      <textarea id="facility_message_text" name="facility_message_text" rows="5" style="width:100%;"><?php echo esc_textarea($message_text); ?></textarea>
+    </div>
+
+    <div style="border:1px solid #ddd; padding:10px;">
+      <label>ギャラリー画像（facility_gallery：複数選択可、カンマ区切りで保存）</label><br>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <input type="hidden" name="facility_gallery" id="facility_gallery" value="<?php echo esc_attr(is_array($gallery_ids_array) ? implode(',', $gallery_ids_array) : $gallery_ids); ?>">
+        <button class="button facility-gallery-select" data-target="facility_gallery">画像を選択</button>
+        <button class="button facility-gallery-clear" data-target="facility_gallery">クリア</button>
+      </div>
+      <div class="facility-gallery-preview" id="facility_gallery_preview" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
+        <?php if (!empty($gallery_ids_array)): ?>
+          <?php foreach ($gallery_ids_array as $gid): ?>
+            <?php
+            $gid = intval($gid);
+            $gallery_src = $gid ? wp_get_attachment_image_url($gid, 'medium') : '';
+            if ($gallery_src):
+            ?>
+              <div style="position:relative;">
+                <img src="<?php echo esc_url($gallery_src); ?>" style="max-width:100px; height:auto;">
+                <span class="facility-gallery-remove" data-id="<?php echo esc_attr($gid); ?>" style="position:absolute; top:-5px; right:-5px; background:#f00; color:#fff; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;">×</span>
+              </div>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <span style="color:#777;">未選択</span>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <div style="border:1px solid #ddd; padding:10px;">
+      <label>地図画像（facility_map_image）</label><br>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <input type="hidden" name="facility_map_image" id="facility_map_image" value="<?php echo esc_attr($map_image_id); ?>">
+        <button class="button facility-image-select" data-target="facility_map_image">画像を選択</button>
+        <button class="button facility-image-clear" data-target="facility_map_image">クリア</button>
+      </div>
+      <div class="facility-image-preview" id="facility_map_image_preview" style="margin-top:8px;">
+        <?php if ($map_image_src): ?>
+          <img src="<?php echo esc_url($map_image_src); ?>" style="max-width:150px; height:auto;">
+        <?php else: ?>
+          <span style="color:#777;">未選択</span>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <div>
+      <label for="facility_tel">TEL（facility_tel）</label><br>
+      <input type="text" id="facility_tel" name="facility_tel" value="<?php echo esc_attr($tel); ?>" style="width:100%;">
+    </div>
+
+    <div>
+      <label for="facility_access_text">アクセスの文章（facility_access_text）</label><br>
+      <textarea id="facility_access_text" name="facility_access_text" rows="5" style="width:100%;"><?php echo esc_textarea($access_text); ?></textarea>
+    </div>
+
+    <div>
+      <label for="facility_google_map">Googleマップ iframeコード（facility_google_map）</label><br>
+      <textarea id="facility_google_map" name="facility_google_map" rows="5" style="width:100%; font-family:monospace; font-size:12px;"><?php echo esc_textarea($google_map); ?></textarea>
+      <p style="color:#777; font-size:12px; margin:5px 0 0 0;">Googleマップの埋め込みコード（iframeタグ）をそのまま貼り付けてください。</p>
+    </div>
   </div>
   <?php
 }
@@ -92,6 +215,46 @@ function soukessou_save_facility_meta($post_id)
   update_post_meta($post_id, 'facility_label', $label);
   update_post_meta($post_id, 'facility_address', $address);
   update_post_meta($post_id, 'facility_tags', $tags);
+
+  // 詳細ページ用のカスタムフィールドを保存
+  $main_image = isset($_POST['facility_main_image']) ? intval($_POST['facility_main_image']) : 0;
+  $message_image = isset($_POST['facility_message_image']) ? intval($_POST['facility_message_image']) : 0;
+  $message_text = isset($_POST['facility_message_text']) ? wp_kses_post($_POST['facility_message_text']) : '';
+  $gallery = isset($_POST['facility_gallery']) ? sanitize_text_field($_POST['facility_gallery']) : '';
+  $map_image = isset($_POST['facility_map_image']) ? intval($_POST['facility_map_image']) : 0;
+  $tel = isset($_POST['facility_tel']) ? sanitize_text_field($_POST['facility_tel']) : '';
+  $access_text = isset($_POST['facility_access_text']) ? wp_kses_post($_POST['facility_access_text']) : '';
+  $google_map = isset($_POST['facility_google_map']) ? wp_kses_post($_POST['facility_google_map']) : '';
+
+  if ($main_image > 0) {
+    update_post_meta($post_id, 'facility_main_image', $main_image);
+  } else {
+    delete_post_meta($post_id, 'facility_main_image');
+  }
+
+  if ($message_image > 0) {
+    update_post_meta($post_id, 'facility_message_image', $message_image);
+  } else {
+    delete_post_meta($post_id, 'facility_message_image');
+  }
+
+  update_post_meta($post_id, 'facility_message_text', $message_text);
+
+  if ($gallery) {
+    update_post_meta($post_id, 'facility_gallery', $gallery);
+  } else {
+    delete_post_meta($post_id, 'facility_gallery');
+  }
+
+  if ($map_image > 0) {
+    update_post_meta($post_id, 'facility_map_image', $map_image);
+  } else {
+    delete_post_meta($post_id, 'facility_map_image');
+  }
+
+  update_post_meta($post_id, 'facility_tel', $tel);
+  update_post_meta($post_id, 'facility_access_text', $access_text);
+  update_post_meta($post_id, 'facility_google_map', $google_map);
 
   for ($i = 1; $i <= 3; $i++) {
     $field = 'facility_thumb_' . $i;
@@ -141,10 +304,100 @@ function soukessou_facility_meta_assets($hook)
       target.val('');
       preview.html('<span style=\"color:#777;\">未選択</span>');
     });
+
+    // 詳細ページ用の画像選択
+    $(document).on('click','.facility-image-select',function(e){
+      e.preventDefault();
+      var button = $(this);
+      var target = $('#' + button.data('target'));
+      var preview = $('#' + button.data('target') + '_preview');
+      var frame = wp.media({
+        title: '画像を選択',
+        button: { text: '決定' },
+        multiple: false
+      });
+      frame.on('select', function(){
+        var attachment = frame.state().get('selection').first().toJSON();
+        target.val(attachment.id);
+        preview.html('<img src=\"' + attachment.url + '\" style=\"max-width:150px; height:auto;\" />');
+      });
+      frame.open();
+    });
+    $(document).on('click','.facility-image-clear',function(e){
+      e.preventDefault();
+      var button = $(this);
+      var target = $('#' + button.data('target'));
+      var preview = $('#' + button.data('target') + '_preview');
+      target.val('');
+      preview.html('<span style=\"color:#777;\">未選択</span>');
+    });
+
+    // ギャラリー画像選択（複数選択可）
+    $(document).on('click','.facility-gallery-select',function(e){
+      e.preventDefault();
+      var button = $(this);
+      var target = $('#' + button.data('target'));
+      var preview = $('#' + button.data('target') + '_preview');
+      var currentIds = target.val() ? target.val().split(',') : [];
+      var frame = wp.media({
+        title: '画像を選択（複数選択可）',
+        button: { text: '決定' },
+        multiple: true
+      });
+      frame.on('select', function(){
+        var selected = frame.state().get('selection');
+        var ids = [];
+        var html = '';
+        selected.each(function(attachment){
+          var att = attachment.toJSON();
+          ids.push(att.id);
+          html += '<div style=\"position:relative;\"><img src=\"' + att.url + '\" style=\"max-width:100px; height:auto;\"><span class=\"facility-gallery-remove\" data-id=\"' + att.id + '\" style=\"position:absolute; top:-5px; right:-5px; background:#f00; color:#fff; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;\">×</span></div>';
+        });
+        if (ids.length > 0) {
+          var allIds = currentIds.concat(ids);
+          allIds = allIds.filter(function(id){ return id && id !== ''; });
+          target.val(allIds.join(','));
+          if (preview.find('span').length && preview.find('span').first().text() === '未選択') {
+            preview.html(html);
+          } else {
+            preview.append(html);
+          }
+        }
+      });
+      frame.open();
+    });
+    $(document).on('click','.facility-gallery-clear',function(e){
+      e.preventDefault();
+      var button = $(this);
+      var target = $('#' + button.data('target'));
+      var preview = $('#' + button.data('target') + '_preview');
+      target.val('');
+      preview.html('<span style=\"color:#777;\">未選択</span>');
+    });
+    $(document).on('click','.facility-gallery-remove',function(e){
+      e.preventDefault();
+      var removeBtn = $(this);
+      var removeId = removeBtn.data('id');
+      var target = $('#facility_gallery');
+      var preview = $('#facility_gallery_preview');
+      var currentIds = target.val() ? target.val().split(',') : [];
+      currentIds = currentIds.filter(function(id){ return id != removeId; });
+      target.val(currentIds.join(','));
+      removeBtn.closest('div').remove();
+      if (preview.children().length === 0) {
+        preview.html('<span style=\"color:#777;\">未選択</span>');
+      }
+    });
   })(jQuery);
 JS;
   wp_add_inline_script('jquery', $inline_js);
 }
+
+
+
+
+
+
 
 
 

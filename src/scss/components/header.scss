@@ -12,13 +12,78 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: prem(15);
+  transition: transform 0.3s ease-out, background 0.3s ease-out;
 
   @include mq(md) {
     padding-inline: prem(65);
     height: prem(149);
   }
+
+  // 追従ヘッダーのスタイル
+  &.is-visible {
+    position: fixed;
+    background: $main-gradient;
+    transform: translateY(0);
+  }
+
+  &.is-hidden {
+    position: fixed;
+    background: $main-gradient;
+    transform: translateY(-100%);
+  }
 }
 
+.header__logo {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  padding: prem(10) 0 prem(10) prem(15);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+
+  @include mq(md) {
+    padding: prem(20) 0 prem(20) prem(65);
+  }
+}
+
+.header__logo a {
+  display: block;
+  text-decoration: none;
+}
+
+.header__logo img {
+  display: block;
+  height: auto;
+  max-width: prem(120);
+
+  @include mq(md) {
+    max-width: prem(270);
+  }
+}
+
+// 追従ヘッダーが表示されている時だけロゴを表示（PCのみ）
+.header.is-visible .header__logo {
+  display: none;
+  opacity: 1;
+  transform: translateY(0);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq(md) {
+    display: flex;
+  }
+}
+.header.is-visible .header__logo.pc-only{
+  display: none;
+  @include mq("md"){
+    display: flex;
+  }
+}
 .header__inner {
   display: flex;
   align-items: flex-start;
@@ -62,13 +127,14 @@ border-right: 1px solid $color-white;
     font-size: prem(20);
   }
 }
-.header__nav-item span{
+.header__nav-item span {
   display: inline-block;
   @include mq("md"){
     display: none;
   }
 }
-.header__nav-item span.pc-only{
+
+.header__nav-item span.pc-only {
   display: none;
   @include mq("md"){
     display: inline-block;
@@ -195,12 +261,12 @@ border-right: 1px solid $color-white;
 }
 
 .header__hamburger.is-open .header__hamburger-bar:nth-of-type(2) {
-  transform: translateY(prem(8)) rotate(45deg);
+  transform: translateY(prem(4)) rotate(45deg);
   margin-right: prem(0);
   scale: 0.8;
 }
 .header__hamburger.is-open .header__hamburger-bar:nth-of-type(3) {
-  transform: translateY(prem(-24)) rotate(-45deg);
+  transform: translateY(prem(-14)) rotate(-45deg);
   margin-left: prem(0);
   scale: 0.8;
 }
@@ -222,8 +288,13 @@ border-right: 1px solid $color-white;
 
 .header__drawer {
   position: fixed;
-  inset: 0;
-  z-index: 1050;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
   background: $color-theme;
   opacity: 0;
   visibility: hidden;
@@ -231,13 +302,13 @@ border-right: 1px solid $color-white;
   overflow-y: auto;
 }
 .header__drawer-inner{
-  padding-top: prem(14);
+  padding-top: prem(60);
   padding-bottom: prem(56);
-  padding-right: prem(14);
-  padding-left: prem(28);
+  padding-right: prem(25);
+  padding-left: prem(78);
   display: flex;
   flex-direction: column;
-  gap: prem(36);
+  gap: prem(22);
   @include mq("md"){
     gap: prem(0);
       padding-top: prem(138);
@@ -279,6 +350,7 @@ grid-template-areas:
   grid-area: nav04;
   display: flex;
   align-items: center;
+
 }
 .header__drawer-nav-05{
   grid-area: nav05;
@@ -286,7 +358,7 @@ grid-template-areas:
   align-items: center;
 }
 .header__drawer-nav {
-  padding-top: prem(16);
+  padding-top: prem(2);
   padding-bottom: prem(12);
   border-bottom: 1px solid $color-white;
   border-top: 1px solid $color-white;
@@ -299,14 +371,12 @@ grid-template-areas:
 
 }
 .header__drawer-logo{
-  max-width: prem(70);
-  @include mq("md"){
-    max-width: prem(170);
-  }
+  max-width: prem(170);
+
 }
 .header__drawer-title {
   font-family: $font-family-heisei;
-  font-size: prem(16);
+  font-size: prem(18);
   line-height: 3.33;
   color: $color-white;
   letter-spacing: 0.08em;
@@ -327,10 +397,14 @@ grid-template-areas:
 .header__drawer-nav {
   width: min(1100px, 100%);
   margin: 0 auto;
-  padding: 0 $padding-sp;
   @include mq("md") {
     padding: 0 $padding-pc;
   }
+}
+.header__drawer-nav-04.header__drawer-nav,
+.header__drawer-nav-05.header__drawer-nav{
+  padding-top: prem(16);
+
 }
 
 
@@ -345,10 +419,15 @@ grid-template-areas:
     line-height: 2.44;
   }
 }
-.header__drawer-item--big a{
-    @include mq("md"){
-      font-size: prem(20);
-      margin-top: prem(16);
 
-    }
+.header__drawer-nav-04 .header__drawer-item a,
+.header__drawer-nav-05 .header__drawer-item a {
+  font-size: prem(18);
+}
+
+.header__drawer-item--big a {
+  @include mq("md"){
+    font-size: prem(20);
+    margin-top: prem(16);
+  }
 }

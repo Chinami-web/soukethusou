@@ -9,4 +9,10 @@
   width: fit-content;
   margin: 0 auto;
   max-width: 100%;
+  padding-left: prem(16);
+  padding-right: prem(16);
+  @include mq("md"){
+    padding-left: $padding-pc;
+    padding-right: $padding-pc;
+  }
 }

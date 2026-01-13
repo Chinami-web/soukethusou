@@ -3,8 +3,10 @@
 .top-staff {
 
     padding-top: prem(88);
+
     @include mq("md") {
-        padding-top: prem(145);    }
+        padding-top: prem(145);
+    }
 
 }
 
@@ -20,11 +22,10 @@
 }
 
 .top-staff__container {
-padding-bottom: prem(94);
+    padding-bottom: prem(49);
 
     @include mq("md") {
         padding-bottom: prem(217);
-
         $left-title-width: prem(95) * 2 + prem(25) * 2.19;
         max-width: calc(100% - #{$left-title-width} - 1px + #{$padding-pc});
     }
@@ -56,6 +57,9 @@ padding-bottom: prem(94);
     line-height: 1.6;
     letter-spacing: 0.15em;
     font-weight: $regular;
+    color: $color-theme;
+    width: fit-content;
+    margin-inline: auto;
 
     @include mq("md") {
         font-size: prem(32);
@@ -71,7 +75,7 @@ padding-bottom: prem(94);
     font-size: prem(14);
     line-height: 1.57;
     letter-spacing: 0.15em;
-    margin-top: prem(27);
+    margin-top: prem(13);
     text-align: center;
 
     @include mq("md") {
@@ -106,8 +110,13 @@ padding-bottom: prem(94);
     color: $color-theme;
     text-align: center;
     font-size: prem(17);
+    max-width: 80%;
+    margin-inline: auto;
+    line-height: 1.65;
 
     @include mq("md") {
+
+        max-width: 100%;
         font-size: prem(20);
 
         padding-bottom: prem(33);
@@ -128,7 +137,7 @@ padding-bottom: prem(94);
     letter-spacing: 0.08em;
     margin-top: prem(29);
 
-    @include mq("md"){
+    @include mq("md") {
         margin-top: prem(33);
         font-size: prem(17);
         line-height: 2.65;
@@ -137,13 +146,13 @@ padding-bottom: prem(94);
     }
 }
 
-.top-staff__btn{
+.top-staff__btn {
     text-align: center;
     margin-top: prem(40);
-    @include mq("md"){
+
+    @include mq("md") {
         margin-top: prem(113);
 
     }
 
 }
-

@@ -4,12 +4,13 @@
     font-size: prem(16);
     font-family: $font-family-mincho;
     font-weight: $regular;
-    padding-block: prem(87);
     line-height: 2.19;
     color: $color-theme;
     position: relative;
+    padding-block: prem(16);
     text-align: center;
     @include mq("md") {
+        padding-block: prem(87);
         border-right: 1px solid $color-theme;
         padding-right: prem(95);
         padding-left: prem(75);

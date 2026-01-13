@@ -70,6 +70,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
       gallerySlider.mount();
     }
+    if (document.querySelector('#facility-gallery')) {
+      const facilityGallerySlider = new Splide('#facility-gallery',
+        {
+          type: 'loop',
+          speed: 2000,
+          autoplay: true,
+          interval: 4000,
+          rewind: true,
+          arrows: true,
+          perPage: 1,
+          fixedWidth: '60%',
+          pagination: false,
+          breakpoints: {
+            767: {
+              perPage: 1,
+              fixedWidth: '76%',
+              padding: '0%',
+              gap: '20px',
+            }
+          },
+          perMove: 1,
+          focus: 'center',
+          padding: '15',
+          gap: '70px',
+        }
+      );
+
+      facilityGallerySlider.on('move', function(newIndex, prevIndex) {
+        const slides = facilityGallerySlider.Components.Elements.slides;
+        if (slides && slides.length > 0) {
+          slides.forEach(function(slide) {
+            slide.classList.remove('is-active');
+          });
+          if (slides[newIndex]) {
+            slides[newIndex].classList.add('is-active');
+          }
+        }
+      });
+
+      facilityGallerySlider.mount();
+    }
     // event
     if (document.querySelector('#post')) {
       new Splide('#post',
@@ -119,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           type: 'loop',
           speed: 800,
-          autoplay: false,
+          autoplay: true,
           interval: 4000,
           rewind: true,
           arrows: false,
@@ -127,10 +168,18 @@ document.addEventListener('DOMContentLoaded', function() {
           perPage: 3,
           paddingLeft: '80px',
           gap: '40px',
+          perMove: 1,
+          focus: 'start',
           breakpoints: {
             767: {
+              padding: { left: '0', right: '100px' },
               perPage: 1,
-              padding: '0',
+              perMove: 1,
+              gap: '10px',
+              autoplay: true,
+              interval: 3000,
+              arrows: true,
+              rewind: false,
             }
           }
         }
@@ -163,6 +212,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
       mainCardSlider.on('mounted move', updateMainCardStatus);
 
+      // デバッグ用ログ
+      mainCardSlider.on('mounted', () => {
+        const isSP = window.innerWidth <= 767;
+        const track = document.querySelector('#main-card-slider .splide__track');
+        const list = document.querySelector('#main-card-slider .splide__list');
+        const firstSlide = document.querySelector('#main-card-slider .splide__slide');
+
+        console.log('=== Splide mounted ===');
+        console.log('isSP:', isSP);
+        console.log('windowWidth:', window.innerWidth);
+        console.log('perPage:', mainCardSlider.options.perPage);
+        console.log('paddingLeft:', mainCardSlider.options.paddingLeft);
+        console.log('paddingRight:', mainCardSlider.options.paddingRight);
+        console.log('padding:', mainCardSlider.options.padding);
+        console.log('gap:', mainCardSlider.options.gap);
+        console.log('type:', mainCardSlider.options.type);
+        console.log('rewind:', mainCardSlider.options.rewind);
+        console.log('--- DOM要素のスタイル ---');
+        if (track) {
+          console.log('track paddingRight:', window.getComputedStyle(track).paddingRight);
+          console.log('track paddingLeft:', window.getComputedStyle(track).paddingLeft);
+        }
+        if (list) {
+          console.log('list gap:', window.getComputedStyle(list).gap);
+        }
+        if (firstSlide) {
+          console.log('firstSlide width:', window.getComputedStyle(firstSlide).width);
+          console.log('firstSlide marginRight:', window.getComputedStyle(firstSlide).marginRight);
+        }
+        console.log('====================');
+      });
+
+      mainCardSlider.on('move', (newIndex, prevIndex, destIndex) => {
+        console.log('Splide move:', {
+          newIndex,
+          prevIndex,
+          destIndex,
+          currentIndex: mainCardSlider.index,
+          length: mainCardSlider.length
+        });
+      });
+
+      mainCardSlider.on('moved', (newIndex, prevIndex, destIndex) => {
+        console.log('Splide moved:', {
+          newIndex,
+          prevIndex,
+          destIndex,
+          currentIndex: mainCardSlider.index,
+          length: mainCardSlider.length
+        });
+      });
+
+      mainCardSlider.on('visible', (Slide) => {
+        console.log('Splide visible:', {
+          index: Slide.index,
+          currentIndex: mainCardSlider.index
+        });
+      });
+
       if (mainCardPrev) {
         mainCardPrev.addEventListener('click', () => {
           mainCardSlider.go('<');
@@ -192,7 +300,134 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
+      // mount前の設定確認
+      const isSP = window.innerWidth <= 767;
+      console.log('=== Splide mount前 ===');
+      console.log('isSP:', isSP);
+      console.log('windowWidth:', window.innerWidth);
+      console.log('設定値（breakpoints適用前）:', {
+        perPage: mainCardSlider.options.perPage,
+        paddingLeft: mainCardSlider.options.paddingLeft,
+        paddingRight: mainCardSlider.options.paddingRight,
+        gap: mainCardSlider.options.gap,
+        type: mainCardSlider.options.type,
+        rewind: mainCardSlider.options.rewind
+      });
+
       mainCardSlider.mount();
+
+      // ハッシュリンクでスライドに移動する処理
+      const handleHashChange = () => {
+        const hash = window.location.hash.replace('#', '');
+        if (!hash) return;
+
+        // スライドを検索（data属性も確認）
+        const allSlides = Array.from(document.querySelectorAll('#main-card-slider .splide__slide'));
+        // 実際のスライドのみを検索（クローンを除外）
+        const actualSlides = allSlides.filter(slide => {
+          const slideId = slide.id;
+          // main-card-slider-slideXX の形式のスライドのみを対象
+          return slideId && slideId.startsWith('main-card-slider-slide');
+        });
+
+        let targetSlide = null;
+        let actualSlideIndex = -1;
+
+        // 実際のスライドから検索（data-original-idで）
+        targetSlide = actualSlides.find(slide => {
+          const originalId = slide.getAttribute('data-original-id');
+          return originalId === hash;
+        });
+
+        if (targetSlide) {
+          // 実際のスライドのインデックスを取得（actualSlidesの中での位置：0-7）
+          actualSlideIndex = actualSlides.indexOf(targetSlide);
+        }
+
+        if (actualSlideIndex === -1 || !targetSlide) return;
+
+        // Splideのgo()メソッドには実際のスライドのインデックス（0-7）を渡す
+        mainCardSlider.go(actualSlideIndex);
+
+        // スムーズスクロールでスライダーセクションまで移動
+        setTimeout(() => {
+          const sliderSection = document.querySelector('.top-main-card');
+          if (sliderSection) {
+            const offsetTop = sliderSection.getBoundingClientRect().top + window.pageYOffset - 100;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 300);
+      };
+
+      // Splideマウント後にIDを再設定
+      mainCardSlider.on('mounted', () => {
+        const slides = document.querySelectorAll('#main-card-slider .splide__slide');
+        slides.forEach((slide, index) => {
+          // 元のIDをdata属性から取得して再設定
+          const originalId = slide.getAttribute('data-original-id') || slide.id;
+          if (originalId && originalId !== `main-card-slider-slide${String(index + 1).padStart(2, '0')}`) {
+            slide.id = originalId;
+            slide.setAttribute('data-original-id', originalId);
+          }
+        });
+
+        // ページ読み込み時にハッシュがあれば移動
+        if (window.location.hash) {
+          setTimeout(handleHashChange, 300);
+        }
+      });
+
+      // ハッシュ変更時に実行
+      window.addEventListener('hashchange', handleHashChange);
+
+      // facility-pinのクリックイベント
+      document.querySelectorAll('.facility-pin').forEach(pin => {
+        pin.addEventListener('click', (e) => {
+          const slug = pin.getAttribute('data-facility-slug');
+          if (slug) {
+            e.preventDefault();
+            window.location.hash = slug;
+            // 少し遅延させてから実行（Splideの準備を待つ）
+            setTimeout(handleHashChange, 100);
+          }
+        });
+      });
+
+      // mount後の設定確認
+      setTimeout(() => {
+        const track = document.querySelector('#main-card-slider .splide__track');
+        const list = document.querySelector('#main-card-slider .splide__list');
+        const firstSlide = document.querySelector('#main-card-slider .splide__slide');
+
+        console.log('=== Splide mount後 ===');
+        console.log('設定値（breakpoints適用後）:', {
+          perPage: mainCardSlider.options.perPage,
+          paddingLeft: mainCardSlider.options.paddingLeft,
+          paddingRight: mainCardSlider.options.paddingRight,
+          padding: mainCardSlider.options.padding,
+          gap: mainCardSlider.options.gap,
+          type: mainCardSlider.options.type,
+          rewind: mainCardSlider.options.rewind
+        });
+        console.log('--- DOM要素のスタイル ---');
+        if (track) {
+          console.log('track paddingRight:', window.getComputedStyle(track).paddingRight);
+          console.log('track paddingLeft:', window.getComputedStyle(track).paddingLeft);
+          console.log('track width:', window.getComputedStyle(track).width);
+        }
+        if (list) {
+          console.log('list gap:', window.getComputedStyle(list).gap);
+          console.log('list width:', window.getComputedStyle(list).width);
+        }
+        if (firstSlide) {
+          console.log('firstSlide width:', window.getComputedStyle(firstSlide).width);
+          console.log('firstSlide marginRight:', window.getComputedStyle(firstSlide).marginRight);
+        }
+        console.log('====================');
+      }, 100);
     }
     // plan-card (plan)
     if (document.querySelector('#plan-card-slider')) {
@@ -226,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
           gap: '100px',
           breakpoints: {
             767: {
-              padding: '10%',
+              padding:'14%',
               gap: '24px',
             }
           }
@@ -627,5 +862,186 @@ jQuery(function ($) {
         $video[0].play();
     });
   });
+
+  // フッターナビゲーションの開閉（SPのみ）
+  jQuery(function ($) {
+    function initFooterNavToggle() {
+      // SPのみで動作するように判定
+      const isSP = window.matchMedia("(max-width: 767px)").matches;
+      console.log('initFooterNavToggle - isSP:', isSP);
+
+      if (isSP) {
+        $('.js-footer-nav-toggle').off('click.footerNav mouseleave.footerNav').on('click.footerNav', function() {
+          const $title = $(this);
+          const $list = $title.next('.footer-nav__list');
+          const $nav = $title.closest('.footer-nav');
+
+          // 現在の状態を確認
+          const wasOpen = $title.hasClass('is-open');
+          console.log('クリック前の状態 - is-open:', wasOpen);
+          console.log('$title要素:', $title[0]);
+          console.log('$list要素:', $list[0]);
+
+          // 開閉動作
+          $title.toggleClass('is-open');
+          $nav.toggleClass('is-open');
+
+          // 変更後の状態を確認
+          const isNowOpen = $title.hasClass('is-open');
+          console.log('クリック後の状態 - is-open:', isNowOpen);
+          console.log('$titleのクラス:', $title[0].className);
+
+          // SP時はCSS変数で制御（ホバーは不要）
+          if (!isNowOpen) {
+            // 閉じた時は強制的に45度に戻す
+            $title[0].style.setProperty('--arrow-rotate', '45deg');
+            console.log('閉じた時 - arrow-rotateを45degに設定');
+          } else {
+            // 開いた時は225度
+            $title[0].style.setProperty('--arrow-rotate', '225deg');
+            console.log('開いた時 - arrow-rotateを225degに設定');
+          }
+
+          $list.slideToggle(300, function() {
+            console.log('アニメーション完了 - is-open:', $title.hasClass('is-open'));
+            console.log('リストの表示状態:', $list.is(':visible'));
+          });
+        });
+
+        // 初期状態を確認
+        $('.js-footer-nav-toggle').each(function() {
+          const $title = $(this);
+          console.log('初期状態 - 要素:', $title[0], 'is-open:', $title.hasClass('is-open'));
+        });
+      } else {
+        // PCの場合は開閉機能を無効化し、常に表示
+        console.log('PC表示モード - 開閉機能を無効化');
+        $('.js-footer-nav-toggle').off('click.footerNav');
+        $('.footer-nav__list').show();
+        $('.js-footer-nav-toggle').removeClass('is-open');
+        $('.footer-nav').removeClass('is-open');
+      }
+    }
+
+    // 初期化
+    initFooterNavToggle();
+
+    // リサイズ時に再初期化
+    $(window).on('resize', function() {
+      console.log('リサイズイベント');
+      initFooterNavToggle();
+    });
+  });
+
+  // top-voice__textの行数制御
+  function adjustTopVoiceText() {
+    const textElements = document.querySelectorAll('.top-voice__text');
+
+    textElements.forEach(function(element) {
+      // 既に処理済みの場合はスキップ
+      if (element.dataset.processed === 'true') {
+        return;
+      }
+
+      const originalText = element.textContent.trim();
+      if (!originalText) return;
+
+      // 元のテキストを保存
+      if (!element.dataset.originalText) {
+        element.dataset.originalText = originalText;
+      }
+
+      // 元のテキストを復元
+      element.textContent = element.dataset.originalText;
+
+      // 一時的な要素を作成して行数を測定
+      const tempElement = element.cloneNode(true);
+      tempElement.style.position = 'absolute';
+      tempElement.style.visibility = 'hidden';
+      tempElement.style.width = element.offsetWidth + 'px';
+      tempElement.style.height = 'auto';
+      tempElement.style.whiteSpace = 'normal';
+      tempElement.style.wordWrap = 'break-word';
+      tempElement.style.top = '-9999px';
+      tempElement.textContent = element.dataset.originalText;
+
+      document.body.appendChild(tempElement);
+      const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
+      const height = tempElement.offsetHeight;
+      const lineCount = Math.ceil(height / lineHeight);
+      document.body.removeChild(tempElement);
+
+      // 4行以上になる場合、3行目の最後6文字を全角スペース3つに置き換え
+      if (lineCount >= 4) {
+        // Range APIを使って3行目の終了位置を特定
+        const range = document.createRange();
+        const textNode = element.firstChild;
+        if (!textNode || textNode.nodeType !== Node.TEXT_NODE) {
+          element.dataset.processed = 'true';
+          return;
+        }
+
+        const text = element.dataset.originalText;
+        const elementRect = element.getBoundingClientRect();
+        let thirdLineEnd = text.length;
+
+        // 3行目の終了位置を探す
+        for (let i = 0; i < text.length; i++) {
+          range.setStart(textNode, 0);
+          range.setEnd(textNode, i);
+          const rect = range.getBoundingClientRect();
+          const relativeTop = rect.top - elementRect.top;
+
+          if (relativeTop >= lineHeight * 3) {
+            thirdLineEnd = i;
+            break;
+          }
+        }
+
+        // 3行目の開始位置を探す
+        let thirdLineStart = 0;
+        for (let i = 0; i < text.length; i++) {
+          range.setStart(textNode, 0);
+          range.setEnd(textNode, i);
+          const rect = range.getBoundingClientRect();
+          const relativeTop = rect.top - elementRect.top;
+
+          if (relativeTop >= lineHeight * 2) {
+            thirdLineStart = i;
+            break;
+          }
+        }
+
+        // 3行目のテキストを取得
+        const thirdLineText = text.substring(thirdLineStart, thirdLineEnd);
+
+        // 3行目が6文字以上の場合、最後6文字を全角スペース2つ + 三点リーダー + 全角スペース1つに置き換え
+        if (thirdLineText.length >= 6) {
+          const modifiedThirdLine = thirdLineText.slice(0, -6) + '　　' + '・・・' + '　';
+          const modifiedText = text.substring(0, thirdLineStart) + modifiedThirdLine + text.substring(thirdLineEnd);
+          element.textContent = modifiedText;
+        }
+      }
+
+      element.dataset.processed = 'true';
+    });
+  }
+
+  // DOMContentLoaded後に実行
+  if (document.querySelectorAll('.top-voice__text').length > 0) {
+    // 画像の読み込み完了を待つ
+    window.addEventListener('load', function() {
+      setTimeout(adjustTopVoiceText, 100);
+    });
+
+    // リサイズ時にも再実行
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        adjustTopVoiceText();
+      }, 250);
+    });
+  }
 
 });

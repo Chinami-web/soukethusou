@@ -1,8 +1,9 @@
 @use 'foundation'as *;
 .top-main-card {
     margin-top: prem(33);
+    padding-left: prem(0);
     @include mq("md"){
-        padding-left: prem(84);
+        padding-left: prem(64);
         margin-top: prem(93);
 
     }
