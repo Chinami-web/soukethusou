@@ -1,0 +1,230 @@
+@use 'foundation'as *;
+
+.facility-hero {
+  position: relative;
+
+  @include mq("md") {
+    min-height: 372px;
+  }
+
+  @include mq("lg") {
+    min-height: 422px;
+  }
+
+  @include mq("xl") {
+    min-height: 760px;
+  }
+}
+
+.facility-hero__image {
+  width: 100%;
+  position: relative;
+}
+
+.facility-hero__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 375/250;
+  object-fit: cover;
+
+  @include mq("md") {
+    aspect-ratio: 768/372;
+  }
+
+  @include mq("lg") {
+    aspect-ratio: 768/322;
+  }
+
+  @include mq("xl") {
+    aspect-ratio: 1920/760;
+  }
+}
+
+.facility-hero__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facility-hero__title-wrapper {
+  position: relative;
+  max-width: prem(600);
+  margin-inline: auto;
+  background-color: $color-white;
+  padding: prem(10) prem(10) prem(20) prem(10);
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px 0 rgba($color-black, 0.15);
+  overflow: hidden;
+  width: 70%;
+  max-width: prem(500);
+  margin-top: prem(200);
+  border: 1px solid $color-theme;
+
+  @include mq("md") {
+    margin-top: prem(400);
+    max-width: prem(633);
+  }
+
+  @include mq("lg") {
+    margin-top: prem(630);
+  }
+
+  @include mq("md") {
+    padding: prem(32) prem(40) prem(60) prem(40);
+    margin-top: prem(689);
+
+  }
+}
+
+.facility-hero__title-wrapper::before {
+  content: '';
+  position: absolute;
+  background-image: url(../images/common/ribon-right.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: prem(198);
+  height: prem(135);
+  bottom: 00px;
+  right: -20px;
+  opacity: 0.2;
+  z-index: 0;
+
+  @include mq("md") {
+    width: prem(396);
+    height: prem(271);
+    bottom: -10px;
+    right: -40px;
+  }
+}
+
+.facility-hero__title-wrapper::after {
+
+  content: "";
+  display: block;
+  width: 100%;
+  height: 8px;
+  background-color: $color-theme;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 0 0 15px 15px;
+
+  @include mq("md") {
+    height: 16px;
+  }
+}
+
+.facility-hero__label {
+  position: relative;
+  font-size: prem(13);
+  color: $color-theme;
+  text-align: center;
+  width: fit-content;
+  margin-inline: auto;
+
+  @include mq("md") {
+    font-size: prem(20);
+    padding-bottom: prem(12);
+  }
+}
+
+.facility-hero__label .main-border {
+  top: initial;
+  bottom: 0;
+}
+
+.facility-hero__title {
+  font-size: prem(20);
+  font-family: $font-family-heisei;
+  font-weight: $regular;
+  color: $color-black;
+  line-height: 1.5;
+  text-align: center;
+
+  @include mq("md") {
+    margin-top: prem(10);
+    font-size: prem(40);
+  }
+}
+
+
+.facility-hero__slug {
+  font-size: prem(14);
+  color: $color-theme;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.facility-hero__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  z-index: 2;
+  position: relative;
+  margin-top: prem(10);
+  gap: prem(10);
+  width: 100%;
+
+  @include mq("md") {
+    max-width: 75%;
+    gap: prem(20);
+    flex-direction: row;
+    justify-content: space-between;
+
+
+  }
+}
+
+.facility-hero__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-theme;
+  color: $color-white;
+  font-size: prem(11);
+  padding: prem(12) prem(20);
+  text-align: center;
+  text-decoration: none;
+  width: calc(100% - 27px);
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  @include mq("md") {
+    font-size: prem(16);
+    padding: prem(6) prem(25);
+  }
+}
+
+.facility-hero__button::after {
+  content: '→';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.facility-hero__button:hover {
+  opacity: 0.8;
+
+}
+
+.facility-hero__button:hover::after {
+  right: 15px;
+}
+
+
+

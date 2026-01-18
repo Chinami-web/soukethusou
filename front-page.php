@@ -110,7 +110,7 @@
         </div>
       </div>
       <div class="top-about__image-wrapper">
-        <figure class="top-about__image">
+        <figure class="top-about__image js-fade-up">
           <picture>
             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/top/image01.png" media="(min-width:768px)">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image01SP.png" alt="想結葬の葬儀の画像"
@@ -264,7 +264,7 @@
           </figure>
         </div>
         <div class="top-philosophy__container-image">
-          <figure class="top-philosophy__container-image-img">
+          <figure class="top-philosophy__container-image-img js-fade-up">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/concept01.png" alt="想結葬の画像"
               width="764"
               height="644"
@@ -643,7 +643,7 @@
             <span>12ヵ所の自社葬儀場</span>
           </p>
         </div>
-        <div class="facility-map">
+        <div class="facility-map js-fade-up">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/map/map.png" alt="施設マップ" class="facility-map__bg" width="1171" height="738" loading="lazy">
           <?php
           // 施設の投稿データを取得して、ラベルとスラッグのマッピングを作成
@@ -939,7 +939,7 @@
               ご家族の不安や想いに、プロとして真摯に向き合います。
             </p>
           </div>
-          <figure class="top-staff__container-image">
+          <figure class="top-staff__container-image js-fade-up">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/staff/image01.jpg" alt="スタッフ紹介" width="881" height="587" loading="lazy">
           </figure>
           <p class="top-staff__container-title-border mincho">
@@ -1090,7 +1090,7 @@
   <section class="top-info">
     <div class="l-inner">
       <div class="top-info__container-01">
-        <figure class="top-info__container-01-image">
+        <figure class="top-info__container-01-image js-fade-up">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image15.jpg" alt="想結葬の画像" width="856" height="571" loading="lazy">
         </figure>
         <div class="top-info__container-01-text-wrapper">
@@ -1191,7 +1191,7 @@
           </p>
         </div>
         <div class="top-info__container-03-image-wrapper">
-          <figure class="top-info__container-03-image">
+          <figure class="top-info__container-03-image js-fade-up">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image16.jpg" alt="想結葬の画像" width="856" height="571" loading="lazy">
           </figure>
           <div class="top-info__container-03-image-text">

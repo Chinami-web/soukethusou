@@ -1,0 +1,439 @@
+@charset "UTF-8";
+/*
+ * 蜿りソn * https: //github.com/Andy-set-studio/modern-css-reset/blob/master/src/reset.css
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "DFPHSMincho";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/dfhsmincho-w3-winp-rksj-h.woff2") format("woff2"), url("../fonts/dfhsmincho-w3-winp-rksj-h.woff") format("woff");
+}
+/*****************************************
+ * 謨ｰ蛟､縺九ｉ蜊倅ｽ阪ｒ蜿悶ｊ髯､縺十n * 蜿りソn * https: //css-tricks.com/snippets/sass/
+******************************************/
+/*****************************************
+ * px竊池em縺ｮ險育ｮ予n * 蜿りソn * https: //webdou.net/sass-rem/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+/*****************************************
+ * vw縺ｮ險育ｮ予n * 蜿りソn * https://webdou.net/sass-vw/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+@media (max-width: 375px) {
+  html {
+    font-size: 4vw;
+  }
+}
+html {
+  font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 0.8021390374vw;
+  }
+}
+@media (min-width: 1870px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  position: relative;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  body {
+    line-height: 2.65;
+    font-size: 1.1333333333rem;
+  }
+}
+
+body.is-fixed {
+  overflow: hidden;
+}
+
+@media screen and (hover: hover) and (min-width: 768px) {
+  a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+.height-low {
+  line-height: 0.5666666667;
+}
+
+.mincho {
+  font-family: "Sawarabi Mincho", sans-serif;
+}
+
+.heisei {
+  font-family: "DFPHSMincho", sans-serif;
+}
+
+.pc-only {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .pc-only {
+    display: block;
+  }
+}
+
+.sp-only {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .sp-only {
+    display: none;
+  }
+}
+
+.contact {
+  margin-top: 3.0666666667rem;
+}
+@media screen and (min-width: 768px) {
+  .contact {
+    margin-top: 5.1333333333rem;
+  }
+}
+
+.contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5333333333rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .contact__list {
+    gap: 1.2rem;
+  }
+}
+
+.contact__item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .contact__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2666666667rem;
+  }
+}
+
+.contact__label {
+  width: 73%;
+  background-color: #957B80;
+  color: #fff;
+  font-size: 0.9333333333rem;
+  padding: 0.4rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2rem;
+  font-family: "Sawarabi Mincho", sans-serif;
+  border: 2px solid #D1C2C5;
+}
+@media screen and (min-width: 768px) {
+  .contact__label {
+    padding: 0.4rem 1.8666666667rem;
+    line-height: 1.75;
+    font-size: 1.3333333333rem;
+    font-size: 1.1333333333rem;
+    width: 19.6rem;
+    flex-shrink: 0;
+  }
+}
+
+.contact__required {
+  background-color: #fff;
+  color: #957B80;
+  font-size: 0.9333333333rem;
+  padding: 0rem 0.3333333333rem;
+  border-radius: 0.3333333333rem;
+  font-family: initial;
+  display: block;
+  align-items: center;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .contact__required {
+    line-height: 1.75;
+    padding: 0rem 0.6666666667rem;
+    font-size: 1rem;
+  }
+}
+
+.contact__input {
+  width: 100%;
+  margin-top: 0.6666666667rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__input {
+    margin-top: 0;
+    flex-grow: 1;
+  }
+}
+.contact__input input[type=text],
+.contact__input input[type=tel],
+.contact__input input[type=email],
+.contact__input select {
+  width: 100%;
+  padding-block: 0.6666666667rem;
+  padding-inline: 1.3333333333rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6.6666666667rem;
+  box-shadow: none;
+  font-size: 1rem;
+  color: #333;
+  appearance: none;
+}
+@media screen and (min-width: 768px) {
+  .contact__input input[type=text],
+.contact__input input[type=tel],
+.contact__input input[type=email],
+.contact__input select {
+    padding-block: 0.3333333333rem;
+    padding-inline: 2.4666666667rem;
+    border: 1px solid #ccc;
+  }
+}
+.contact__input textarea {
+  width: 100%;
+  border-radius: 15px;
+  padding-block: 0.6666666667rem;
+  padding-inline: 2.4666666667rem;
+  border: 1px solid #ccc;
+}
+.contact__input select {
+  cursor: pointer;
+}
+.contact__input textarea {
+  height: 0.1333333333rem;
+  resize: none;
+}
+@media screen and (min-width: 768px) {
+  .contact__input textarea {
+    height: 15.4666666667rem;
+  }
+}
+
+.wpcf7-form-control-wrap:has(select) {
+  position: relative;
+}
+.wpcf7-form-control-wrap:has(select)::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  right: 1.3333333333rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.6666666667rem 0.5333333333rem 0 0.5333333333rem;
+  border-color: #4a4a4a transparent transparent transparent;
+  pointer-events: none;
+}
+@media screen and (min-width: 768px) {
+  .wpcf7-form-control-wrap:has(select)::after {
+    right: 2.4666666667rem;
+    border-width: 1.2rem 0.8666666667rem 0 0.8666666667rem;
+  }
+}
+
+.contact__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+@media screen and (min-width: 768px) {
+  .contact__input-group {
+    flex-direction: row;
+    gap: 1.3333333333rem;
+  }
+}
+.contact__input-group span.wpcf7-form-control-wrap {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .contact__input-group span.wpcf7-form-control-wrap {
+    width: 50%;
+  }
+}
+.contact__input-group input {
+  width: 100% !important;
+}
+.contact__input-group input::placeholder {
+  color: #D1C2C5;
+}
+
+.contact__input input::placeholder {
+  color: #D1C2C5;
+}
+
+.contact__input textarea::placeholder {
+  color: #D1C2C5;
+}
+
+.contact__submit {
+  margin-top: 2rem;
+  width: 100%;
+  position: relative;
+  margin-inline: auto;
+  font-size: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+  .contact__submit {
+    margin-top: 8rem;
+    width: 46.4666666667rem;
+  }
+}
+.contact__submit input[type=submit] {
+  border-radius: 10px;
+  background: linear-gradient(360deg, #957b80 75%, #b59f94 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.6666666667rem;
+  font-size: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .contact__submit input[type=submit] {
+    font-size: 1.5333333333rem;
+    padding: 1.3333333333rem 2.6666666667rem;
+  }
+}
+
+.contact__submit::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/common/arrow-c.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.3333333333rem;
+  height: 0.6666666667rem;
+  top: 36%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+@media screen and (min-width: 768px) {
+  .contact__submit::before {
+    right: 10%;
+    width: 3.2rem;
+    height: 1.6rem;
+  }
+}
+
+.contact__submit:hover {
+  transform: scale(1.01);
+}
+
+/*# sourceMappingURL=contact.css.map */

@@ -38,11 +38,32 @@ function styles() {
 
 function images() {
   return src('../src/images/**/*')
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log('Image optimization error:', err.message);
+        console.log('File:', err.fileName);
+        // エラーを通知するが処理は続行
+        notify.onError('Error: <%= error.message %>')(err);
+        this.emit('end');
+      }
+    }))
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 80 }),
       imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
-      pngquant({ quality: [0.65, 0.8] })
-    ]))
+      pngquant({
+        quality: [0.65, 0.8],
+        speed: 1,
+        strip: true,
+        dithering: 0.5
+      })
+    ], {
+      verbose: true
+    }).on('error', function(err) {
+      console.log('PNG optimization error:', err.message);
+      console.log('File:', err.fileName);
+      // エラーが発生しても処理を続行（元の画像をコピー）
+      this.emit('end');
+    }))
     .pipe(dest('../assets/images'));
 }
 

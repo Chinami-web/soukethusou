@@ -38,8 +38,14 @@ function my_script_init()
     wp_enqueue_style('slider-style', '//cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css', array(), '4.0.7', 'all');
   }
 
+  wp_enqueue_script('yubinbango', 'https://yubinbango.github.io/yubinbango/yubinbango.js', array(), null, false);
+  
+  // GSAP
+  wp_enqueue_script('gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', array(), '3.12.5', true);
+  wp_enqueue_script('gsap-scroll-trigger', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', array('gsap'), '3.12.5', true);
+
   // 基本JavaScript
-  wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('slider-script'), filemtime(get_theme_file_path('assets/js/script.js')), true);
+  wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('slider-script', 'gsap-scroll-trigger'), filemtime(get_theme_file_path('assets/js/script.js')), true);
   // 基本CSS
   wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css', array('slider-style'), filemtime(get_theme_file_path('assets/css/style.css')), 'all');
 

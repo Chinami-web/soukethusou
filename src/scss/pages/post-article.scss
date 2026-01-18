@@ -9,18 +9,46 @@
 //   }
 // }
 .post-article__inner.container {
-  margin-top: prem(32);
+  padding-top: prem(32);
+  padding-bottom: prem(40);
 }
 
-.post-article__title {
-  font-size: prem(48);
+.post-article__inner > .post-article__title {
+  font-size: prem(20);
+  font-weight: $regular;
+  font-family: $font-family-mincho;
   color: $color-theme;
+  text-align: center;
+  letter-spacing: 0.2em;
+  position: relative;
+  padding-bottom: prem(16);
+
+  @include mq("md") {
+    font-size: prem(28);
+    padding-bottom: prem(20);
+  }
+}
+
+.post-article__inner > .post-article__title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: prem(80);
+  height: prem(1);
+  background-color: $color-theme;
+
+  @include mq("md") {
+    width: prem(120);
+  }
 }
 
 .post-article__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: prem(12);
 }
 
 .post-article__category {
@@ -31,35 +59,55 @@
 }
 
 .post-article__category li{
-  padding: prem(5);
+  padding: prem(4) prem(10);
   color: $color-theme;
   border: 1px solid $color-theme;
+  font-size: prem(12);
+  line-height: 1.4;
+
+  @include mq("md") {
+    font-size: prem(14);
+  }
 }
 
 
 
 .post-article__box {
-  margin: 6.4rem auto 0;
+  margin-top: prem(64);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-article__content{
-  padding: prem(20) prem(23) 0;
+  padding: prem(20) prem(20) 0;
   background-color: $color-white;
   width: 100%;
+
+  @include mq("md") {
+    padding: prem(32) prem(40) 0;
+  }
 }
 
 .post-article__content-wrap {
-  padding-bottom: prem(30);
+  padding-bottom: prem(40);
   width: 100%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.post-article__title {
+.post-article__title-box .post-article__title {
+  font-size: prem(22);
+  font-weight: $regular;
+  color: $color-black;
+  line-height: 1.6;
 
+  @include mq("md") {
+    font-size: prem(30);
+  }
 }
 
 .post-article__contents {
-  margin-top: prem(30);
+  padding-top: prem(24);
 }
 
 .post-article__main-img {
@@ -83,44 +131,77 @@
 }
 .post-article__data {
   margin-left: auto;
-  font-size: prem(21);
+  font-size: prem(12);
   text-align: right;
   letter-spacing: 0.05em;
+
+  @include mq("md") {
+    font-size: prem(14);
+  }
+}
+
+.post-article__contents > * + * {
+  padding-top: prem(16);
 }
 
 .post-article__content h2 {
-  margin: prem(30) 0 prem(15);
-  padding: prem(5) prem(20);
+  margin-top: prem(24);
+  padding: prem(8) prem(16);
   color: $color-white;
   background-color: $color-theme;
-  font-size: prem(28);
+  font-size: prem(20);
+  line-height: 1.6;
+
+  @include mq("md") {
+    font-size: prem(26);
+    padding: prem(10) prem(20);
+  }
 }
 
 .post-article__contents h3 {
-  margin: prem(30) 0 prem(15);
+  margin-top: prem(24);
   padding-left: prem(10);
   color: $color-theme;
-  font-size: prem(28);
+  font-size: prem(20);
   border-left: 0.5em solid $color-theme;
+  line-height: 1.6;
+
+  @include mq("md") {
+    font-size: prem(24);
+  }
 }
 
 .post-article__contents h4 {
-  margin: prem(10) 0;
-  font-size: prem(24);
+  margin-top: prem(16);
+  font-size: prem(18);
+  line-height: 1.6;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
 }
 
 .post-article__contents h5 {
-  margin: prem(10) 0;
+  margin-top: prem(16);
   padding: prem(2) prem(12.5);
   display: inline-block;
   color: $color-theme;
-  font-size: prem(20);
+  font-size: prem(16);
   border-top: 2px solid $color-theme;
   border-bottom: 2px solid $color-theme;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
 }
 
 .post-article__contents p {
-  font-size: prem(20);
+  font-size: prem(15);
+  line-height: 2;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
 }
 
 .post-article__contents a {
@@ -129,16 +210,17 @@
 }
 
 .post-article__contents img {
-  margin: prem(10) 0;
+  margin: 0;
 }
 
 .post-article__contents figure {
-  margin: prem(10) 0;
+  margin: 0;
 }
 
 .post-article__contents figcaption{
-  margin: prem(10) 0;
+  margin: 0;
   font-size: prem(12);
+  line-height: 1.6;
 }
 
 

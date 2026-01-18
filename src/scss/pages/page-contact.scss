@@ -1,0 +1,22 @@
+@use 'foundation'as *;
+
+.page-contact {
+    @include mq("md"){
+        max-width: prem(1148);
+        margin-inline: auto;
+        margin-top: prem(80);
+    }
+}
+.page-contact__description {
+    margin-top: prem(30);
+    font-size: prem(15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    @include mq("md"){
+
+        font-size: prem(17);
+        line-height: 2.65;
+        letter-spacing: 0.12em;
+    }
+}
