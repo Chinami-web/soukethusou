@@ -1,0 +1,211 @@
+@use 'foundation'as *;
+
+.floating-contact {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: prem(12);
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(prem(8));
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.floating-contact__inner {
+  width: 100%;
+  max-width: prem(360);
+  margin: 0 auto;
+  background-image: url(../images/common/floating.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: grid;
+  grid-template-columns: prem(150) 1fr 1fr;
+  align-items: center;
+  min-height: prem(52);
+  padding-left: prem(25);
+  padding-right: prem(20);
+
+
+  pointer-events: auto;
+  padding-block: prem(10);
+
+
+  @include mq("md") {
+    grid-template-columns: prem(103) prem(255) 1fr 1fr;
+    max-width: prem(805);
+    min-height: prem(100);
+    padding-inline: prem(65);
+    padding-block: prem(20);
+  }
+}
+
+.floating-contact__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $color-white;
+  font-size: prem(12);
+  font-weight: $medium;
+  line-height: 1.2;
+}
+
+.floating-contact__link:hover {
+  text-shadow: 0 0px 4px rgba($color-white, 0.39);
+  opacity: 1;
+
+}
+
+
+.floating-contact__link--tel {
+
+  display: grid;
+  grid-template-areas:
+    "tel-icon tel-text"
+    "tel-icon tel-number"
+    "tel-icon tel-note";
+  grid-template-columns: prem(27) 1fr;
+  column-gap: prem(10);
+  row-gap: prem(2);
+
+  @include mq("md") {
+    padding-left: prem(23);
+    grid-template-areas:
+      "tel-icon tel-number"
+      "tel-icon tel-note";
+    ;
+    grid-template-columns: prem(40) 1fr;
+    row-gap: prem(4);
+    column-gap: prem(8);
+  }
+}
+
+.floating-contact__tel-label {
+  display: none;
+
+  @include mq("md") {
+    font-size: prem(10);
+    line-height: 1.44;
+    color: $color-white;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    font-size: prem(18);
+  }
+}
+
+.floating-contact__tel-main {
+  display: flex;
+  align-items: center;
+  gap: prem(4);
+}
+
+.floating-contact__tel-icon {
+  grid-area: tel-icon;
+}
+
+.floating-contact__tel-note {
+  grid-area: tel-note;
+  margin-inline: auto;
+  text-align: left;
+  width: 100%;
+}
+
+.floating-contact__tel-note span {
+  font-size: prem(10);
+  border-left: 1px solid $color-white;
+  border-right: 1px solid $color-white;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding-inline: prem(3);
+
+  @include mq("md") {
+    font-size: prem(16);
+    padding-inline: prem(5);
+
+  }
+
+}
+
+.floating-contact__tel-icon img {
+  height: auto;
+  display: block;
+  width: prem(27);
+
+  @include mq("md") {
+    width: prem(37);
+  }
+}
+
+.floating-contact__tel-text {
+  font-size: prem(11);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+letter-spacing: 0.07em;
+  grid-area: tel-text;
+  text-align: left;
+
+  @include mq("md") {
+    text-align: center;
+  }
+}
+
+.floating-contact__tel-number {
+  font-size: prem(13);
+  grid-area: tel-number;
+  font-weight: 300;
+  text-align: left;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+line-height: 1;
+letter-spacing: 0.09em;
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+
+.floating-contact__link-text {
+  display: block;
+  font-size: prem(11);
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.floating-contact__link--request {
+  font-size: prem(18);
+  border-right: 1px solid $color-white;
+  border-left: 1px solid $color-white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.floating-contact__link--consult {
+  font-size: prem(18);
+  font-weight: 300;
+}
+
+.floating-contact {
+  @include mq("md") {
+    bottom: prem(20);
+  }
+}
+
+.floating-contact.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.floating-contact__tel-note {
+  font-size: prem(10);
+  font-weight: 300;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include mq("md") {
+    font-size: prem(11);
+  }
+}

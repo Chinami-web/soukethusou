@@ -26,6 +26,21 @@
 
     }
 }
+.top-voice::after {
+    @include mq("md"){
+        content: '';
+        position: absolute;
+        width: prem(940);
+        height: prem(632);
+        background-image: url(../images/common/bk03.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        bottom: prem(200);
+        left: -200px;
+        z-index: -1;
+    }
+}
 
 
 .top-voice__container {
@@ -262,25 +277,6 @@ margin-top: prem(10);
 
 }
 
-.top-voice__info {
-
-}
-
-.top-voice__address {
-
-}
-
-.top-voice__name {
-
-}
-
-.top-voice__hall {
-
-}
-
-.top-voice__plan {
-
-}
 
 .top-voice__link {
     position: relative;

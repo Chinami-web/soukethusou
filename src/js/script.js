@@ -1,5 +1,127 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+  var floatingContact = document.querySelector('.floating-contact');
+  if (floatingContact) {
+    var mvSection = document.querySelector('.mv');
+    if (!mvSection) {
+      floatingContact.classList.add('is-visible');
+    } else {
+      var mvBottom = Number.POSITIVE_INFINITY;
+      var mvReady = false;
+      var mvLocked = false;
+      var updateMvBottom = function() {
+        if (mvLocked) {
+          return;
+        }
+        var rect = mvSection.getBoundingClientRect();
+        if (rect.height <= 0) {
+          return;
+        }
+        mvBottom = rect.top + window.pageYOffset + rect.height;
+        mvReady = true;
+      };
+      var updateFloatingVisibility = function() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (mvLocked && scrollY <= 0) {
+          mvLocked = false;
+          updateMvBottom();
+        }
+        if (!mvReady) {
+          floatingContact.classList.remove('is-visible');
+          return;
+        }
+        if (scrollY > mvBottom) {
+          floatingContact.classList.add('is-visible');
+          mvLocked = true;
+        } else {
+          floatingContact.classList.remove('is-visible');
+        }
+      };
+      updateMvBottom();
+      updateFloatingVisibility();
+      window.addEventListener('scroll', updateFloatingVisibility, { passive: true });
+      window.addEventListener('resize', function() {
+        updateMvBottom();
+        updateFloatingVisibility();
+      });
+      window.addEventListener('load', function() {
+        updateMvBottom();
+        updateFloatingVisibility();
+      });
+    }
+  }
+  var header = document.querySelector('.header');
+  if (header) {
+    var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    var scrollThreshold = 100;
+    var headerMvSection = document.querySelector('.mv');
+    var headerMvBottom = Number.POSITIVE_INFINITY;
+    var headerMvReady = false;
+    var headerMvLocked = false;
+    var updateHeaderMvBottom = function() {
+      if (headerMvLocked) {
+        return;
+      }
+      if (!headerMvSection) {
+        headerMvBottom = 0;
+        return;
+      }
+      var rect = headerMvSection.getBoundingClientRect();
+      if (rect.height <= 0) {
+        return;
+      }
+      headerMvBottom = rect.top + window.pageYOffset + rect.height;
+      headerMvReady = true;
+    };
+    var updateHeaderState = function() {
+      var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (document.body.classList.contains('is-fixed')) {
+        lastScrollY = currentScrollY;
+        return;
+      }
+      if (headerMvLocked && currentScrollY <= 0) {
+        headerMvLocked = false;
+        updateHeaderMvBottom();
+      }
+      if (headerMvSection) {
+        if (!headerMvReady) {
+          updateHeaderMvBottom();
+          header.classList.remove('is-visible');
+          header.classList.remove('is-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+      }
+      if (currentScrollY <= scrollThreshold || currentScrollY <= headerMvBottom) {
+        header.classList.remove('is-visible');
+        header.classList.remove('is-hidden');
+        lastScrollY = currentScrollY;
+        return;
+      }
+      if (currentScrollY < lastScrollY) {
+        header.classList.add('is-visible');
+        header.classList.remove('is-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('is-hidden');
+        header.classList.remove('is-visible');
+      }
+      if (currentScrollY > headerMvBottom) {
+        headerMvLocked = true;
+      }
+      lastScrollY = currentScrollY;
+    };
+    updateHeaderMvBottom();
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('resize', function() {
+      updateHeaderMvBottom();
+      updateHeaderState();
+    });
+    window.addEventListener('load', function() {
+      updateHeaderMvBottom();
+      updateHeaderState();
+    });
+  }
   var library = sliderSettings.library;
   // Splideの読み込み
   if (library === "splide") {
@@ -75,12 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           type: 'loop',
           speed: 2000,
-          autoplay: true,
+          autoplay: false,
           interval: 4000,
           rewind: true,
           arrows: true,
           perPage: 1,
-          fixedWidth: '60%',
+          fixedWidth: '54%',
           pagination: false,
           breakpoints: {
             767: {
@@ -92,8 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
           },
           perMove: 1,
           focus: 'center',
-          padding: '15',
-          gap: '70px',
+          padding: '0%',
+          gap: '47px',
         }
       );
 
@@ -346,8 +468,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (actualSlideIndex === -1 || !targetSlide) return;
 
-        // Splideのgo()メソッドには実際のスライドのインデックス（0-7）を渡す
-        mainCardSlider.go(actualSlideIndex);
+        // 画面幅に応じてインデックスを調整
+        const isSP = window.innerWidth <= 767;
+        let targetIndex;
+
+        if (isSP) {
+          // SPの場合（perPage: 1）：クリックしたスライドを1枚目（一番左）に配置
+          targetIndex = actualSlideIndex;
+        } else {
+          // PCの場合（perPage: 3）：クリックしたスライドを2枚目（中央）に配置
+          // その1つ前のスライドを選択する必要がある
+          // ループモードなので、負のインデックスも使用可能
+          targetIndex = actualSlideIndex - 1;
+        }
+
+        // Splideのgo()メソッドには調整後のインデックスを渡す
+        mainCardSlider.go(targetIndex);
 
         // スムーズスクロールでスライダーセクションまで移動
         setTimeout(() => {
@@ -503,6 +639,22 @@ document.addEventListener('DOMContentLoaded', function() {
       mainCardSlider.mount().on(['mounted', 'updated', 'refresh'], adjustArrowPosition);
       window.addEventListener('resize', adjustArrowPosition);
       window.addEventListener('load', adjustArrowPosition);
+    }
+    if (document.querySelector('#relation-parts-slider')) {
+      const relationPartsSlider = new Splide('#relation-parts-slider',
+        {
+          type: 'loop',
+          speed: 800,
+          autoplay: true,
+          interval: 4000,
+          rewind: true,
+          arrows: true,
+          pagination: false,
+          perPage: 1,
+          perMove: 1,
+        }
+      );
+      relationPartsSlider.mount();
     }
   }
   if (library === "swiper") {
@@ -1044,4 +1196,68 @@ jQuery(function ($) {
     });
   }
 
+});
+
+// Contact Form 7 Yubinbango Support
+jQuery(function ($) {
+  var $form = $('.wpcf7-form');
+  if ($form.length) {
+    $form.addClass('h-adr');
+  }
+});
+
+// GSAP Animations
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 共通のフェードイン設定（下からふわっと）
+    // HTML側で対象の要素に class="js-fade-up" を付与してください
+    const fadeUpElements = document.querySelectorAll('.js-fade-up');
+    fadeUpElements.forEach(el => {
+      gsap.fromTo(el,
+        {
+          y: 30,
+          autoAlpha: 0
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 1.5, // アニメーション時間を1.5秒に変更
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 80%', // 画面の下から20%の位置に来たら開始
+            toggleActions: 'play none none none' // 一度だけ再生
+          }
+        }
+      );
+    });
+
+    // feature-list__img (6枚を遅延表示)
+    const featureImages = document.querySelectorAll('.feature-list__img');
+    if (featureImages.length > 0) {
+      // 最初の画像の親要素（リスト全体）をトリガーにすることを試みる
+      const triggerElement = featureImages[0].closest('.feature-list') || featureImages[0];
+
+      gsap.fromTo(featureImages,
+        {
+          y: 30,
+          autoAlpha: 0
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 2,
+          ease: 'power2.out',
+          stagger: 0.6, // 0.2秒ずつ遅延
+          scrollTrigger: {
+            trigger: triggerElement,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    }
+  }
 });

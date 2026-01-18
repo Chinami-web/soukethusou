@@ -1,0 +1,96 @@
+@use 'foundation'as *;
+
+.facility-message {
+  margin-top: prem(60);
+  border: 1px solid $color-theme;
+border-radius: 20px;
+  @include mq("md") {
+    padding: prem(42) prem(72) prem(74) prem(67);
+  }
+}
+
+.facility-message__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: prem(30);
+
+  @include mq("md") {
+    grid-template-columns: prem(185) 1fr;
+    gap: prem(45);
+    margin-top: prem(20);
+
+    align-items: center;
+  }
+}
+
+.facility-message__image {
+  width: 100%;
+
+  @include mq("md") {
+    max-width: prem(185);
+    margin-inline: auto;
+  }
+}
+
+.facility-message__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 185/261;
+  object-fit: cover;
+}
+
+.facility-message__title {
+  font-size: prem(20);
+  font-family: $font-family-heisei;
+  font-weight: $regular;
+  color: $color-theme;
+  line-height: 1.5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  @include mq("md") {
+    font-size: prem(32);
+    white-space: nowrap;
+  }
+}
+
+.facility-message__title .main-border {
+  position: relative;
+}
+.facility-message__container .facility-message__person-name {
+  font-size: prem(14);
+  line-height: 1.5;
+  @include mq("md") {
+    font-size: prem(32);
+  }
+}
+.facility-message__container .facility-message__text {
+  position: relative;
+  @include mq("md"){
+    margin-top: prem(12);
+    font-size: prem(17);
+    line-height: 2.35;
+    letter-spacing: 0.12em;
+  }
+
+}
+
+.facility-message__main-border {
+  top: 0;
+}
+
+.facility-message__text{
+  font-size: prem(14);
+  line-height: 2;
+  color: $color-black;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
+}
+
+
+

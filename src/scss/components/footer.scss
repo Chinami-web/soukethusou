@@ -6,7 +6,6 @@
     padding-bottom: prem(25);
     background-color: #212121;
     @include mq("md"){
-        padding-top: prem(65);
         background-color: #272727;
         padding: 0;
     }

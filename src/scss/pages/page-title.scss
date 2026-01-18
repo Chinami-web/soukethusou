@@ -1,0 +1,41 @@
+@use 'foundation'as *;
+
+.page-title__wrapper {
+
+    margin-top: prem(30);
+    @include mq("md"){
+        margin-top: prem(37);
+        max-width:prem(974);
+
+    }
+
+}
+
+.page-title__main {
+    font-size: prem(20);
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    color: $color-theme;
+
+    @include mq("md"){
+        font-size: prem(32);
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+    }
+}
+
+.page-title__text-sub {
+    font-size: prem(15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    margin-top: prem(20);
+    font-weight: 400;
+    @include mq("md"){
+        margin-top: prem(37);
+
+        font-size: prem(17);
+        line-height: 2.65;
+        letter-spacing: 0.12em;
+    }
+}

@@ -1,0 +1,85 @@
+@use 'foundation'as *;
+
+.relation-parts {
+  padding-top: prem(40);
+  padding-bottom: prem(40);
+}
+
+.relation-parts__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: prem(24);
+
+  @include mq("md") {
+    grid-template-columns: 1fr 1fr;
+    gap: prem(40);
+  }
+}
+
+.relation-parts__column {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: prem(16);
+  min-width: 0;
+}
+
+.relation-parts__heading {
+  font-size: prem(18);
+  font-weight: $regular;
+  text-align: center;
+  color: $color-black;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+.relation-parts__flow-card {
+  border: 1px solid $color-theme;
+  background-color: $color-white;
+  padding: prem(12);
+
+  @include mq("md") {
+    padding: prem(18);
+  }
+}
+
+.relation-parts__flow-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.relation-parts__flow-caption {
+  text-align: center;
+  font-size: prem(14);
+  color: $color-black;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
+}
+
+.relation-parts__slider {
+  width: 100%;
+  visibility: visible;
+  min-width: 0;
+  padding-inline: 20%;
+}
+
+.relation-parts__slider .plan-card__item {
+    padding-bottom: prem(0);
+
+}
+.relation-parts__slider .plan-card__title-text{
+    @include mq("md"){
+        font-size: prem(26);
+
+    }
+}
+.relation-parts__slider .plan-card__title-price{
+    @include mq("md"){
+        font-size: prem(24);
+    }
+}
+

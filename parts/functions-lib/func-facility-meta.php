@@ -33,6 +33,7 @@ function soukessou_render_facility_meta($post)
   $main_image_id = get_post_meta($post->ID, 'facility_main_image', true);
   $message_image_id = get_post_meta($post->ID, 'facility_message_image', true);
   $message_text = get_post_meta($post->ID, 'facility_message_text', true);
+  $message_person_name = get_post_meta($post->ID, 'facility_message_person_name', true);
   $gallery_ids = get_post_meta($post->ID, 'facility_gallery', true);
   $map_image_id = get_post_meta($post->ID, 'facility_map_image', true);
   $tel = get_post_meta($post->ID, 'facility_tel', true);
@@ -129,6 +130,11 @@ function soukessou_render_facility_meta($post)
     </div>
 
     <div>
+      <label for="facility_message_person_name">部長からのメッセージ - 人物名（facility_message_person_name）</label><br>
+      <input type="text" id="facility_message_person_name" name="facility_message_person_name" value="<?php echo esc_attr($message_person_name); ?>" style="width:100%;">
+    </div>
+
+    <div>
       <label for="facility_message_text">部長からのメッセージ - テキスト（facility_message_text）</label><br>
       <textarea id="facility_message_text" name="facility_message_text" rows="5" style="width:100%;"><?php echo esc_textarea($message_text); ?></textarea>
     </div>
@@ -220,11 +226,26 @@ function soukessou_save_facility_meta($post_id)
   $main_image = isset($_POST['facility_main_image']) ? intval($_POST['facility_main_image']) : 0;
   $message_image = isset($_POST['facility_message_image']) ? intval($_POST['facility_message_image']) : 0;
   $message_text = isset($_POST['facility_message_text']) ? wp_kses_post($_POST['facility_message_text']) : '';
+  $message_person_name = isset($_POST['facility_message_person_name']) ? sanitize_text_field($_POST['facility_message_person_name']) : '';
   $gallery = isset($_POST['facility_gallery']) ? sanitize_text_field($_POST['facility_gallery']) : '';
   $map_image = isset($_POST['facility_map_image']) ? intval($_POST['facility_map_image']) : 0;
   $tel = isset($_POST['facility_tel']) ? sanitize_text_field($_POST['facility_tel']) : '';
   $access_text = isset($_POST['facility_access_text']) ? wp_kses_post($_POST['facility_access_text']) : '';
-  $google_map = isset($_POST['facility_google_map']) ? wp_kses_post($_POST['facility_google_map']) : '';
+  $allowed_map_html = array(
+    'iframe' => array(
+      'src' => true,
+      'width' => true,
+      'height' => true,
+      'style' => true,
+      'frameborder' => true,
+      'allowfullscreen' => true,
+      'loading' => true,
+      'referrerpolicy' => true,
+      'aria-hidden' => true,
+      'tabindex' => true,
+    ),
+  );
+  $google_map = isset($_POST['facility_google_map']) ? wp_kses($_POST['facility_google_map'], $allowed_map_html) : '';
 
   if ($main_image > 0) {
     update_post_meta($post_id, 'facility_main_image', $main_image);
@@ -239,6 +260,7 @@ function soukessou_save_facility_meta($post_id)
   }
 
   update_post_meta($post_id, 'facility_message_text', $message_text);
+  update_post_meta($post_id, 'facility_message_person_name', $message_person_name);
 
   if ($gallery) {
     update_post_meta($post_id, 'facility_gallery', $gallery);

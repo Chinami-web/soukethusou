@@ -3,11 +3,13 @@
 $post_type = get_post_type();
 $post_type_data = get_post_type_object($post_type);
 $post_type_label = $post_type_data->labels->name;
+$categories = get_the_category();
+$category_label = !empty($categories) ? $categories[0]->name : $post_type_label;
 ?>
 <main class="main">
   <section class="post-article">
     <div class="post-article__inner container">
-      <h1 class="post-article__title"><?php echo $post_type_label; ?></h1>
+      <h1 class="post-article__title"><?php echo esc_html($category_label); ?></h1>
       <!-- パンくずリスト -->
       <?php if (function_exists('bcn_display')) : ?>
         <div class="post-article__breadcrumb breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">

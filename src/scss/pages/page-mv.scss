@@ -1,0 +1,55 @@
+@use 'foundation'as *;
+.page-mv {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.page-mv__inner {
+    display: grid;
+    grid-template-columns: 1fr 0.45fr;
+    @include mq("md"){
+        grid-template-columns: 1fr 0.32fr;
+
+    }
+}
+
+
+.page-mv__image {
+    width: 100%;
+}
+
+
+.page-mv__image img {
+    aspect-ratio: 288/160;
+    object-fit: cover;
+    height: auto;
+    @include mq("md"){
+        aspect-ratio: 1465/722;
+    }
+}
+
+.page-mv__title {
+    display: flex;
+    align-items: flex-end;
+    padding-right: prem(20);
+    @include mq("md"){
+        padding-left: prem(58);
+
+        padding-right: prem(65);
+    }
+}
+
+.page-mv__title-text {
+    writing-mode: vertical-rl;
+    font-size: prem(20);
+    letter-spacing: 0.4em;
+    font-weight: 400;
+    @include mq("md"){
+        font-size: prem(40);
+    }
+
+
+}
+
+

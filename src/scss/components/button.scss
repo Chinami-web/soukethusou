@@ -33,7 +33,10 @@
   right: 24px;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
-
+  @include mq("md"){
+    width: prem(58);
+    height: prem(58);
+  }
 }
 .button-solid::after{
   background-image: url(../images/common/arrow-solid.png);
@@ -103,8 +106,13 @@
   font-size: prem(15);
   padding-block: prem(30);
   @include mq("md"){
-    font-size: prem(15);
+    font-size: prem(25);
       width: prem(739);
       padding-block: prem(62);
+  }
+}
+.button--wide::after{
+  @include mq("md"){
+    right: 49px;
   }
 }
