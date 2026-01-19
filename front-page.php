@@ -82,18 +82,19 @@
     </div>
   </div>
 
-  <section class="top-about">
+  <section class="about">
     <div class="l-inner">
-      <div class="top-about__container">
-        <div class="top-about__main-title top-about__vertical-title vertical-title heisei">
+      <div class="about__container">
+        <div class="about__main-title about__vertical-title vertical-title heisei">
           想結葬のおもい
         </div>
-        <div class="top-about__sub-title heisei">
-          <span class="top-about__main-border main-border"></span>
+        <div class="about__sub-title heisei">
+          <span class="about__main-border main-border"></span>
           手と手でつなぐ、<br>
           想いのかたち「想結葬」
         </div>
-        <p class="top-about__text">
+        <div class="about__text-wrapper">
+        <p class="about__text">
           大切な人とのお別れの瞬間、言葉では伝えきれない想いがあります。<br>
           東上セレモは、その想いをかたちにし、心からの「ありがとう」を届けるお手伝いをします。<br>
           手を取り合い、寄り添う温もりが、最期の時間を優しく包み込みます。<br>
@@ -101,7 +102,8 @@
           心を込めたサポートをお約束します。<br>
           故人への敬意と家族の想いを大切にし、一つひとつの葬儀をかけがえのない時間へと紡いでいきます。<br>
         </p>
-        <div class="top-about__btn">
+        </div>
+        <div class="about__btn">
           <a class="button button-solid" href="#">
             <span></span>
             <span></span>
@@ -109,8 +111,8 @@
           </a>
         </div>
       </div>
-      <div class="top-about__image-wrapper">
-        <figure class="top-about__image js-fade-up">
+      <div class="about__image-wrapper">
+        <figure class="about__image js-fade-up">
           <picture>
             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/top/image01.png" media="(min-width:768px)">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/image01SP.png" alt="想結葬の葬儀の画像"
@@ -265,7 +267,7 @@
         </div>
         <div class="top-philosophy__container-image">
           <figure class="top-philosophy__container-image-img js-fade-up">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/concept01.png" alt="想結葬の画像"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/concept01.png" alt="想結葬のコンセプト"
               width="764"
               height="644"
               loading="lazy">
@@ -371,13 +373,15 @@
                     一日葬プラン
                   </h3>
                   <p class="plan-card__title-description">
-                    通夜をせず、告別式と火葬を一日で行うお葬式 
+                    通夜をせず、告別式と火葬を一日で行うお葬式
                   </p>
                   <div class="plan-card__title-price heisei">
-                    492,000円
-                    <span>
-                      (税別)
-                    </span>
+                    <p>
+                      492,000円
+                      <span>
+                        (税別)
+                      </span>
+                    </p>
                   </div>
                 </div>
                 <div class="plan-card__body">
@@ -411,7 +415,7 @@
                   <div class="plan-card__drawer-content">
                     <ul class="plan-card__icon-list">
                       <?php
-                      $icon_numbers = [1, 2, 4, 5, 6, 7, 9, 12, 14, 16, 17, 23, 25, 26, 28, 31, 32, 33, 34, 35];
+                      $icon_numbers = [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
                       foreach ($icon_numbers as $i): ?>
                         <li class="plan-card__icon-item">
                           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
@@ -443,9 +447,12 @@
                     多くの方々と故人を偲ぶ伝統的な葬儀
                   </p>
                   <div class="plan-card__title-price heisei">
-                    1,293,000円 <span>
-                      (税別)
-                    </span>
+                    <p>
+                      1,293,000円
+                      <span>
+                        (税別)
+                      </span>
+                    </p>
                   </div>
                 </div>
                 <div class="plan-card__body">
@@ -477,7 +484,7 @@
                   </div>
                   <div class="plan-card__drawer-content">
                     <ul class="plan-card__icon-list">
-                      <?php for ($i = 1; $i <= 23; $i++): ?>
+                      <?php for ($i = 1; $i <= 27; $i++): ?>
                         <li class="plan-card__icon-item">
                           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
                         </li>
@@ -508,9 +515,12 @@
                     火葬だけのシンプルなお見送り
                   </p>
                   <div class="plan-card__title-price heisei">
-                    222,000円 <span>
-                      (税別)
-                    </span>
+                    <p>
+                      222,000円
+                      <span>
+                        (税別)
+                      </span>
+                    </p>
                   </div>
                 </div>
                 <div class="plan-card__body">
@@ -738,7 +748,7 @@
                 }
                 ?>
                 <li class="main-card__item splide__slide" id="<?php echo esc_attr($slide_id); ?>" data-original-id="<?php echo esc_attr($slide_id); ?>">
-                  <a class="main-card__link sp-only" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr(get_the_title() . 'の詳細ページへ'); ?>"></a>
+                  <a class="main-card__link" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr(get_the_title() . 'の詳細ページへ'); ?>"></a>
                   <div class="main-card__content">
                     <figure class="main-card__hero">
                       <img src="<?php echo esc_url($hero); ?>" alt="<?php echo esc_attr($hero_alt); ?>" loading="lazy">
@@ -776,12 +786,12 @@
                       <?php endif; ?>
                     </div>
                     <div class="main-card__button-wrapper pc-only">
-                      <a class="button button-solid" href="<?php the_permalink(); ?>">
+                      <div class="button button-solid" href="<?php the_permalink(); ?>">
                         <span></span>
                         <span></span>
                         ホール詳細
 
-                      </a>
+                      </div>
                     </div>
                   </div>
                   <p class="main-card__label">
@@ -1249,27 +1259,34 @@
       </button>
       <div class="movie-modal__video-wrapper">
         <video id="modal-video" controls playsinline>
-          <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/mv.mp4" type="video/mp4">
+          <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/mv.mp4" type="video/mp4" autoplay>
         </video>
+        <span class="movie-modal__thumbnail-play movie-modal__thumbnail-play--main">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play.png" alt="play movie" width="141" height="141">
+        </span>
       </div>
       <ul class="movie-modal__thumbnails">
-        <li class="movie-modal__thumbnail is-active" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4">
-          <div class="movie-modal__thumbnail-overlay">
-            <span class="movie-modal__thumbnail-title">「祖母の手」篇</span>
-            <span class="movie-modal__thumbnail-play">▶</span>
+        <li class="movie-modal__thumbnail is-active" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg">
+          <div class="movie-modal__thumbnail-content">
+            <video muted playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg">
+              <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4" type="video/mp4">
+            </video>
+            <span class="movie-modal__thumbnail-play">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play-w.png" alt="play movie" width="141" height="141">
+            </span>
           </div>
-          <video muted playsinline>
-            <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/mv.mp4" type="video/mp4">
-          </video>
+          <span class="movie-modal__thumbnail-title">「祖母の手」篇</span>
         </li>
-        <li class="movie-modal__thumbnail" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4">
-          <div class="movie-modal__thumbnail-overlay">
-            <span class="movie-modal__thumbnail-title">「もう一度孫から」篇</span>
-            <span class="movie-modal__thumbnail-play">▶</span>
+        <li class="movie-modal__thumbnail" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg">
+          <div class="movie-modal__thumbnail-content">
+            <video muted playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg">
+              <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" type="video/mp4">
+            </video>
+            <span class="movie-modal__thumbnail-play">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play-w.png" alt="play movie" width="141" height="141">
+            </span>
           </div>
-          <video muted playsinline>
-            <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" type="video/mp4">
-          </video>
+          <span class="movie-modal__thumbnail-title">「もう一度孫から」篇</span>
         </li>
       </ul>
     </div>

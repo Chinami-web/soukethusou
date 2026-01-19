@@ -118,6 +118,10 @@
         font-size: prem(15);
     }
 }
+.top-post-news__link:hover .top-post-news__date {
+    color: $color-theme;
+}
+
 
 .top-post-news__title {
     font-size: prem(15);
@@ -128,6 +132,9 @@
     transition: color 0.3s ease;
     grid-area: title;
     letter-spacing: 0.08em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include mq("md") {
         font-size: prem(15);
@@ -137,6 +144,7 @@
 .top-post-news__link:hover .top-post-news__title {
     color: $color-theme;
 }
+
 
 .top-post-news__btn {
     display: flex;

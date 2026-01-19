@@ -9,6 +9,7 @@
     position: relative;
     padding-bottom: prem(5);
     transition: z-index 0.3s;
+    padding-bottom: prem(60);
 
 @include mq("md"){
     padding-bottom: prem(145);
@@ -132,11 +133,11 @@
 }
 .plan-card__title-price p span {
     font-size: prem(16);
+    color: $color-black;
 
 
     @include mq("md") {
         font-size: prem(19);
-        color: $color-black;
     }
 }
 
@@ -314,7 +315,7 @@
 .plan-card__icon-list {
     display: flex;
     flex-wrap: wrap;
-    gap: prem(5);
+    gap: prem(0);
     justify-content: center;
 
     @include mq("md") {
@@ -323,7 +324,7 @@
 }
 
 .plan-card__icon-item {
-    width: prem(65);
+    width: prem(54);
 
     @include mq("md") {
         width: prem(100);
@@ -387,12 +388,12 @@
     width: 80px;
     height: 80px;
     opacity: 1;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
     z-index: 4;
 }
 
 #plan-card-slider .splide__arrow:hover {
-    opacity: 0.8;
+    transition: scale 0.3s;
 }
 
 #plan-card-slider .splide__arrow svg {
@@ -410,8 +411,8 @@
     height: prem(31);
     @include mq("md") {
         left: prem(130);
-        width: prem(185);
-        height: prem(185);
+        width: prem(150);
+        height: prem(150);
     }
 }
 

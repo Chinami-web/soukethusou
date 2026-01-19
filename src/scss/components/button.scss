@@ -27,7 +27,7 @@
   background-size: contain;
   background-image: url(../images/common/arrow-circle.png);
   background-repeat: no-repeat;
-  width: prem(23);
+  width: prem(9);
   height: prem(15);
   top: 50%;
   right: 24px;
@@ -40,6 +40,10 @@
 }
 .button-solid::after{
   background-image: url(../images/common/arrow-solid.png);
+  @include mq("md"){
+    width: prem(23);
+    height: prem(15);
+  }
 }
 .button:hover::after {
   transform: translate(prem(5), -50%);

@@ -9,16 +9,16 @@
           </picture>
       </div>
       <div class="page-mv__title mincho">
-        <h1 class="page-mv__title-text">お問合せ</h1>
+        <h1 class="page-mv__title-text">お問合わせ</h1>
       </div>
     </div>
   </section>
   <div class="page-contact">
     <div class="l-inner">
       <div class="page-contact__title-wrapper page-title__wrapper">
-        <h2 class="page-contact__title-main page-title__main mincho">各種お問合せにつきましては、下記フォームより承っておりますので、お気軽にご相談ください。</h2>
+        <h2 class="page-contact__title-main page-title__main mincho">各種お問合わせにつきましては、下記フォームより承っておりますので、お気軽にご相談ください。</h2>
         <p class="page-contact__title-text-sub page-title__text-sub">この度は、東上セレモのホームページへアクセスいただき、誠にありがとうございます。<br>
-          ホームページよりお問合せいただくと「お葬式スムーズノート」をプレゼントいたします。</p>
+          ホームページよりお問合わせいただくと「お葬式スムーズノート」をプレゼントいたします。</p>
       </div>
       <div class="page-contact__description">
         【営業メールを送信される方へ】<br>こちらはお客様専用フォームです。弊社への営業メールは必ずこちらの <a href="#"> 営業専用フォーム（リンクはこちら）</a>からご提案ください。営業メールをこのフォームから送信されますと、弊社のお客様への返信、確認に時間のロスが発生いたしますためご協力をお願いいたします。
