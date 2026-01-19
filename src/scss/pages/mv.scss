@@ -309,7 +309,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     cursor: pointer;
 }
 
@@ -378,6 +378,7 @@
     justify-content: center;
     list-style: none;
     padding: 0;
+    background-color: #000;
 }
 
 .movie-modal__thumbnail {
@@ -386,8 +387,6 @@
     aspect-ratio: 16/9;
     position: relative;
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s;
     border: 2px solid transparent;
 
     &.is-active {
@@ -407,33 +406,48 @@
     }
 }
 
-.movie-modal__thumbnail-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    pointer-events: none;
-    z-index: 2;
+.movie-modal__thumbnail-content {
+    position: relative;
 }
-
 .movie-modal__thumbnail-title {
-    font-size: prem(14);
+    font-size: prem(18);
+    text-align: center;
+    color: $color-white;
+
     margin-bottom: prem(10);
     font-weight: bold;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
 .movie-modal__thumbnail-play {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: prem(10) 0 prem(10) prem(16);
-    border-color: transparent transparent transparent #ffffff;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+        width: prem(50);
+        height: prem(56);
+        object-fit: contain;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+}
+.movie-modal__thumbnail-play--main{
+    width: prem(50);
+    height: prem(56);
+@include mq("md"){
+    width: prem(141);
+    height: prem(141);
+}
+}
+.movie-modal__thumbnail-play img{
+    aspect-ratio: 50/56;
+    object-fit: cover;
+    height: auto;
+
+}
+.movie-modal__thumbnail-play--main img{
+        aspect-ratio: 141/141;
 }
