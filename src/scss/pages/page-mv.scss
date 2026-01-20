@@ -3,6 +3,10 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    @include mq("md"){
+        margin-top: prem(149);
+        
+    }
 }
 
 .page-mv__inner {

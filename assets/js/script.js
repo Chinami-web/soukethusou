@@ -93,8 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       if (currentScrollY <= scrollThreshold || currentScrollY <= headerMvBottom) {
-        header.classList.remove('is-visible');
-        header.classList.remove('is-hidden');
+        if (!headerMvSection) {
+          header.classList.add('is-visible');
+          header.classList.remove('is-hidden');
+        } else {
+          header.classList.remove('is-visible');
+          header.classList.remove('is-hidden');
+        }
         lastScrollY = currentScrollY;
         return;
       }
@@ -645,7 +650,6 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           type: 'loop',
           speed: 800,
-          autoplay: true,
           interval: 4000,
           rewind: true,
           arrows: true,
@@ -1012,6 +1016,30 @@ jQuery(function ($) {
         $video.find('source').attr('src', src);
         $video[0].load();
         $video[0].play();
+    });
+
+    // Aboutページなどからのモーダルオープン
+    $('.js-open-movie-modal').on('click', function() {
+        const src = $(this).data('movie-src');
+        if (!src) return;
+
+        $modal.addClass('is-open');
+        $modal.animate({ opacity: 1 }, 300);
+
+        // 動画をセット
+        $video.find('source').attr('src', src);
+        $video[0].load();
+        $video[0].play();
+
+        // サムネイルのアクティブ状態を同期
+        $thumbnails.removeClass('is-active');
+        $thumbnails.each(function() {
+            // URLの一部が一致するか確認
+            const thumbSrc = $(this).data('src');
+            if (thumbSrc && src.indexOf(thumbSrc.split('/').pop()) !== -1) {
+                $(this).addClass('is-active');
+            }
+        });
     });
   });
 

@@ -1,0 +1,75 @@
+@use 'foundation'as *;
+
+.about-movie__container {
+    margin-top: prem(99);
+
+    @include mq("md"){
+        margin-top: prem(159);
+    }
+
+}
+.about-movie__title-main {
+    text-align: center;
+    font-size: prem(17);
+    font-weight: 400;
+    color: $color-theme;
+
+    @include mq("md"){
+        font-size: prem(20);
+    }
+}
+
+.about-movie__title-en {
+    font-size: prem(20);
+    line-height: 1;
+    @include mq("md"){
+        display: block;
+        color: $color-black;
+        font-size: prem(32);
+
+    }
+
+
+}
+.about-movie__image {
+    position: relative;
+}
+.about-movie__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: prem(20);
+    margin-top: prem(40);
+    @include mq("md"){
+        margin-top: prem(85);
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: prem(991);
+        margin-inline: auto;
+    }
+}
+.about-movie__image-play {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: prem(116);
+    height: prem(116);
+}
+.about-movie__image-title{
+    background-color: $color-white;
+    text-align: center;
+    font-size: prem(17);
+    border-radius: 0px 0px 15px 15px;
+    min-height: prem(62);
+
+    display: block;
+    @include mq("md"){
+        font-size: prem(20);
+        min-height: prem(62);
+
+    }
+
+
+}
+

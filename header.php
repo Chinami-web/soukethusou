@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <div id="page" class="site">
-    <header class="header" id="header">
+    <header class="header<?php echo !is_front_page() ? ' is-visible' : ''; ?>" id="header">
       <div class="header__logo pc-only">
         <a href="<?php echo esc_url(home_url('/')); ?>">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-w02.png" alt="想結葬">

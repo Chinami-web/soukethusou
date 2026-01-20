@@ -3,7 +3,8 @@
 .main-card {
   position: relative;
   padding-bottom: prem(15);
-  @include mq("md"){
+
+  @include mq("md") {
     padding-bottom: prem(56);
   }
 }
@@ -28,6 +29,7 @@
   border-radius: 10px 0 10px 10px;
   border: 1px solid $color-theme;
   position: relative;
+
   @include mq("md") {
     border-radius: 20px 0 20px 20px;
 
@@ -47,7 +49,8 @@
   height: 10px;
   border-radius: 0 0 10px 10px;
   background-color: $color-theme;
-  @include mq("md"){
+
+  @include mq("md") {
     height: 20px;
     border-radius: 0 0 40px 40px;
   }
@@ -62,9 +65,6 @@
   z-index: 1;
   text-decoration: none;
   display: block;
-  @include mq("md") {
-    display: none;
-  }
 }
 
 .main-card__content {
@@ -73,7 +73,8 @@
   gap: prem(10);
   height: 100%;
   flex: 1;
-  @include mq("md"){
+
+  @include mq("md") {
     gap: prem(14);
   }
 }
@@ -118,7 +119,8 @@
   display: flex;
   align-items: center;
   gap: prem(5);
-  @include mq("md"){
+
+  @include mq("md") {
     gap: prem(8);
   }
 }
@@ -127,7 +129,8 @@
   font-size: prem(9);
   line-height: 1;
   color: $color-theme;
-  @include mq("md"){
+
+  @include mq("md") {
     font-size: prem(14);
   }
 }
@@ -146,14 +149,10 @@
 }
 
 .main-card__tags {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: prem(3);
-
-  @include mq("md") {
   display: flex;
   flex-wrap: wrap;
   gap: prem(5);
+  @include mq("md"){
     gap: prem(14);
   }
 }
@@ -168,10 +167,10 @@ gap: prem(3);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  border-radius: 20px;
+  padding: prem(8) prem(12);
 
   @include mq("md") {
-    padding: prem(8) prem(12);
     font-size: prem(15);
   }
 }
@@ -208,6 +207,7 @@ gap: prem(3);
   font-weight: 300;
   z-index: 2;
   gap: prem(3);
+
   @include mq("md") {
     gap: prem(6);
     letter-spacing: 0.3em;
@@ -219,7 +219,8 @@ gap: prem(3);
 .main-card__label-mark {
   font-size: prem(7);
   line-height: 1;
-  @include mq("md"){
+
+  @include mq("md") {
     font-size: prem(12);
   }
 }
@@ -246,6 +247,7 @@ gap: prem(3);
   display: flex;
   transition: transform 0.3s ease;
 }
+
 #main-card-slider .splide__slide:hover {
   transform: scale(1.03);
 }
