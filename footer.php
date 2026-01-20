@@ -61,9 +61,6 @@
                 <a href="#">葬祭ディレクター</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">スタッフ紹介</a>
-              </li>
-              <li class="footer-nav__item">
                 <a href="#">地域連携</a>
               </li>
             </ul>

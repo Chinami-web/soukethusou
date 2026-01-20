@@ -1691,11 +1691,6 @@ a {
   line-height: 2;
 }
 
-.facility-map__container > .plan-card__title-description {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
 .plan-card__title-price {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -2288,6 +2283,17 @@ a {
   width: 7.7333333333rem;
 }
 
+.about-movie__image-title {
+  background-color: #fff;
+  border-radius: 0px 0px 15px 15px;
+  display: block;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  min-height: 61.999px;
+  min-height: 4.1333333333rem;
+  text-align: center;
+}
+
 .about-philosophy__container {
   align-items: center;
   display: flex;
@@ -2306,6 +2312,10 @@ a {
   padding-bottom: 6.1333333333rem;
   padding-top: 54px;
   padding-top: 3.6rem;
+  position: relative;
+}
+
+.about__page {
   position: relative;
 }
 
@@ -2340,6 +2350,20 @@ a {
   z-index: -1;
 }
 
+.about.about__page::after {
+  background: linear-gradient(180deg, #ffffff 0%, #e9e2e2 100%);
+  bottom: 0;
+  content: "";
+  height: 30%;
+  left: 0;
+  position: absolute;
+  right: auto;
+  right: initial;
+  top: auto;
+  top: initial;
+  width: 100%;
+}
+
 .about__container {
   display: grid;
   grid-template-areas: "main-title sub-title" "main-title text" "main-title btn";
@@ -2354,8 +2378,21 @@ a {
   grid-area: image;
 }
 
+.page-about-director__philosophy-list-item > .about__images {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .about__images {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 2;
+}
+
 .top-philosophy__container > .about__images {
   -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   -ms-grid-column: 1;
 }
 
@@ -2407,6 +2444,16 @@ a {
 
 .about__page .about__container > .about__text-wrapper {
   -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item > .about__text-wrapper {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .about__text-wrapper {
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
 }
 
@@ -2501,6 +2548,29 @@ a {
   position: relative;
   text-align: center;
   z-index: -1;
+}
+
+.about__page {
+  position: relative;
+}
+
+.about.about__page::before {
+  background-image: url(../images/common/ribon-w.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: -79.999px;
+  bottom: -5.3333333333rem;
+  content: "";
+  height: 652px;
+  height: 43.4666666667rem;
+  left: auto;
+  left: initial;
+  position: absolute;
+  right: -100px;
+  right: -6.6666666667rem;
+  width: 968.999px;
+  width: 64.6rem;
+  z-index: 0;
 }
 
 .about__page .about__main-title {
@@ -3244,6 +3314,476 @@ a {
 
 .movie-modal__thumbnail-play--main img {
   aspect-ratio: 141/141;
+}
+
+.page-about-commitment__container {
+  display: grid;
+  grid-template-areas: "container01" "container02" "container03" "container04" "container05" "container06" "container07";
+}
+
+.page-about-commitment__container01 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: container01;
+}
+
+.page-about-commitment__container02 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: container02;
+}
+
+.page-about-commitment__container03 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: container03;
+}
+
+.page-about-commitment__container04 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: container04;
+}
+
+.page-about-commitment__container05 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: container05;
+}
+
+.page-about-commitment__container06 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: container06;
+}
+
+.page-about-commitment__container07 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: container07;
+}
+
+.page-about-commitment__container02,
+.page-about-commitment__container03,
+.page-about-commitment__container05,
+.page-about-commitment__container06,
+.page-about-commitment__container07 {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-about-commitment__container02,
+.page-about-commitment__container03,
+.page-about-commitment__container05,
+.page-about-commitment__container06,
+.page-about-commitment__container07 {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.page-about-commitment__container04 {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-about-commitment__container01 .vertical-border-title .vertical-border-title__single-border {
+  display: none;
+}
+
+.page-about-commitment__container01 .vertical-border-title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 7.999px;
+  padding-bottom: 0.5333333333rem;
+  writing-mode: horizontal-tb;
+}
+
+.page-about-commitment__container01 .main-border {
+  bottom: 0;
+  left: 0;
+  top: auto;
+  top: initial;
+}
+
+.page-about-commitment__container01-text {
+  align-items: flex-end;
+  display: flex;
+  margin-top: 19.999px;
+  margin-top: 1.3333333333rem;
+}
+
+.page-about-commitment__container-image {
+  max-width: 100%;
+  width: 100%;
+}
+
+.page-about-commitment__container-image img {
+  width: 100%;
+}
+
+.page-about-commitment__container-text-title h3 {
+  font-size: 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.page-about-director .l-inner {
+  display: flex;
+}
+
+.page-about-director__container-title {
+  font-size: 19.999px;
+  font-size: 1.3333333333rem;
+  text-align: center;
+}
+
+.page-about-director__container-text {
+  margin-top: 24px;
+  margin-top: 1.6rem;
+}
+
+.page-about-director__list-title {
+  color: #957B80;
+  font-size: 19.999px;
+  font-size: 1.3333333333rem;
+  line-height: 1.72;
+  margin-top: 24px;
+  margin-top: 1.6rem;
+}
+
+.page-about-director__list-title span {
+  color: #000;
+  display: block;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+}
+
+.page-about-director__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  gap: 16px;
+  gap: 1.0666666667rem;
+  margin-top: 10px;
+  margin-top: 0.6666666667rem;
+}
+
+.page-about-director__list-item {
+  background-color: #957B80;
+  color: #fff;
+  font-family: "Sawarabi Mincho", sans-serif;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  padding: 10px 16px;
+  padding: 0.6666666667rem 1.0666666667rem;
+}
+
+.page-about-director__philosophy {
+  padding-top: 16px;
+  padding-top: 1.0666666667rem;
+}
+
+.page-about-director__philosophy-list {
+  border-bottom: 1px solid #957B80;
+  display: flex;
+  flex-direction: column;
+  gap: 76.999px;
+  gap: 5.1333333333rem;
+  margin-top: 40px;
+  margin-top: 2.6666666667rem;
+  padding-bottom: 40px;
+  padding-bottom: 2.6666666667rem;
+}
+
+.page-about-director__philosophy-list-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-column-gap: 2.6666666667rem;
+  -moz-column-gap: 2.6666666667rem;
+       column-gap: 2.6666666667rem;
+  grid-template-areas: "image label" "image name" "image catch" "image text" "image button";
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) {
+  grid-template-areas: "label image" "name image" "catch image" "text image" "button image";
+  grid-template-columns: 1fr 1.2fr;
+}
+.page-about-director__philosophy-list-item:nth-child(even) .page-about-director__philosophy-list-item-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-about-director__philosophy-list-item-image {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: image;
+  width: 100%;
+}
+
+.page-about-director__philosophy-list-item > .page-about-director__philosophy-list-item-image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .page-about-director__philosophy-list-item-image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 2;
+}
+
+.top-philosophy__container > .page-about-director__philosophy-list-item-image {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item-image img {
+  aspect-ratio: 583/389;
+  -o-object-fit: cover;
+  height: auto;
+     object-fit: cover;
+}
+
+.page-about-director__philosophy-list-item-label {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: label;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .page-about-director__philosophy-list-item-label {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.comparison__content > .page-about-director__philosophy-list-item-label {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item-name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  font-size: 19.999px;
+  font-size: 1.3333333333rem;
+  grid-area: name;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .page-about-director__philosophy-list-item-name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item-catch {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  grid-area: catch;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .page-about-director__philosophy-list-item-catch {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item-text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  font-size: 15px;
+  font-size: 1rem;
+  grid-area: text;
+  letter-spacing: 0.08em;
+  line-height: 2;
+}
+
+.about__page .about__container > .page-about-director__philosophy-list-item-text {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item > .page-about-director__philosophy-list-item-text {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .page-about-director__philosophy-list-item-text {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+}
+
+.top-philosophy__container > .page-about-director__philosophy-list-item-text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item-button {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: button;
+  margin-top: 24px;
+  margin-top: 1.6rem;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .page-about-director__philosophy-list-item-button {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+
+.facility-map__container > .page-about-director__philosophy-list-item-button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__container-image-wrapper {
+  margin-top: 40px;
+  margin-top: 2.6666666667rem;
+}
+
+.page-about-director__container-image-wrapper img {
+  aspect-ratio: 390/360;
+  -o-object-fit: cover;
+  height: auto;
+     object-fit: cover;
+}
+
+.page-about-director__container-image-title {
+  color: #957B80;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  white-space: nowrap;
+}
+
+.page-about-director__container-image-title span {
+  color: #000;
+  display: block;
+  font-size: 13.999px;
+  font-size: 0.9333333333rem;
+  line-height: 1.2;
+  position: relative;
+  text-align: right;
+}
+
+.page-about-director__container-image-title span::before {
+  background-color: #957B80;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page-about-director__container-image-pyramid {
+  margin: 0 calc(50% - 50vw);
+  padding-bottom: 73px;
+  padding-bottom: 4.8666666667rem;
+}
+
+.page-about-director__container-image-pyramid img {
+  width: 100%;
+}
+
+.page-about-local {
+  border-top: 1px solid #957B80;
+}
+
+.page-about-local__title {
+  color: #957B80;
+  font-size: 19.999px;
+  font-size: 1.3333333333rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.page-about-local__description {
+  color: #000;
+  font-size: 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 2;
+  margin-top: 10px;
+  margin-top: 0.6666666667rem;
+}
+
+.page-about-local__list-wrapper {
+  margin-top: 40px;
+  margin-top: 2.6666666667rem;
+}
+
+.page-about-local__list-title {
+  border-bottom: 1px solid #957B80;
+  border-top: 1px solid #957B80;
+  color: #957B80;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  font-weight: 400;
+  line-height: 1.65;
+  padding-bottom: 30px;
+  padding-bottom: 2rem;
+  padding-top: 30px;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.page-about-local__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 24px;
+  margin-top: 1.6rem;
+}
+
+.page-about-local__item {
+  border: 1px solid #957B80;
+  border-radius: 20px;
+  position: relative;
+}
+
+.page-about-local__item::after {
+  background-color: #957B80;
+  border-radius: 0 0 20px 20px;
+  bottom: 0;
+  content: "";
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.page-about-local__item-image {
+  width: 100%;
+}
+
+.page-about-local__item-image img {
+  aspect-ratio: 553/369;
+  height: auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page-about-local__item-title {
+  color: #957B80;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.75;
+  margin-top: 19.999px;
+  margin-top: 1.3333333333rem;
+  text-align: center;
+}
+
+.page-about-local__item-text {
+  margin-top: 19.999px;
+  margin-top: 1.3333333333rem;
 }
 
 .page-contact__description {
@@ -4067,7 +4607,7 @@ a {
 
 .relation-parts__column {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 487px;
   grid-gap: 16px;
   gap: 16px;
   gap: 1.0666666667rem;
@@ -5427,13 +5967,23 @@ a {
 }
 
 .comparison__content-label {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   display: flex;
   flex-direction: column;
   grid-area: label;
   min-height: 93px;
   min-height: 6.2rem;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .comparison__content-label {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.comparison__content > .comparison__content-label {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
 }
 
 .comparison__content-label-text {
@@ -5549,11 +6099,6 @@ a {
   z-index: 10;
 }
 
-.facility-map__container > .facility-map__description-wrapper {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
 .facility-map__description {
   color: #957B80;
   font-size: 13.999px;
@@ -5572,13 +6117,23 @@ a {
 }
 
 .facility-map__button-wrapper {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
   grid-area: button;
   margin-top: 27px;
   margin-top: 1.8rem;
   text-align: center;
   z-index: 10;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .facility-map__button-wrapper {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+
+.facility-map__container > .facility-map__button-wrapper {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
 }
 
 .facility-map__selling-wrapper {
@@ -5782,6 +6337,16 @@ a {
   -ms-grid-column: 1;
 }
 
+.page-about-director__philosophy-list-item > .top-philosophy__container-text {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .top-philosophy__container-text {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+}
+
 .top-philosophy__container > .top-philosophy__container-text {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -5824,8 +6389,21 @@ a {
   margin-top: 4.2rem;
 }
 
+.page-about-director__philosophy-list-item > .top-philosophy__container-image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 1;
+}
+
+.page-about-director__philosophy-list-item:nth-child(even) > .top-philosophy__container-image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 2;
+}
+
 .top-philosophy__container > .top-philosophy__container-image {
   -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   -ms-grid-column: 1;
 }
 
@@ -6837,6 +7415,12 @@ a {
     max-width: 991px;
     max-width: 66.0666666667rem;
   }
+  .about-movie__image-title {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+    min-height: 61.999px;
+    min-height: 4.1333333333rem;
+  }
   .about-philosophy__container {
     align-items: center;
     flex-direction: row;
@@ -7181,6 +7765,236 @@ a {
     width: 141px;
     width: 9.4rem;
   }
+  .page-about-commitment__container {
+    grid-template-areas: "container01 container04" "container01 container05" "container02 container06" "container03 container07";
+    grid-template-columns: 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 94%;
+    -moz-column-gap: 2.8rem;
+         column-gap: 2.8rem;
+  }
+  .page-about-commitment__container02,
+  .page-about-commitment__container03,
+  .page-about-commitment__container05,
+  .page-about-commitment__container06,
+  .page-about-commitment__container07 {
+    border-bottom: 1px solid #957B80;
+    flex-direction: row;
+    gap: 48px;
+    gap: 3.2rem;
+    padding-bottom: 67.999px;
+    padding-bottom: 4.5333333333rem;
+    padding-top: 42px;
+    padding-top: 2.8rem;
+  }
+  .page-about-commitment__container02,
+  .page-about-commitment__container03,
+  .page-about-commitment__container05,
+  .page-about-commitment__container06,
+  .page-about-commitment__container07 {
+    flex-direction: row;
+  }
+  .page-about-commitment__container01 {
+    border-bottom: 1px solid #957B80;
+  }
+  .page-about-commitment__container04 {
+    display: flex;
+    flex-direction: column;
+  }
+  .page-about-commitment__container01-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    gap: 3.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 712px;
+    max-width: 47.4666666667rem;
+  }
+  .page-about-commitment__container01 .vertical-border-title .vertical-border-title__single-border {
+    display: block;
+    height: 259px;
+  }
+  .page-about-commitment__container01 .vertical-border-title {
+    writing-mode: vertical-rl;
+  }
+  .page-about-commitment__container01 .main-border {
+    display: none;
+  }
+  .page-about-commitment__container04-wrapper {
+    border-bottom: 1px solid #957B80;
+    border-top: 1px solid #957B80;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    gap: 3.2rem;
+    margin-top: 139.999px;
+    margin-top: 9.3333333333rem;
+    padding-bottom: 40px;
+    padding-bottom: 2.6666666667rem;
+    padding-top: 40px;
+    padding-top: 2.6666666667rem;
+  }
+  .page-about-commitment__container-image {
+    max-width: 262.999px;
+    max-width: 17.5333333333rem;
+  }
+  .page-about-commitment__container-image img {
+    aspect-ratio: 263/176;
+    -o-object-fit: cover;
+    height: auto;
+       object-fit: cover;
+  }
+  .page-about-commitment__container-text-title h3 {
+    font-size: 25px;
+    font-size: 1.6666666667rem;
+    letter-spacing: 0.1em;
+    line-height: 1.72;
+    text-align: left;
+  }
+  .page-about-director__container-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1177.999px;
+    max-width: 78.5333333333rem;
+  }
+  .page-about-director__container-title {
+    font-size: 30px;
+    font-size: 2rem;
+    margin-top: -100px;
+    margin-top: -6.6666666667rem;
+    text-align: left;
+  }
+  .page-about-director__container-text {
+    margin-top: 54px;
+    margin-top: 3.6rem;
+  }
+  .page-about-director__list-title {
+    font-size: 31.999px;
+    font-size: 2.1333333333rem;
+    margin-top: 30px;
+    margin-top: 2rem;
+  }
+  .page-about-director__list-title span {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+  }
+  .page-about-director__list {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 19.999px;
+    margin-top: 1.3333333333rem;
+    max-width: 994px;
+    max-width: 66.2666666667rem;
+    -moz-column-gap: 1.6666666667rem;
+         column-gap: 1.6666666667rem;
+    row-gap: 19.999px;
+    row-gap: 1.3333333333rem;
+  }
+  .page-about-director__list-item {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+    padding: 16px 19.999px;
+    padding: 1.0666666667rem 1.3333333333rem;
+  }
+  .page-about-director__philosophy {
+    padding-top: 166.999px;
+    padding-top: 11.1333333333rem;
+  }
+  .page-about-director__philosophy-list {
+    margin-top: 55px;
+    margin-top: 3.6666666667rem;
+    padding-bottom: 85.999px;
+    padding-bottom: 5.7333333333rem;
+  }
+  .page-about-director__philosophy-list-item-name {
+    font-size: 31.999px;
+    font-size: 2.1333333333rem;
+    letter-spacing: 0.15em;
+    line-height: 1.6;
+  }
+  .page-about-director__philosophy-list-item-catch {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+  }
+  .page-about-director__philosophy-list-item-text {
+    font-size: 16.999px;
+    font-size: 1.1333333333rem;
+  }
+  .page-about-director__philosophy-list-item-button {
+    margin-top: 19px;
+    margin-top: 1.2666666667rem;
+  }
+  .page-about-director__container-image-wrapper img {
+    aspect-ratio: 1045/662;
+    width: 96.3;
+  }
+  .page-about-director__container-image-title span::before {
+    width: 20%;
+  }
+  .page-about-director__container-image-pyramid {
+    margin: 0;
+    margin: initial;
+    margin-right: calc(58% - 50vw);
+    padding-bottom: 273px;
+    padding-bottom: 18.2rem;
+  }
+  .page-about-director__container-image-pyramid img {
+    aspect-ratio: 1671/971;
+    -o-object-fit: cover;
+    height: auto;
+       object-fit: cover;
+  }
+  .page-about-local__container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1294.999px;
+    max-width: 86.3333333333rem;
+  }
+  .page-about-local__title {
+    font-size: 31.999px;
+    font-size: 2.1333333333rem;
+    letter-spacing: 0.1em;
+    line-height: 1.72;
+    text-align: left;
+  }
+  .page-about-local__description {
+    font-size: 16.999px;
+    font-size: 1.1333333333rem;
+    letter-spacing: 0.08em;
+    line-height: 2.65;
+    margin-top: 58px;
+    margin-top: 3.8666666667rem;
+    max-width: 838.999px;
+    max-width: 55.9333333333rem;
+  }
+  .page-about-local__list-wrapper {
+    margin-top: 91px;
+    margin-top: 6.0666666667rem;
+  }
+  .page-about-local__list-title {
+    font-size: 30px;
+    font-size: 2rem;
+    line-height: 1.75;
+  }
+  .page-about-local__list {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    -moz-column-gap: 3.6rem;
+         column-gap: 3.6rem;
+    margin-top: 54px;
+    margin-top: 3.6rem;
+    row-gap: 51px;
+    row-gap: 3.4rem;
+  }
+  .page-about-local__item {
+    padding: 34px 34px 60px 34px;
+    padding: 2.2666666667rem 2.2666666667rem 4rem 2.2666666667rem;
+  }
+  .page-about-local__item-title {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+  }
   .page-contact {
     margin-left: auto;
     margin-right: auto;
@@ -7194,6 +8008,10 @@ a {
     font-size: 1.1333333333rem;
     letter-spacing: 0.12em;
     line-height: 2.65;
+  }
+  .page-mv {
+    margin-top: 148.999px;
+    margin-top: 9.9333333333rem;
   }
   .page-mv__inner {
     grid-template-columns: 1fr 0.32fr;
@@ -8368,6 +9186,57 @@ a {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
   }
+  .page-about-commitment__container01 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  .page-about-commitment__container02 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .page-about-commitment__container03 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  .page-about-commitment__container04 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .page-about-commitment__container05 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .page-about-commitment__container06 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .page-about-commitment__container07 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+  }
+  .page-about-director__philosophy-list-item-image {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 5;
+  }
+  .top-philosophy__container > .page-about-director__philosophy-list-item-image {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+  }
+  .about__page .about__container > .page-about-director__philosophy-list-item-text {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .top-philosophy__container > .page-about-director__philosophy-list-item-text {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .facility-map__container > .page-about-director__philosophy-list-item-button {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
   .top-info__container-01 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
@@ -8379,6 +9248,24 @@ a {
   }
   .top-info__container-03 {
     -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .facility-map__notion-wrapper {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .facility-map__container > .facility-map__button-wrapper {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .facility-map__selling-wrapper {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  .facility-map {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
     -ms-grid-column: 2;
   }
   .about__page .about__container > .top-philosophy__container-text {
@@ -8418,20 +9305,19 @@ a {
   }
 }
 
-@media screen and (min-width: 1000px){
-  .facility-hero {
-    min-height: 422px;
-  }
-  .facility-hero__image img {
-    aspect-ratio: 768/322;
-  }
-  .facility-hero__title-wrapper {
-    margin-top: 630px;
-    margin-top: 42rem;
-  }
-}
-
 @media screen and (min-width: 1400px){
+  .page-about-director__container-image-wrapper {
+    align-items: center;
+    display: flex;
+    margin-top: 118px;
+    margin-top: 7.8666666667rem;
+    position: relative;
+  }
+  .page-about-director__container-image-title {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+    transform: translate(-210px, 120px);
+  }
   .facility-hero {
     min-height: 760px;
   }
@@ -8448,6 +9334,35 @@ a {
     margin-top: -10rem;
     transform: translateX(-5%);
     width: 159%;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .page-about-director__container-image-title span {
+    font-size: 15px;
+    font-size: 1rem;
+    width: 400px;
+    width: 26.6666666667rem;
+  }
+  .facility-hero {
+    min-height: 422px;
+  }
+  .facility-hero__image img {
+    aspect-ratio: 768/322;
+  }
+  .facility-hero__title-wrapper {
+    margin-top: 630px;
+    margin-top: 42rem;
+  }
+}
+
+@media screen and (min-width: 1800px){
+  .page-about-director__container-image-title span {
+    width: 519px;
+    width: 34.6rem;
+  }
+  .page-about-director__container-image-title span::before {
+    width: 39%;
   }
 }
 /*# sourceMappingURL=style.css.map */

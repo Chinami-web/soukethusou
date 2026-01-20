@@ -1,0 +1,22 @@
+@use 'foundation'as *;
+.about-philosophy__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: prem(40);
+gap: prem(40);
+align-items: center;
+justify-content: center;
+
+    @include mq("md"){
+        margin-top: prem(35);
+        max-width: prem(1241);
+        flex-direction: row;
+        margin-inline: auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: prem(100);
+    }
+
+}
+
+

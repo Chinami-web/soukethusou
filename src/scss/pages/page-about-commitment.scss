@@ -1,0 +1,184 @@
+@use 'foundation'as *;
+
+.page-about-commitment {
+
+}
+
+.l-inner {
+
+}
+
+.page-about-commitment__container {
+    display: grid;
+    grid-template-areas:
+    "container01"
+    "container02"
+    "container03"
+    "container04"
+    "container05"
+    "container06"
+    "container07"
+    ;
+    @include mq("md"){
+        grid-template-areas:
+        "container01 container04"
+        "container01 container05"
+        "container02 container06"
+        "container03 container07"
+        ;
+        grid-template-columns: 1fr 1fr;
+        max-width: 94%;
+        margin-inline: auto;
+        column-gap: prem(42);
+    }
+}
+
+.page-about-commitment__container01 {
+    grid-area: container01;
+}
+.page-about-commitment__container02 {
+    grid-area: container02;
+}
+.page-about-commitment__container03 {
+    grid-area: container03;
+}
+.page-about-commitment__container04 {
+    grid-area: container04;
+}
+.page-about-commitment__container05 {
+    grid-area: container05;
+}
+.page-about-commitment__container06 {
+    grid-area: container06;
+}
+.page-about-commitment__container07 {
+    grid-area: container07;
+}
+
+.page-about-commitment__container02,
+.page-about-commitment__container03,
+.page-about-commitment__container05,
+.page-about-commitment__container06,
+.page-about-commitment__container07 {
+    display: flex;
+    flex-direction: column;
+    @include mq("md"){
+        flex-direction: row;
+        gap: prem(48);
+        padding-top: prem(42);
+        padding-bottom: prem(68);
+        border-bottom: 1px solid $color-theme;
+
+    }
+}
+.page-about-commitment__container02,
+.page-about-commitment__container03,
+.page-about-commitment__container05,
+.page-about-commitment__container06,
+.page-about-commitment__container07{
+    display: flex;
+    flex-direction: column-reverse;
+    @include mq("md"){
+        flex-direction: row;
+    }
+}
+.page-about-commitment__container01{
+    @include mq("md"){
+        border-bottom: 1px solid $color-theme;
+
+    }
+
+}
+.page-about-commitment__container04{
+    display: flex;
+    flex-direction: column;
+    @include mq("md"){
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.page-about-commitment__container01-wrapper{
+    @include mq("md"){
+        display: flex;
+        flex-direction: row;
+        max-width: prem(712);
+        margin-inline: auto;
+        gap: prem(48);
+    }
+
+}
+.page-about-commitment__container01 .vertical-border-title .vertical-border-title__single-border{
+    display: none;
+@include mq("md"){
+    height: 259px;
+    display: block;
+}
+}
+.page-about-commitment__container01 .vertical-border-title{
+    writing-mode: horizontal-tb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: prem(8);
+    @include mq("md"){
+        writing-mode: vertical-rl;
+    }
+}
+.page-about-commitment__container01 .main-border{
+    top:initial;
+    bottom: 0;
+    left: 0;
+@include mq("md"){
+    display: none;
+}
+}
+.page-about-commitment__container01-text{
+    margin-top: prem(20);
+    display: flex;
+    align-items:flex-end;
+}
+.page-about-commitment__container04-wrapper{
+    @include mq("md"){
+        display: flex;
+        flex-direction: row;
+        gap: prem(48);
+        margin-top: prem(140);
+        border-bottom: 1px solid $color-theme;
+        border-top: 1px solid $color-theme;
+        padding-top: prem(40);
+        padding-bottom: prem(40);
+
+
+    }
+}
+.page-about-commitment__container-image {
+    width: 100%;
+    max-width: 100%;
+    @include mq("md"){
+        max-width: prem(263);
+    }
+}
+.page-about-commitment__container-image img{
+    width: 100%;
+    @include mq("md"){
+        aspect-ratio: 263/176;
+        object-fit: cover;
+        height: auto;
+    }
+}
+.page-about-commitment__container-text-title h3{
+    font-size: prem(15);
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    font-weight:400;
+    text-align: center;
+    @include mq("md"){
+        text-align: left;
+        font-size: prem(25);
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+    }
+
+}
+

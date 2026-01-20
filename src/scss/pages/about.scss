@@ -1,0 +1,335 @@
+@use 'foundation'as *;
+
+.about {
+    padding-top: prem(54);
+    padding-bottom: prem(92);
+    border-bottom: 1px solid $color-theme;
+    position: relative;
+    overflow: hidden;
+
+    @include mq("md") {
+        padding-top: prem(180);
+        padding-bottom: prem(236);
+    }
+
+
+}
+.about__page{
+    position: relative;
+}
+
+.about::before,
+.about::after {
+    content: '';
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.about::before {
+    background-image: url(../images/common/bk01.png);
+    width: prem(109);
+    height: prem(374);
+    bottom: 5%;
+    left: 0;
+    z-index: -1;
+
+    @include mq("md") {
+        width: prem(424);
+        height: prem(1488);
+        bottom: 10%;
+        left: 0;
+    }
+}
+
+.about::after {
+    background-image: url(../images/common/bk02SP.png);
+    width: prem(123);
+    height: prem(331);
+    bottom: 15%;
+    right: -7%;
+    z-index: -1;
+
+    @include mq("md") {
+        background-image: url(../images/common/bk02.png);
+        width: prem(940);
+        height: prem(632);
+        top: 22%;
+        right: -115px;
+    }
+}
+.about.about__page::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, #ffffff 0%, #e9e2e2 100%);    bottom: 0;
+    left: 0;
+    right:initial;
+    top: initial;
+}
+
+.about__container {
+    display: grid;
+    grid-template-areas:
+        "main-title sub-title"
+        "main-title text"
+        "main-title btn"
+    ;
+    column-gap: prem(10);
+
+    @include mq("md") {
+        max-width: calc(100% - (950 / 1970 * 100%));
+        column-gap: prem(55);
+        margin-inline: auto;
+    }
+}
+
+
+
+.about__images {
+    grid-area: image;
+}
+
+.about__main-title {
+    grid-area: main-title;
+}
+
+.about__sub-title {
+    grid-area: sub-title;
+    font-size: prem(20);
+    padding-top: prem(25);
+    position: relative;
+    letter-spacing: 0.15em;
+    width: fit-content;
+    line-height: 1.6;
+
+    @include mq(md) {
+        width: 100%;
+        padding-top: prem(42);
+        line-height: 1.72;
+        font-size: prem(32);
+    }
+}
+
+.about__text-wrapper {
+    grid-area: text;
+    margin-top: prem(29);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: prem(20);
+
+    @include mq("md") {
+        gap: prem(40);
+        margin-top: prem(54);
+    }
+}
+.about__text--border{
+    padding-left: prem(36);
+    border-left: 2px solid $color-theme;
+
+}
+.about__text--border span{
+    display: block;
+    color: $color-theme;
+
+}
+
+.about__btn {
+    grid-area: btn;
+    margin-top: prem(30);
+
+    @include mq("md") {
+        margin-top: prem(80);
+    }
+}
+
+.about__image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: prem(74);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+
+    @include mq("md") {
+        margin-top: prem(230);
+    }
+}
+
+
+.about__image img {
+    object-fit: cover;
+    height: auto;
+
+    @include mq("md") {}
+}
+
+.about__main-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    border-top: 1px solid $color-theme;
+}
+
+.about__main-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 1px solid $color-theme;
+    border-radius: 100%;
+    background-color: $color-white;
+}
+
+.about__main-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 1px solid $color-theme;
+    border-radius: 100%;
+    background-color: $color-white;
+}
+
+.about__vertical-title {
+    color: #624349;
+    writing-mode: vertical-rl;
+    font-weight: $regular;
+    font-size: prem(15);
+    line-height: 1.6;
+    letter-spacing: 14px;
+
+    @include mq("md") {
+        font-size: prem(25);
+    }
+}
+
+.top-plan__btn {
+    z-index: -1;
+    position: relative;
+    text-align: center;
+    margin-top: prem(40);
+
+    @include mq("md") {
+        margin-top: prem(111);
+    }
+}
+
+
+// アバウトページ
+
+.about__page{
+    position: relative;
+}
+.about.about__page::before{
+        content: '';
+        position: absolute;
+        background-image: url(../images/common/ribon-w.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width:prem(969);
+        height:prem(652);
+        bottom: prem(-80);
+        left: initial;
+        right: prem(-100);
+        z-index: 0;
+}
+
+.about__page .about__main-title{
+    writing-mode: horizontal-tb;
+    color: $color-theme;
+    text-align: center;
+
+
+
+    @include mq("md"){
+
+        text-align: left;
+        writing-mode: vertical-rl;
+    }
+}
+.about__page .main-border{
+    margin-top: prem(10);
+    width: prem(232);
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+    @include mq("md")
+
+    {
+        width: 100%;
+        margin-top: prem(0);
+    }
+
+}
+.about__page .about__container {
+    grid-template-areas:
+    "main-title"
+    "sub-title"
+    "text"
+    "image"
+;
+    @include mq("md") {
+        grid-template-areas:
+            "main-title sub-title image"
+            "main-title text image"
+        ;
+        column-gap: prem(10);
+        max-width: calc(100% - (442 / 1970 * 100%));
+        width: 100vw;
+        margin-right: calc(50% - 50vw);
+    }
+}
+.about__page .about__sub-title{
+    text-align: center;
+    width: 100%;
+
+    @include mq("md"){
+        padding-top: prem(60);
+        margin-left: prem(103);
+
+        text-align: left;
+    }
+}
+
+.about__page .about__images{
+    margin-top: prem(24);
+    max-width: 70%;
+    margin-inline: auto;
+    @include mq("md"){
+        margin-top: prem(60);
+
+        max-width: 100%;
+        width: prem(770);
+        margin-inline: 0;
+        transform: translateX(-25%);
+
+    }
+
+}
+.about__page .about__text-wrapper{
+    @include mq("md"){
+        margin-top: prem(30);
+        gap: prem(44);
+
+        padding-left: prem(90);
+        width: prem(828);
+    }
+}
+.about__page .about__text{
+    @include mq("md"){
+        margin-right:auto;
+
+    }
+}
