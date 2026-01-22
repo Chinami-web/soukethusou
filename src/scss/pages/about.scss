@@ -16,6 +16,9 @@
 }
 .about__page{
     position: relative;
+    @include mq("md"){
+        padding-top: prem(280);
+    }
 }
 
 .about::before,
@@ -129,11 +132,19 @@
 .about__text--border{
     padding-left: prem(36);
     border-left: 2px solid $color-theme;
+    margin-top: prem(-16);
+
+
 
 }
 .about__text--border span{
     display: block;
     color: $color-theme;
+    font-size: prem(20);
+    font-family: $font-family-mincho;
+    line-height: 1.75;
+
+
 
 }
 
@@ -286,7 +297,7 @@
             "main-title text image"
         ;
         column-gap: prem(10);
-        max-width: calc(100% - (442 / 1970 * 100%));
+        max-width: calc(100% - (400 / 1970 * 100%));
         width: 100vw;
         margin-right: calc(50% - 50vw);
     }
@@ -320,7 +331,7 @@
 }
 .about__page .about__text-wrapper{
     @include mq("md"){
-        margin-top: prem(30);
+        margin-top: prem(60);
         gap: prem(44);
 
         padding-left: prem(90);

@@ -1,4 +1,4 @@
-﻿@use 'foundation' as *;
+@use 'foundation' as *;
 .top-gallery {
   margin-top: prem(76);
   padding-bottom: prem(50);
@@ -108,6 +108,7 @@
   height: prem(185);
   opacity: 1;
   transition: opacity 0.3s;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3499999940395355);
 }
 
 #gallery .splide__arrow:hover {
@@ -126,7 +127,6 @@
   left: prem(10);
   width: prem(31);
   height: prem(31);
-  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.3499999940395355);
 
   @include mq("md") {
     width: prem(185);
@@ -144,7 +144,6 @@
   right: prem(10);
   width: prem(42);
   height: prem(42);
-  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.3499999940395355);
 
   @include mq("md") {
     width: prem(185);

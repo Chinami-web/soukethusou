@@ -1,0 +1,12 @@
+@use 'foundation'as *;
+
+.page-faq{
+    padding-top: prem(40);
+    padding-bottom: prem(40);
+    @include mq("md"){
+        padding-top: prem(80);
+        padding-bottom: prem(80);
+        max-width: prem(1145);
+        margin-inline: auto;
+    }
+}

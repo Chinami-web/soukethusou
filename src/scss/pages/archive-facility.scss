@@ -1,0 +1,38 @@
+@use 'foundation'as *;
+
+.facility-grid {
+  padding: 80px 0 120px;
+}
+
+@include mq("md") {
+  .facility-grid {
+    padding: 40px 0 60px;
+  }
+}
+
+.facility-grid__list {
+  display: grid;
+  gap: 40px 30px;
+  grid-template-columns: 1fr;
+
+  @include mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+.facility-grid__list .main-card__item {
+  width: 100%;
+}
+
+.facility-grid__list .main-card__item {
+    @include mq("md") {
+    width: 100% !important;
+  }
+}
+
+.page-facility .facility-map {
+    @include mq("md") {
+    transform: unset;
+  }
+}

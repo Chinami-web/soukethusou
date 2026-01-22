@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/*
+ * 蜿りソn * https: //github.com/Andy-set-studio/modern-css-reset/blob/master/src/reset.css
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "DFPHSMincho";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/dfhsmincho-w3-winp-rksj-h.woff2") format("woff2"), url("../fonts/dfhsmincho-w3-winp-rksj-h.woff") format("woff");
+}
+/*****************************************
+ * 謨ｰ蛟､縺九ｉ蜊倅ｽ阪ｒ蜿悶ｊ髯､縺十n * 蜿りソn * https: //css-tricks.com/snippets/sass/
+******************************************/
+/*****************************************
+ * px竊池em縺ｮ險育ｮ予n * 蜿りソn * https: //webdou.net/sass-rem/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+/*****************************************
+ * vw縺ｮ險育ｮ予n * 蜿りソn * https://webdou.net/sass-vw/
+ * Sass縺ｧ縺ｯmath.div髢｢謨ｰ縺ｮ菴ｿ逕ｨ縺梧耳螂ｨ縺ｮ縺溘ａ縲√せ繝ｩ繝・す繝･(/)貍皮ｮ怜ｭ舌°繧牙､画峩
+******************************************/
+@media (max-width: 375px) {
+  html {
+    font-size: 4vw;
+  }
+}
+html {
+  font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 0.8021390374vw;
+  }
+}
+@media (min-width: 1870px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  position: relative;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  body {
+    line-height: 2.65;
+    font-size: 1.1333333333rem;
+  }
+}
+
+body.is-fixed {
+  overflow: hidden;
+}
+
+@media screen and (hover: hover) and (min-width: 768px) {
+  a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+.height-low {
+  line-height: 0.5666666667;
+}
+
+.mincho {
+  font-family: "Sawarabi Mincho", sans-serif;
+}
+
+.heisei {
+  font-family: "DFPHSMincho", sans-serif;
+}
+
+.pc-only {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .pc-only {
+    display: block;
+  }
+}
+
+.sp-only {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .sp-only {
+    display: none;
+  }
+}
+
+.faq-list {
+  margin-top: 2.6666666667rem;
+}
+@media screen and (min-width: 768px) {
+  .faq-list {
+    margin-top: 6.6666666667rem;
+  }
+}
+
+.faq-list__item {
+  position: relative;
+  padding-block: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__item {
+    padding-top: 2.6666666667rem;
+    padding-inline: 2rem;
+    padding-bottom: 4.2666666667rem;
+  }
+}
+
+.faq-list__border-bottom {
+  position: relative;
+  height: 1px;
+  list-style: none;
+}
+
+.faq-list__item .main-border:last-child {
+  top: initial;
+  bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__item .main-border:last-child {
+    bottom: 40px;
+  }
+}
+
+.faq-list__q-wrapper,
+.faq-list__a-wrapper {
+  display: flex;
+  gap: 0.6666666667rem;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__q-wrapper,
+.faq-list__a-wrapper {
+    gap: 1.3333333333rem;
+  }
+}
+
+.faq-list__a-wrapper {
+  margin-top: 1.3333333333rem;
+  align-items: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__a-wrapper {
+    margin-top: 1.4666666667rem;
+  }
+}
+
+.faq-list__q-wrapper {
+  align-items: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__q-wrapper {
+    align-items: center;
+  }
+}
+
+.faq-list__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 2.2666666667rem;
+  height: 2.2666666667rem;
+  border-radius: 50%;
+  font-family: "Sawarabi Mincho", sans-serif;
+  font-size: 1.3333333333rem;
+  line-height: 1;
+  background-color: #957B80;
+  color: #fff;
+  border: 2px solid #D1C2C5;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__label {
+    width: 3.6666666667rem;
+    height: 3.6666666667rem;
+    font-size: 2rem;
+  }
+}
+
+.faq-list__label-a {
+  background-color: #624349;
+}
+
+.faq-list__text {
+  font-size: 1.1333333333rem;
+  line-height: 1.7;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__text {
+    font-size: 1.5333333333rem;
+  }
+}
+
+.faq-list__text-q {
+  color: #957B80;
+  font-size: 1.1333333333rem;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__text-q {
+    font-size: 1.3333333333rem;
+  }
+}
+
+.faq-list__text-a {
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .faq-list__text-a {
+    padding-top: 0.8333333333rem;
+    line-height: 2.65;
+    font-size: 1.1333333333rem;
+  }
+}
+
+/*# sourceMappingURL=faq-list.css.map */

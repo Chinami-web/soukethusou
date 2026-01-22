@@ -831,7 +831,7 @@
     <div class="l-inner">
       <div class="section-title__wrapper comparison__title__wrapper">
         <h2 class="section-title section-title--big">
-          そのお葬式、<br class="sp-only">誰が寄り添いますか？
+          そのお葬式、<br class="sp-only">誰が寄り添います？
         </h2>
         <p class="section-title__text section-title__text--small">
           ネット仲介葬儀ではできない、<br class="sp-only">東上セレモの「ちがい」

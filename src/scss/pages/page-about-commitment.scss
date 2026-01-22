@@ -1,12 +1,14 @@
 @use 'foundation'as *;
 
 .page-about-commitment {
+    padding-bottom: prem(80);
+    @include mq("md"){
+        padding-bottom: prem(177);
+    }
+
 
 }
 
-.l-inner {
-
-}
 
 .page-about-commitment__container {
     display: grid;
@@ -27,7 +29,7 @@
         "container03 container07"
         ;
         grid-template-columns: 1fr 1fr;
-        max-width: 94%;
+        max-width: 91%;
         margin-inline: auto;
         column-gap: prem(42);
     }
@@ -84,6 +86,8 @@
 }
 .page-about-commitment__container01{
     @include mq("md"){
+        padding-left: prem(70);
+
         border-bottom: 1px solid $color-theme;
 
     }
@@ -104,14 +108,20 @@
         flex-direction: row;
         max-width: prem(712);
         margin-inline: auto;
-        gap: prem(48);
+        gap: prem(78);
     }
 
+}
+.page-about-commitment__container03,
+.page-about-commitment__container07{
+    @include mq("md"){
+        border-bottom:none;
+    }
 }
 .page-about-commitment__container01 .vertical-border-title .vertical-border-title__single-border{
     display: none;
 @include mq("md"){
-    height: 259px;
+    height: 229px;
     display: block;
 }
 }
@@ -123,6 +133,10 @@
     padding-bottom: prem(8);
     @include mq("md"){
         writing-mode: vertical-rl;
+        letter-spacing: 0.65em;
+        gap: prem(50);
+        padding-bottom: prem(0);
+
     }
 }
 .page-about-commitment__container01 .main-border{
@@ -139,15 +153,16 @@
     align-items:flex-end;
 }
 .page-about-commitment__container04-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
     @include mq("md"){
-        display: flex;
         flex-direction: row;
         gap: prem(48);
-        margin-top: prem(140);
+        margin-top: prem(115);
         border-bottom: 1px solid $color-theme;
         border-top: 1px solid $color-theme;
         padding-top: prem(40);
-        padding-bottom: prem(40);
+        padding-bottom: prem(70);
 
 
     }
@@ -161,13 +176,11 @@
 }
 .page-about-commitment__container-image img{
     width: 100%;
-    @include mq("md"){
         aspect-ratio: 263/176;
         object-fit: cover;
         height: auto;
     }
-}
-.page-about-commitment__container-text-title h3{
+.page-about-commitment__container-title{
     font-size: prem(15);
     line-height: 1.6;
     letter-spacing: 0.15em;
@@ -181,4 +194,6 @@
     }
 
 }
-
+.page-about-commitment__container-text p{
+    line-height: 1.94;
+}

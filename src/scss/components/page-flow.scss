@@ -1,0 +1,12 @@
+@use 'foundation'as *;
+
+.page-flow{
+    padding-top: prem(40);
+    padding-bottom: prem(40);
+    @include mq("md"){
+        max-width: prem(1150);
+        margin-inline: auto;
+        padding-top: prem(60);
+        padding-bottom: prem(80);
+    }
+}

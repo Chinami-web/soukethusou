@@ -2,16 +2,26 @@
     <div class="l-inner">
         <div class="relation-parts__inner">
             <div class="relation-parts__column">
-                <h3 class="relation-parts__heading mincho">お葬式の流れ</h3>
+                <h3 class="relation-parts__heading mincho">
+                    お葬式の流れ
+                    <span class="main-border"></span>
+                </h3>
+                <span class="relation-parts__text">想結葬の流れをご確認いただけます。</span>
                 <div class="relation-parts__flow-card">
+                    <a href="<?php echo get_permalink(get_page_by_path('flow')); ?>" class="relation-parts__flow-link">
                     <figure class="relation-parts__flow-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plan/image01.jpg" alt="お葬式の流れ" loading="lazy">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/flow.jpg" alt="お葬式の流れ" loading="lazy">
                     </figure>
                     <p class="relation-parts__flow-caption mincho">想結葬の流れ</p>
+                    </a>
                 </div>
             </div>
             <div class="relation-parts__column">
-                <h3 class="relation-parts__heading mincho">葬儀プラン</h3>
+                <h3 class="relation-parts__heading mincho">
+                    葬儀プラン
+                    <span class="main-border"></span>
+                </h3>
+                <span class="relation-parts__text">家族葬、一日葬、火葬式、一般葬など様々なご要望に対応。</span>
                 <div class="relation-parts__slider plan-card splide" id="relation-parts-slider">
                     <div class="splide__track">
                         <ul class="plan-card__list splide__list">
@@ -39,7 +49,7 @@
                                     <div class="plan-card__list">
                                         <ul class="plan-card__list-items">
                                             <li class="plan-card__list-item">
-                                            10名様前後までの家族、親族を想定
+                                                ご家族中心でゆったり見送るお葬式
                                             </li>
                                         </ul>
                                     </div>
@@ -61,17 +71,19 @@
                                         一日葬プラン
                                     </h4>
                                     <div class="plan-card__title-price heisei">
-                                        492,000円
-                                        <span>
-                                            (税別)
-                                        </span>
+                                        <p>
+                                            492,000円
+                                            <span>
+                                                (税別)
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="plan-card__body">
                                     <div class="plan-card__list">
                                         <ul class="plan-card__list-items">
                                             <li class="plan-card__list-item">
-                                                ご家族や親しい方々と落ち着いた雰囲気の中で、しっかりとお別れの時間をお過ごしいただけます。
+                                                通夜をせず、告別式と火葬を一日で行うお葬式
                                             </li>
                                         </ul>
                                     </div>
@@ -93,16 +105,19 @@
                                         一般葬プラン
                                     </h4>
                                     <div class="plan-card__title-price heisei">
-                                        1,293,000円 <span>
-                                            (税別)
-                                        </span>
+                                        <p>
+                                            1,293,000円
+                                            <span>
+                                                (税別)
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="plan-card__body">
                                     <div class="plan-card__list">
                                         <ul class="plan-card__list-items">
                                             <li class="plan-card__list-item">
-                                                通夜・告別式を通じて、伝統的な儀式として丁寧に故人をお見送りできます。
+                                                多くの方々と故人を偲ぶ伝統的な葬儀
                                             </li>
                                         </ul>
                                     </div>
@@ -124,22 +139,19 @@
                                         火葬式プラン
                                     </h4>
                                     <div class="plan-card__title-price heisei">
-                                        222,000円 <span>
-                                            (税別)
-                                        </span>
+                                        <p>
+                                            222,000円
+                                            <span>
+                                                (税別)
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="plan-card__body">
                                     <div class="plan-card__list">
                                         <ul class="plan-card__list-items">
                                             <li class="plan-card__list-item">
-                                                ごく親しい家族だけで、静かに故人との最期の時間をお過ごしいただけます。
-                                            </li>
-                                            <li class="plan-card__list-item">
-                                                費用やご家族の負担をできるだけ抑えたい方、参列を家族だけにしたい方に選ばれています。
-                                            </li>
-                                            <li class="plan-card__list-item">
-                                                儀式にこだわらない方でも、手続きを最小限にし、無理のない形でお別れいただけます。
+                                                火葬だけのシンプルなお見送り
                                             </li>
                                         </ul>
                                     </div>
@@ -156,4 +168,3 @@
         </div>
     </div>
 </section>
-

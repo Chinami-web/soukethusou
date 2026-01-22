@@ -3,13 +3,12 @@
     <section class="page-mv">
         <div class="page-mv__inner">
             <div class="page-mv__image">
-                <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/about/fv.jpg" media="(min-width:768px)">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/fvSP.jpg" alt="ページヘッダー画像">
-                </picture>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/fv.jpg" alt="ページヘッダー画像"
+                    width="1920"
+                    height="1080">
             </div>
             <div class="page-mv__title mincho">
-                <h1 class="page-mv__title-text">東上セレモの想結葬</h1>
+                <h1 class="page-mv__title-text">東上セレモの<br class="sp-only">想結葬</h1>
             </div>
         </div>
     </section>
@@ -61,7 +60,7 @@
                         それが、想結葬の根幹にある「結ぶ」という想いです。
                     </p>
                 </div>
-                <div class="about__images">
+                <div class="about__images pc-only">
                     <figure class="about__image js-fade-up">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/image01.png" alt="想結葬の葬儀の画像"
                             width="770"
@@ -88,7 +87,7 @@
                         <span class="about-movie__title-en">
                             BRAND MOVIE
                         </span>
-                        <span class="main-border">
+                        <span class="main-border pc-only">
                         </span>
                     </h2>
                 </div>
@@ -111,6 +110,7 @@
                         </span>
                         <span class="about-movie__image-title mincho">想いは、手から手へ</span>
                     </div>
+                    <span class="main-border"></span>
                 </div>
             </div>
         </div>
@@ -143,8 +143,8 @@
                             height="176">
                     </div>
                     <div class="page-about-commitment__container-text-wrapper">
-                        <div class="page-about-commitment__container-text-title mincho">
-                            <h3>
+                        <div class="page-about-commitment__container-title-wrapper mincho">
+                            <h3 class="page-about-commitment__container-title">
                                 想いを伝える空間演出
                             </h3>
                         </div>
@@ -162,14 +162,14 @@
                             height="176">
                     </div>
                     <div class="page-about-commitment__container-text-wrapper">
-                        <div class="page-about-commitment__container-text-title mincho">
-                            <h3>
+                        <div class="page-about-commitment__container-title-wrapper mincho">
+                            <h3 class="page-about-commitment__container-title">
                                 顔の見えるサポートと寄り添い
                             </h3>
                         </div>
                         <div class="page-about-commitment__container-text">
                             <p>
-                                故人を偲ぶ品々や写真で彩る思い出コーナーを設け一人ひとりに合わせた工夫やおもてなしで、その方らしい人生を静かに感じられる、あたたかく心に残る時間をご提供します。
+                            ご家族が何を大切にされているのかを丁寧にヒアリングし、故人らしさを演出できる式をご提案。 打ち合わせから式後のフォローまで、東上セレモのスタッフが一貫して対応します。
                             </p>
                         </div>
                     </div>
@@ -182,14 +182,14 @@
                                 height="176">
                         </div>
                         <div class="page-about-commitment__container-text-wrapper">
-                            <div class="page-about-commitment__container-text-title mincho">
-                                <h3>
+                            <div class="page-about-commitment__container-title-wrapper mincho">
+                                <h3 class="page-about-commitment__container-title">
                                     自社葬儀場で一貫した安心対応
                                 </h3>
                             </div>
-                            <div class="page-about-commitment__container-text-wrapper-text">
+                            <div class="page-about-commitment__container-text">
                                 <p>
-                                    故人を偲ぶ品々や写真で彩る思い出コーナーを設け一人ひとりに合わせた工夫やおもてなしで、その方らしい人生を静かに感じられる、あたたかく心に残る時間をご提供します。
+                                埼玉県内に複数の自社葬儀場を展開。施設の品質管理はもちろん、搬送から式の進行まで東上セレモスタッフで対応します。最後まで安心してお任せください。
                                 </p>
                             </div>
                         </div>
@@ -202,14 +202,14 @@
                             height="176">
                     </div>
                     <div class="page-about-commitment__container-text-wrapper">
-                        <div class="page-about-commitment__container-text-title mincho">
-                            <h3 class="page-about-commitment__container-title-text">
+                        <div class="page-about-commitment__container-title-wrapper mincho">
+                            <h3 class="page-about-commitment__container-title">
                                 一人ひとりに向き合う「人」の力
                             </h3>
                         </div>
                         <div class="page-about-commitment__container-text">
                             <p>
-                                故人を偲ぶ品々や写真で彩る思い出コーナーを設け一人ひとりに合わせた工夫やおもてなしで、その方らしい人生を静かに感じられる、あたたかく心に残る時間をご提供します。
+                            費用と内容を明確に提示し、追加費用が必要な場合も事前に丁寧にご説明いたします。プランごとに家族葬・一日葬・一般葬・火葬式など、多様なご希望にも柔軟に対応いたします。
                             </p>
                         </div>
                     </div>
@@ -221,14 +221,14 @@
                             height="176">
                     </div>
                     <div class="page-about-commitment__container-text-wrapper">
-                        <div class="page-about-commitment__container-text-title mincho">
-                            <h3 class="page-about-commitment__container-title-text">
+                        <div class="page-about-commitment__container-title-wrapper mincho">
+                            <h3 class="page-about-commitment__container-title">
                                 分かりやすく安心な料金
                             </h3>
                         </div>
-                        <div class="page-about-commitment__container-text-wrapper-text">
+                        <div class="page-about-commitment__container-text">
                             <p>
-                                故人を偲ぶ品々や写真で彩る思い出コーナーを設け一人ひとりに合わせた工夫やおもてなしで、その方らしい人生を静かに感じられる、あたたかく心に残る時間をご提供します。
+                            想結葬を支えるのは、マニュアルではなく“人の想い”。東上セレモのスタッフは、打ち合わせから、式の進行、お葬式後のご相談にいたるまで、寄り添うことを大切にしています。
                             </p>
                         </div>
                     </div>
@@ -240,14 +240,14 @@
                             height="176">
                     </div>
                     <div class="page-about-commitment__container-text-wrapper">
-                        <div class="page-about-commitment__container-text-title mincho">
-                            <h3>
+                        <div class="page-about-commitment__container-title-wrapper mincho">
+                            <h3 class="page-about-commitment__container-title">
                                 地域と共に歩み得た信頼と実績
                             </h3>
                         </div>
                         <div class="page-about-commitment__container-text">
                             <p>
-                                故人を偲ぶ品々や写真で彩る思い出コーナーを設け一人ひとりに合わせた工夫やおもてなしで、その方らしい人生を静かに感じられる、あたたかく心に残る時間をご提供します。
+                            埼玉県で地域密着を重んじる葬儀社として選ばれ続けて60年。葬送文化や風習に詳しく、きめ細やかな対応でお葬式をサポートいたします。
                             </p>
                         </div>
                     </div>
@@ -256,23 +256,22 @@
         </div>
     </div>
 
-    <section class="page-about-director">
-        <div class="l-inner">
+    <section class="page-director-block">
             <div class="left-title">
                 葬祭ディレクター
             </div>
-            <div class="page-about-director__container">
-                <div class="page-about-director__container-image">
+            <div class="page-director-block__container">
+                <div class="page-director-block__container-image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/image08.jpg" alt="想結葬のディレクターの画像"
                         width="1671"
                         height="796">
                 </div>
-                <div class="page-about-director__container-wrapper">
-                    <div class="page-about-director__container-title mincho">
+                <div class="page-director-block__container-wrapper">
+                    <div class="page-director-block__container-title mincho">
                         心に寄り添う人がいるから、<br>
                         安心できる最期の時間に。
                     </div>
-                    <div class="page-about-director__container-text">
+                    <div class="page-director-block__container-text">
                         <p>
                             「この方に任せてよかった」――そう思っていただけるように。<br>
                             東上セレモの葬祭ディレクターは、葬儀の進行だけでなく、ご家族の気持ちに寄り添うスタッフです。<br>
@@ -282,31 +281,31 @@
                             心から安心して任せていただける“人”が、ここにいます。。
                         </p>
                     </div>
-                    <div class="page-about-director__list-wrapper">
-                        <div class="page-about-director__list-title mincho">
+                    <div class="page-director-block__list-wrapper">
+                        <div class="page-director-block__list-title mincho">
                             想結葬では、<span>あらゆるお葬式を知りつくした「葬祭ディレクター」が専従し、ご遺族をサポートいたします。</span>
                         </div>
-                        <ul class="page-about-director__list">
-                            <li class="page-about-director__list-item">
+                        <ul class="page-director-block__list">
+                            <li class="page-director-block__list-item">
                                 ・スタッフの98％が「葬祭ディレクター」
                             </li>
-                            <li class="page-about-director__list-item">
+                            <li class="page-director-block__list-item">
                                 ・知識と経験が支える確かな提案力
                             </li>
-                            <li class="page-about-director__list-item">
+                            <li class="page-director-block__list-item">
                                 ・厚生労働省認定資格による専門性と信頼性
                             </li>
-                            <li class="page-about-director__list-item">
+                            <li class="page-director-block__list-item">
                                 ・人の心に寄り添う、一貫した専従サポート
                             </li>
                         </ul>
                     </div>
-                    <div class="page-about-director__philosophy">
+                    <div class="page-director-block__philosophy">
                         <h2 class="border-title">
                             <span>スタッフの思い</span>
                             <span class="border-title__main-border main-border"></span>
                         </h2>
-                        <ul class="page-about-director__philosophy-list">
+                        <ul class="page-director-block__philosophy-list">
                             <?php
                             $args = array(
                                 'post_type' => 'director',
@@ -321,8 +320,8 @@
                                     $director_text = get_post_meta(get_the_ID(), 'director_text', true);
                                     $director_image_id = get_post_meta(get_the_ID(), 'director_image', true);
                             ?>
-                                    <li class="page-about-director__philosophy-list-item">
-                                        <div class="page-about-director__philosophy-list-item-image">
+                                    <li class="page-director-block__philosophy-list-item">
+                                        <div class="page-director-block__philosophy-list-item-image">
                                             <?php if ($director_image_id) : ?>
                                                 <?php echo wp_get_attachment_image($director_image_id, 'full', false, array('alt' => get_the_title() . 'の画像', 'width' => 583, 'height' => 389)); ?>
                                             <?php elseif (has_post_thumbnail()) : ?>
@@ -333,27 +332,27 @@
                                                     height="176">
                                             <?php endif; ?>
                                         </div>
-                                        <div class="page-about-director__philosophy-list-item-label">
-                                            <span class="page-about-director__philosophy-list-item-label-text">
+                                        <div class="page-director-block__philosophy-list-item-label">
+                                            <span class="page-director-block__philosophy-list-item-label-text">
                                                 <?php echo esc_html($job_title); ?>
                                             </span>
                                         </div>
-                                        <div class="page-about-director__philosophy-list-item-name mincho">
+                                        <div class="page-director-block__philosophy-list-item-name mincho">
                                             <p>
                                                 <?php the_title(); ?>
                                             </p>
                                         </div>
-                                        <div class="page-about-director__philosophy-list-item-catch mincho">
+                                        <div class="page-director-block__philosophy-list-item-catch mincho">
                                             <p>
                                                 <?php echo esc_html($catchphrase); ?>
                                             </p>
                                         </div>
-                                        <div class="page-about-director__philosophy-list-item-text">
+                                        <div class="page-director-block__philosophy-list-item-text">
                                             <p>
                                                 <?php echo nl2br(esc_html($director_text)); ?>
                                             </p>
                                         </div>
-                                        <div class="page-about-director__philosophy-list-item-button">
+                                        <div class="page-director-block__philosophy-list-item-button">
                                             <a href="<?php the_permalink(); ?>" class="button button-solid">
                                                 インタビューをみる
                                             </a>
@@ -367,22 +366,22 @@
                         </ul>
                     </div>
                 </div>
-                <div class="page-about-director__container-image-wrapper">
+                <div class="page-director-block__container-image-wrapper">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/about/image11.png" media="(min-width:768px)">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/image11SP.png" alt="想結葬のディレクターの画像"
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/image11SP.jpg" alt="想結葬のディレクターの画像"
                             width="1045"
                             height="622">
-                        <figcaption class="page-about-director__container-image-text">「葬祭ディレクター」は<br class="pc-only">
+                        <figcaption class="page-director-block__container-image-text mincho">「葬祭ディレクター」は<br class="pc-only">
                             厚生労働省の認定を受けた民間資格です</figcaption>
                     </picture>
-                    <div class="page-about-director__container-image-title mincho">
+                    <div class="page-director-block__container-image-title mincho">
                         <p>大切な人を、心を込めてお見送りします。</p>
                         <span>最期の時間に、心を寄せる人がいる。</span>
                     </div>
                 </div>
 
-                <div class="page-about-director__container-image-pyramid">
+                <div class="page-director-block__container-image-pyramid">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/about/image12.png" media="(min-width:768px)">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/image12SP.png" alt="想結葬のディレクターの画像"
@@ -391,7 +390,6 @@
                     </picture>
                 </div>
             </div>
-        </div>
     </section>
 
 
@@ -431,7 +429,7 @@
                         </figure>
                         <div class="page-about-local__item-body">
                             <h4 class="page-about-local__item-title mincho">見て・聞いて・学べる「終活イベント」</h4>
-                            <p class="page-about-local__item-text">人生のこれからを、より安心して、より自分らしく過ごすために。ご家族とご自身のための「終活」をわかりやすく体験できるイベントを定期的に開催しています。本イベントは終活コーディネーターによるセミナーや最新供養スタイルについてなど〝見て・聞いて・学んで“終活を身近に感じられる内容となっています。</p>
+                            <p class="page-about-local__item-text">人生のこれからを、より安心して、より自分らしく過ごすために。ご家族とご自身のための「終活」をわかりやすく体験できるイベントを定期的に開催しています。<br>本イベントは終活コーディネーターによるセミナーや最新供養スタイルについてなど〝見て・聞いて・学んで“終活を身近に感じられる内容となっています。</p>
                         </div>
                     </li>
                     <li class="page-about-local__item">
@@ -440,7 +438,7 @@
                         </figure>
                         <div class="page-about-local__item-body">
                             <h4 class="page-about-local__item-title mincho">学校×企業の共創イベント</h4>
-                            <p class="page-about-local__item-text">地域の未来を担う子供たちに「いのち」「家族」「地域」「仕事」について考える機会を提供するため、学校と連携した共創イベントを実施しています。葬祭の場で培った知識や文化、命の大切さを伝える経験を教育の場と結びつけることで、子供たちの学びをより豊かにし、地域とのつながりを深めることを目指しています。
+                            <p class="page-about-local__item-text">地域の未来を担う子供たちに「いのち」「家族」「地域」「仕事」について考える機会を提供するため、学校と連携した共創イベントを実施しています。<br>葬祭の場で培った知識や文化、命の大切さを伝える経験を教育の場と結びつけることで、子供たちの学びをより豊かにし、地域とのつながりを深めることを目指しています。
                         </div>
                     </li>
                     <li class="page-about-local__item">

@@ -1,0 +1,104 @@
+@use '../foundation' as *;
+
+.faq-list {
+  margin-top: prem(40);
+  @include mq("md") {
+    margin-top: prem(100);
+  }
+}
+
+.faq-list__item {
+  position: relative;
+  padding-block: prem(30);
+  @include mq("md") {
+    padding-top: prem(40);
+    padding-inline: prem(30);
+    padding-bottom: prem(64);
+
+  }
+}
+
+.faq-list__border-bottom {
+  position: relative;
+  height: 1px;
+  list-style: none;
+}
+.faq-list__item .main-border:last-child{
+  top:initial;
+  bottom: 10px;
+  @include mq("md"){
+    bottom: 40px;
+  }
+}
+.faq-list__q-wrapper,
+.faq-list__a-wrapper {
+  display: flex;
+  gap: prem(10);
+  align-items: center;
+  @include mq("md") {
+    gap: prem(20);
+  }
+}
+
+.faq-list__a-wrapper {
+  margin-top: prem(20);
+  align-items: flex-start;
+  @include mq("md") {
+    margin-top: prem(22);
+  }
+}
+.faq-list__q-wrapper{
+  align-items: flex-start;
+  @include mq("md") {
+    align-items: center;
+  }
+}
+
+.faq-list__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: prem(34);
+  height: prem(34);
+  border-radius: 50%;
+  font-family: $font-family-mincho;
+  font-size: prem(20);
+  line-height: 1;
+  background-color: $color-theme;
+  color: $color-white;
+  border: 2px solid #D1C2C5;
+  @include mq("md") {
+    width: prem(55);
+    height: prem(55);
+    font-size: prem(30);
+  }
+}
+.faq-list__label-a {
+  background-color: #624349;
+}
+
+.faq-list__text {
+  font-size: prem(17);
+  line-height: 1.7;
+  @include mq("md") {
+    font-size: prem(23);
+  }
+}
+.faq-list__text-q{
+  color: $color-theme;
+  font-size: prem(17);
+  @include mq("md"){
+    font-size: prem(20);
+
+  }
+}
+.faq-list__text-a{
+  font-size: prem(15);
+  @include mq("md"){
+    padding-top: prem(12.5);
+    line-height: 2.65;
+
+    font-size: prem(17);
+  }
+}
