@@ -3,9 +3,10 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    margin-top: prem(60);
     @include mq("md"){
         margin-top: prem(149);
-        
+
     }
 }
 
@@ -47,9 +48,10 @@
 .page-mv__title-text {
     writing-mode: vertical-rl;
     font-size: prem(20);
-    letter-spacing: 0.4em;
     font-weight: 400;
+    letter-spacing: 0.2em;
     @include mq("md"){
+        letter-spacing: 0.4em;
         font-size: prem(40);
     }
 

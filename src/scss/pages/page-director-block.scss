@@ -1,0 +1,332 @@
+@use 'foundation'as *;
+
+.page-director-block{
+    @include mq("md"){
+        display: flex;
+    }
+}
+
+.page-director-block .left-title{
+    @include mq("md"){
+        padding-inline:prem(95);
+    }
+}
+.page-director-block__container-wrapper {
+    @include mq("md") {
+        max-width: prem(1178);
+        margin-inline: auto;
+    }
+}
+
+
+.page-director-block__container-title {
+    font-size: prem(20);
+    text-align: center;
+
+    @include mq("md") {
+        line-height: 1.72;
+        margin-top: prem(-60);
+        text-align: left;
+        font-size: prem(32);
+        letter-spacing: 0.1em;
+    }
+
+
+}
+
+
+.page-director-block__container-text {
+    margin-top: prem(24);
+
+    @include mq("md") {
+        margin-top: prem(54);
+
+    }
+
+}
+
+
+
+.page-director-block__list-title {
+    color: $color-theme;
+    line-height: 1.72;
+    font-size: prem(20);
+    margin-top: prem(24);
+
+    @include mq("md") {
+        margin-top: prem(30);
+
+        font-size: prem(32);
+    }
+}
+
+.page-director-block__list-title span {
+    font-size: prem(17);
+    color: $color-black;
+    display: block;
+
+    @include mq("md") {
+        font-size: prem(20);
+    }
+
+
+
+
+}
+
+.page-director-block__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: prem(16);
+    margin-top: prem(10);
+
+    @include mq("md") {
+        margin-top: prem(20);
+        max-width: prem(994);
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: prem(25);
+        row-gap: prem(20);
+    }
+
+}
+
+.page-director-block__list-item {
+    background-color: $color-theme;
+    color: $color-white;
+    font-size: prem(17);
+    font-family: $font-family-mincho;
+    padding: prem(10) prem(16);
+
+    @include mq("md") {
+        font-size: prem(20);
+        padding: prem(16) prem(20);
+    }
+}
+
+.page-director-block__philosophy {
+    padding-top: prem(16);
+
+    @include mq("md") {
+        padding-top: prem(156);
+
+    }
+
+
+}
+.page-director-block__philosophy .border-title{
+    font-size: prem(16);
+
+    @include mq("md"){
+        font-size: prem(20);
+    }
+
+}
+.page-director-block__philosophy-list {
+    display: flex;
+    flex-direction: column;
+    gap: prem(77);
+    margin-top: prem(40);
+    padding-bottom: prem(40);
+    border-bottom: 1px solid $color-theme;
+
+
+    @include mq("md"){
+        margin-top: prem(55);
+        padding-bottom: prem(86);
+
+    }
+
+}
+
+.page-director-block__philosophy-list-item {
+    display: grid;
+    grid-template-columns: 1;
+    column-gap: prem(40);
+
+    grid-template-areas:
+        "image"
+        "label"
+        "name"
+        "catch"
+        "text"
+        "button"
+}
+
+.page-director-block__philosophy-list-item:nth-child(even) {
+    @include mq("md"){
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-areas:
+        "label image"
+        "name image"
+        "catch image"
+        "text image"
+        "button image";
+
+        .page-director-block__philosophy-list-item-image {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.page-director-block__philosophy-list-item-image {
+    grid-area: image;
+    width: 100%
+    ;
+}
+.page-director-block__philosophy-list-item-image img{
+    aspect-ratio: 583 / 389;
+    object-fit: cover;
+    height: auto;
+}
+
+
+.page-director-block__philosophy-list-item-label {
+    grid-area: label;
+}
+
+.page-director-block__philosophy-list-item-name {
+    grid-area: name;
+    font-size: prem(20);
+    @include mq("md"){
+        font-size: prem(32);
+        line-height: 1.6;
+        letter-spacing: 0.15em;
+
+    }
+
+}
+
+.page-director-block__philosophy-list-item-catch {
+    grid-area: catch;
+    font-size: prem(17);
+
+    @include mq("md"){
+        font-size: prem(20);
+    }
+
+}
+
+.page-director-block__philosophy-list-item-text {
+    grid-area: text;
+    font-size: prem(15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+
+    @include mq("md"){
+        line-height: 2.65;
+        font-size: prem(17);
+    }
+
+}
+
+.page-director-block__philosophy-list-item-button {
+    grid-area: button;
+    margin-top: prem(24);
+    @include mq("md"){
+        margin-top: prem(19);
+    }
+
+}
+.page-director-block__container-image-wrapper {
+    margin-top: prem(40);
+    @include mq("xl"){
+        display: flex;
+        align-items: center;
+        margin-top: prem(118);
+        position: relative;
+
+}
+}
+.page-director-block__container-image-wrapper img{
+    aspect-ratio: 390/360;
+    object-fit: cover;
+    height: auto;
+    @include mq("md"){
+        width: 90.3%;
+        aspect-ratio: 1045/622;
+    }
+}
+
+.page-director-block__container-image-title {
+    font-size: prem(17);
+    color: $color-theme;
+    white-space: nowrap;
+    @include mq("xl"){
+        font-size: prem(20);
+        transform: translate(-390px, 47px);
+    }
+}
+.page-director-block__container-image-title span{
+    font-size: prem(14);
+    color: $color-black;
+    line-height: 1.2;
+    position: relative;
+    display: block;
+    text-align: right;
+    @include mq("lg"){
+        width: prem(400);
+        font-size: prem(15);
+    }
+    @media screen and (min-width: 1800px) {
+        width: prem(519);
+    }
+}
+.page-director-block__container-image-title span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 1px;
+    background-color: $color-theme;
+    @include mq("md"){
+        width:20%;
+    }
+    @media screen and (min-width: 1800px) {
+        width:39%;
+    }
+
+}
+
+.page-director-block__container-image img{
+    aspect-ratio: 1671/796;
+    object-fit: cover;
+    height: auto;
+}
+.page-director-block__container-image-text{
+    font-size: prem(14);
+    line-height: 1.57;
+    @include mq("md"){
+        margin-top: prem(47);
+
+        padding-left: prem(40);
+
+        font-size: prem(20);
+
+    }
+
+}
+.page-director-block__container-image-pyramid {
+    margin :0 calc(50% - 50vw);
+    padding-bottom: prem(73);
+
+@include mq("md"){
+    margin-top: prem(80);
+    margin:initial;
+    margin-right :calc(58% - 50vw);
+    padding-bottom: prem(273);
+
+
+}
+}
+.page-director-block__container-image-pyramid img{
+    width: 100%;
+    aspect-ratio: 390/260;
+    object-fit: cover;
+    height: auto;
+    @include mq("md"){
+        aspect-ratio: 1744/976;
+    }
+}
+

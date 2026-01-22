@@ -22,9 +22,9 @@
 .about-movie__title-en {
     font-size: prem(20);
     line-height: 1;
+    display: block;
+    color: $color-black;
     @include mq("md"){
-        display: block;
-        color: $color-black;
         font-size: prem(32);
 
     }
@@ -33,12 +33,19 @@
 }
 .about-movie__image {
     position: relative;
+    z-index: 1;
+}
+.about-movie__image img{
+    aspect-ratio: 463/297;
+    height: auto;
+    object-fit: cover;
 }
 .about-movie__image-wrapper {
     display: flex;
     flex-direction: column;
     gap: prem(20);
     margin-top: prem(40);
+    position: relative;
     @include mq("md"){
         margin-top: prem(85);
         flex-direction: row;
@@ -47,6 +54,17 @@
         margin-inline: auto;
     }
 }
+.about__page .about-movie__image-wrapper .main-border{
+    display: none;
+    @include mq("md"){
+        display: block;
+        width: 128%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 .about-movie__image-play {
     position: absolute;
     content: '';

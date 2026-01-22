@@ -1,11 +1,18 @@
 @use 'foundation'as *;
 .page-about-local{
+    padding-bottom: prem(16);
+
     border-top: 1px solid $color-theme;
+    @include mq("md"){
+        padding-bottom: prem(221);
+    }
 }
 .page-about-local__container {
     @include mq("md"){
         max-width: prem(1295);
         margin-inline: auto;
+        margin-top: prem(70);
+
     }
 
 }
@@ -66,8 +73,10 @@
     border-top: 1px solid $color-theme;
     font-weight: $regular;
     @include mq("md"){
-        font-size: prem(30);
+        font-size: prem(20);
         line-height: 1.75;
+        padding-block: prem(18);
+
 
     }
 
@@ -90,10 +99,7 @@
     border: 1px solid $color-theme;
     border-radius: 20px;
     position: relative;
-    @include mq("md"){
 
-        padding: prem(34) prem(34) prem(60) prem(34);
-    }
 
 }
 .page-about-local__item::after {
@@ -109,6 +115,10 @@
 
 .page-about-local__item-image {
     width: 100%;
+    @include mq("md"){
+
+        padding: prem(34) prem(34) prem(0) prem(34);
+    }
 
 }
 .page-about-local__item-image
@@ -120,6 +130,9 @@ img{
 
  }
 .page-about-local__item-body {
+    @include mq("md"){
+        padding: prem(0) prem(34) prem(45) prem(34);
+    }
 
 }
 
@@ -141,7 +154,8 @@ img{
 
 .page-about-local__item-text {
     margin-top: prem(20);
-    
+    line-height: 2.47;
+
 
 }
 
