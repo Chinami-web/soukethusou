@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="main">
+< class="main">
   <section class="page-mv">
     <div class="page-mv__inner">
       <div class="page-mv__image">
@@ -14,11 +14,6 @@
   </section>
   <div class="page-facility">
     <div class="l-inner">
-      <div class="page-title__wrapper">
-        <h2 class="page-title__main mincho">東上セレモなら安心して、<br>
-          心を込めてお別れの準備ができるようお手伝いします。</h2>
-        <p class="page-title__text-sub">東上セレモで執り行うお迎えからお葬式後までの流れをご紹介します。</p>
-      </div>
       <?php
       // facility-pinの設定配列（両方のセクションで使用）
       $facility_pins = array(
@@ -61,13 +56,13 @@
           </p>
         </div>
 
-        <div class="facility-map__button-wrapper">
+        <!-- <div class="facility-map__button-wrapper">
           <a class="button button-solid" href="#">
             <span></span>
             <span></span>
             施設一覧をみる
           </a>
-        </div>
+        </div> -->
         <div class="facility-map__selling-wrapper">
           <p class="facility-map__selling">
             埼玉県内に
@@ -124,107 +119,113 @@
       </div>
     </div>
     <div class="facility-grid">
-      <?php
-      $facility_query = new WP_Query(
-        array(
-          'post_type' => 'facility',
-          'posts_per_page' => -1,
-          'orderby' => 'menu_order',
-          'order' => 'ASC',
-        )
-      );
-      ?>
-      <?php if ($facility_query->have_posts()): ?>
-        <ul class="facility-grid__list main-card__list">
-          <?php while ($facility_query->have_posts()): $facility_query->the_post(); ?>
-            <?php
-            $post_id = get_the_ID();
-            $post_slug = get_post_field('post_name', $post_id);
+      <div class="l-inner">
 
-            $label = get_post_meta($post_id, 'facility_label', true);
-            $label_text = $label ? $label : 'プライベートホール';
-            $label_text = preg_replace('/([ー]+)/u', '<span class="main-card__label-long-vowel">$1</span>', $label_text);
-            $address = get_post_meta($post_id, 'facility_address', true);
-            $address_text = $address ? $address : '';
-            $tags_raw = get_post_meta($post_id, 'facility_tags', true);
-            $tags = array_filter(array_map('trim', preg_split('/[\r\n,]+/', $tags_raw)));
-            $thumb_ids = array_filter(array(
-              get_post_meta($post_id, 'facility_thumb_1', true),
-              get_post_meta($post_id, 'facility_thumb_2', true),
-            ));
-            $hero_id = get_post_thumbnail_id($post_id);
-            $hero = $hero_id ? get_the_post_thumbnail_url($post_id, 'large') : '';
-            $hero_alt = $hero_id ? get_post_meta($hero_id, '_wp_attachment_image_alt', true) : '';
-            if (!$hero) {
-              $hero = get_template_directory_uri() . '/assets/images/top/image09.jpg';
-            }
-            if (!$hero_alt) {
-              $hero_alt = get_the_title();
-            }
-            ?>
-            <li class="main-card__item" id="<?php echo esc_attr($post_slug); ?>">
-              <a class="main-card__link" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr(get_the_title() . 'の詳細ページへ'); ?>"></a>
-              <div class="main-card__content">
-                <figure class="main-card__hero">
-                  <img src="<?php echo esc_url($hero); ?>" alt="<?php echo esc_attr($hero_alt); ?>" loading="lazy">
-                </figure>
-                <?php if (!empty($thumb_ids)): ?>
-                  <div class="main-card__thumbs">
-                    <?php foreach ($thumb_ids as $index => $thumb_id): ?>
-                      <?php
-                      $thumb_id = intval($thumb_id);
-                      $thumb_src = wp_get_attachment_image_url($thumb_id, 'large');
-                      $thumb_alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-                      if (!$thumb_alt) {
-                        $thumb_alt = get_the_title();
-                      }
-                      ?>
-                      <?php if ($thumb_src): ?>
-                        <figure class="main-card__thumb">
-                          <img src="<?php echo esc_url($thumb_src); ?>" alt="<?php echo esc_attr($thumb_alt); ?>" loading="lazy">
-                        </figure>
-                      <?php endif; ?>
-                    <?php endforeach; ?>
-                  </div>
-                <?php endif; ?>
-                <div class="main-card__info">
-                  <p class="main-card__name heisei"><span class="main-card__name-mark">○</span> <?php the_title(); ?></p>
-                  <?php if ($address_text): ?>
-                    <p class="main-card__address"><?php echo esc_html($address_text); ?></p>
-                  <?php endif; ?>
-                  <?php if (!empty($tags)): ?>
-                    <div class="main-card__tags">
-                      <?php foreach ($tags as $tag): ?>
-                        <span class="main-card__tag"><?php echo esc_html($tag); ?></span>
+        <?php
+        $facility_query = new WP_Query(
+          array(
+            'post_type' => 'facility',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+          )
+        );
+        ?>
+        <?php if ($facility_query->have_posts()): ?>
+          <ul class="facility-grid__list main-card__list">
+            <?php while ($facility_query->have_posts()): $facility_query->the_post(); ?>
+              <?php
+              $post_id = get_the_ID();
+              $post_slug = get_post_field('post_name', $post_id);
+              $label = get_post_meta($post_id, 'facility_label', true);
+              $label_text = $label ? $label : 'プライベートホール';
+              $label_text = preg_replace('/([ー]+)/u', '<span class="main-card__label-long-vowel">$1</span>', $label_text);
+              $address = get_post_meta($post_id, 'facility_address', true);
+              $address_text = $address ? $address : '';
+              $tags_raw = get_post_meta($post_id, 'facility_tags', true);
+              $tags = array_filter(array_map('trim', preg_split('/[\r\n,]+/', $tags_raw)));
+              $thumb_ids = array_filter(array(
+                get_post_meta($post_id, 'facility_thumb_1', true),
+                get_post_meta($post_id, 'facility_thumb_2', true),
+              ));
+              $hero_id = get_post_thumbnail_id($post_id);
+              $hero = $hero_id ? get_the_post_thumbnail_url($post_id, 'large') : '';
+              $hero_alt = $hero_id ? get_post_meta($hero_id, '_wp_attachment_image_alt', true) : '';
+              if (!$hero) {
+                $hero = get_template_directory_uri() . '/assets/images/top/image09.jpg';
+              }
+              if (!$hero_alt) {
+                $hero_alt = get_the_title();
+              }
+              ?>
+              <li class="main-card__item" id="<?php echo esc_attr($post_slug); ?>">
+                <a class="main-card__link" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr(get_the_title() . 'の詳細ページへ'); ?>"></a>
+                <div class="main-card__content">
+                  <figure class="main-card__hero">
+                    <img src="<?php echo esc_url($hero); ?>" alt="<?php echo esc_attr($hero_alt); ?>" loading="lazy">
+                  </figure>
+                  <?php if (!empty($thumb_ids)): ?>
+                    <div class="main-card__thumbs">
+                      <?php foreach ($thumb_ids as $index => $thumb_id): ?>
+                        <?php
+                        $thumb_id = intval($thumb_id);
+                        $thumb_src = wp_get_attachment_image_url($thumb_id, 'large');
+                        $thumb_alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                        if (!$thumb_alt) {
+                          $thumb_alt = get_the_title();
+                        }
+                        ?>
+                        <?php if ($thumb_src): ?>
+                          <figure class="main-card__thumb">
+                            <img src="<?php echo esc_url($thumb_src); ?>" alt="<?php echo esc_attr($thumb_alt); ?>" loading="lazy">
+                          </figure>
+                        <?php endif; ?>
                       <?php endforeach; ?>
                     </div>
                   <?php endif; ?>
-                </div>
-                <div class="main-card__button-wrapper pc-only">
-                  <div class="button button-solid" href="<?php the_permalink(); ?>">
-                    <span></span>
-                    <span></span>
-                    ホール詳細
+                  <div class="main-card__info">
+                    <p class="main-card__name heisei"><span class="main-card__name-mark">○</span> <?php the_title(); ?></p>
+                    <?php if ($address_text): ?>
+                      <p class="main-card__address"><?php echo esc_html($address_text); ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($tags)): ?>
+                      <div class="main-card__tags">
+                        <?php foreach ($tags as $tag): ?>
+                          <span class="main-card__tag"><?php echo esc_html($tag); ?></span>
+                        <?php endforeach; ?>
+                      </div>
+                    <?php endif; ?>
+                  </div>
+                  <div class="main-card__button-wrapper pc-only">
+                    <div class="button button-solid" href="<?php the_permalink(); ?>">
+                      <span></span>
+                      <span></span>
+                      ホール詳細
+                    </div>
                   </div>
                 </div>
-              </div>
-              <p class="main-card__label">
-                <span class="main-card__label-mark">○</span>
-                <span class="main-card__label-text">
-                  <?php echo wp_kses($label_text, array('span' => array('class' => array()))); ?>
-                </span>
-              </p>
-            </li>
-          <?php endwhile; ?>
-        </ul>
-      <?php endif;
-      wp_reset_postdata(); ?>
+                <p class="main-card__label">
+                  <span class="main-card__label-mark">○</span>
+                  <span class="main-card__label-text">
+                    <?php echo wp_kses($label_text, array('span' => array('class' => array()))); ?>
+                  </span>
+                </p>
+              </li>
+            <?php endwhile; ?>
+          </ul>
+        <?php endif;
+        wp_reset_postdata(); ?>
+
+      </div>
     </div>
+
+    <!-- 提携式場＆公営斎場のご案内 -->
+
 
     <!-- 想結葬式場の魅力と特長 -->
     <section class="page-director-block">
       <div class="left-title">
-      想結葬式場の魅力と特長
+        想結葬式場の魅力と特長
       </div>
       <div class="page-director-block__container">
         <div class="page-director-block__container-image">
@@ -311,6 +312,115 @@
         </div>
       </div>
     </section>
+
+    <section class="public-facility">
+      <div class="l-inner">
+        <h2 class="public-facility__title">
+          提携式場＆公営斎場のご案内
+          <span class="main-border"></span>
+        </h2>
+        <div class="public-facility__lead-wrapper">
+          <p class="public-facility__lead">
+            地域の特性やご家族のご希望に合わせて、最適な会場をご提案します。どの場所でも想結葬ならではの心のこもったお別れを実現できますので、安心してご相談ください。
+          </p>
+        </div>
+
+        <?php
+        // データ定義
+        $public_data = [
+          'saitama' => [
+            'label' => '埼玉県',
+            'cities' => [
+              'niiza' => '新座市',
+              'asaka' => '朝霞市',
+              'shiki' => '志木市',
+              'fujimi' => '富士見市',
+              'miyoshi' => '三芳町',
+              'kawagoe' => '川越市',
+              'tsurugashima' => '鶴ヶ島市',
+              'sakado' => '坂戸市',
+              'higashimatsuyama' => '東松山市',
+              'hidaka' => '日高市',
+              'hanno' => '飯能市',
+              'tokorozawa' => '所沢市',
+              'iruma' => '入間市',
+              'hatoyama' => '鳩山町',
+              'saitama' => 'さいたま市',
+              'kawaguchi' => '川口市',
+              'warabi' => '蕨市'
+            ],
+            // 施設データ（川越市のみ実装）
+            'facilities' => [
+              'kawagoe' => [
+                ['name' => '市民聖苑やすらぎのさと', 'img' => 'image01.jpg'],
+                ['name' => '蓮馨寺講堂', 'img' => 'image02.jpg'],
+                ['name' => '最明寺道心殿', 'img' => 'image03.jpg'],
+                ['name' => '喜多院斎霊殿', 'img' => 'image04.jpg'],
+                ['name' => '福昌寺会館', 'img' => 'image01.jpg'],
+                ['name' => '萬久院会館', 'img' => 'image02.jpg'],
+              ]
+            ]
+          ],
+          'tokyo' => [
+            'label' => '東京都',
+            'cities' => [
+              'dummy1' => 'エリア1',
+              'dummy2' => 'エリア2'
+            ],
+            'facilities' => [
+              'dummy1' => [
+                ['name' => 'ダミー施設1', 'img' => 'image03.jpg'],
+              ]
+            ]
+          ]
+        ];
+        ?>
+
+        <div class="public-facility__tabs">
+          <?php foreach ($public_data as $key => $data): ?>
+            <button class="public-facility__tab js-public-tab <?php echo $key === 'saitama' ? 'is-active' : ''; ?>" data-pref="<?php echo $key; ?>">
+              <?php echo $data['label']; ?>
+            </button>
+          <?php endforeach; ?>
+        </div>
+
+        <div class="public-facility__content">
+          <?php foreach ($public_data as $pref_key => $data): ?>
+            <div class="public-facility__areas js-public-area-list <?php echo $pref_key === 'saitama' ? 'is-active' : ''; ?>" id="area-<?php echo $pref_key; ?>">
+              <div class="public-facility__area-grid">
+                <?php foreach ($data['cities'] as $city_key => $city_name): ?>
+                  <button class="public-facility__area-btn js-public-area-btn <?php echo ($pref_key === 'saitama' && $city_key === 'kawagoe') ? 'is-active' : ''; ?>" data-pref="<?php echo $pref_key; ?>" data-city="<?php echo $city_key; ?>">
+                    <?php echo $city_name; ?>
+                  </button>
+                <?php endforeach; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+
+          <div class="public-facility__list-wrapper">
+            <ul class="public-facility__list">
+              <?php foreach ($public_data as $pref_key => $data): ?>
+                <?php if (isset($data['facilities'])): ?>
+                  <?php foreach ($data['facilities'] as $city_key => $facilities): ?>
+                    <?php foreach ($facilities as $facility): ?>
+                      <li class="public-facility__item js-public-item <?php echo ($pref_key === 'saitama' && $city_key === 'kawagoe') ? 'is-active' : ''; ?>" data-pref="<?php echo $pref_key; ?>" data-city="<?php echo $city_key; ?>">
+                        <figure class="public-facility__item-img">
+                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/saitama/<?php echo $facility['img']; ?>" alt="<?php echo $facility['name']; ?>" loading="lazy">
+                        </figure>
+                        <p class="public-facility__item-name heisei"><?php echo $facility['name']; ?></p>
+                      </li>
+                    <?php endforeach; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <?php get_template_part('parts/project/relation-parts'); ?>
 
 
 </main>

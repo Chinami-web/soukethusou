@@ -5,7 +5,7 @@
     <div class="footer__wrap">
       <div class="footer__left">
         <div class="footer__logo">
-          <a href="#">
+          <a href="<?php echo esc_url(home_url('/')); ?>">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-right.png" alt="省略">
           </a>
         </div>
@@ -16,7 +16,7 @@
           国際標準化機構ISO9001認証取得
         </address>
         <div class="footer-nav__btn sp-only">
-          <a class="footer-nav__btn-link" href="#">
+          <a class="footer-nav__btn-link" href="<?php echo esc_url(home_url('/contact/')); ?>">
             <span>
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/flower.png" alt="生花の依頼のこちら">
             </span>
@@ -26,18 +26,18 @@
         <nav class="footer__nav footer-nav__right">
           <ul class="footer__nav-items-right">
             <li class="footer-nav__item">
-              <a href="#">運営会社</a>
+              <a href="https://tojoceremo.jp/company/" target="_blank" rel="noopener">運営会社</a>
             </li>
             <li class="footer-nav__item">
-              <a href="#">採用情報</a>
+              <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a>
             </li>
             <li class="footer-nav__item">
-              <a href="#">お問い合わせ</a>
+              <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
             </li>
           </ul>
         </nav>
         <div class="footer-nav__btn pc-only">
-          <a class="footer-nav__btn-link" href="#">
+          <a class="footer-nav__btn-link" href="<?php echo esc_url(home_url('/contact/')); ?>">
             <span>
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/flower.png" alt="生花の依頼のこちら">
             </span>
@@ -52,16 +52,16 @@
             <p class="footer-nav__title js-footer-nav-toggle">想結葬について</p>
             <ul class="footer-nav__list">
               <li class="footer-nav__item">
-                <a href="#">想結葬のおもい</a>
+                <a href="<?php echo esc_url(home_url('/about/')); ?>">想結葬のおもい</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">想結葬の特徴</a>
+                <a href="<?php echo esc_url(home_url('/about/')); ?>">想結葬の特徴</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">葬祭ディレクター</a>
+                <a href="<?php echo esc_url(home_url('/director/')); ?>">葬祭ディレクター</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">地域連携</a>
+                <a href="https://tojoceremo.jp/relation/" target="_blank" rel="noopener">地域連携</a>
               </li>
             </ul>
           </nav>
@@ -69,19 +69,19 @@
             <p class="footer-nav__title js-footer-nav-toggle">葬儀プラン・費用案内</p>
             <ul class="footer-nav__list">
               <li class="footer-nav__item">
-                <a href="#">想結直葬</a>
+                <a href="<?php echo esc_url(home_url('/plan/')); ?>">想結直葬</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">想結家族葬</a>
+                <a href="<?php echo esc_url(home_url('/plan/')); ?>">想結家族葬</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">想結一般葬</a>
+                <a href="<?php echo esc_url(home_url('/plan/')); ?>">想結一般葬</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">各種サービス紹介</a>
+                <a href="<?php echo esc_url(home_url('/service/')); ?>">各種サービス紹介</a>
               </li>
               <li class="footer-nav__item footer-nav__item--big">
-                <a href="#">各種サービス</a>
+                <a href="<?php echo esc_url(home_url('/service/')); ?>">各種サービス</a>
               </li>
             </ul>
           </nav>
@@ -90,40 +90,40 @@
             <p class="footer-nav__title js-footer-nav-toggle">式場案内</p>
             <ul class="footer-nav__list">
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール新座</a>
+                <a href="<?php echo esc_url(home_url('/facility/niiza/')); ?>">東上セレモニーホール新座</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール志木</a>
+                <a href="<?php echo esc_url(home_url('/facility/siki/')); ?>">東上セレモニーホール志木</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホールみずほ台</a>
+                <a href="<?php echo esc_url(home_url('/facility/mizuhodai/')); ?>">東上セレモニーホールみずほ台</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホールふじみ野</a>
+                <a href="<?php echo esc_url(home_url('/facility/huzimino/')); ?>">東上セレモニーホールふじみ野</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール川越</a>
+                <a href="<?php echo esc_url(home_url('/facility/kawagoe/')); ?>">東上セレモニーホール川越</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール坂戸</a>
+                <a href="<?php echo esc_url(home_url('/facility/sakado/')); ?>">東上セレモニーホール坂戸</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール所沢</a>
+                <a href="<?php echo esc_url(home_url('/facility/tokorozawa/')); ?>">東上セレモニーホール所沢</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール入間</a>
+                <a href="<?php echo esc_url(home_url('/facility/iruma/')); ?>">東上セレモニーホール入間</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上セレモニーホール狭山</a>
+                <a href="<?php echo esc_url(home_url('/facility/sayama/')); ?>">東上セレモニーホール狭山</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上プライベートホール朝霞</a>
+                <a href="<?php echo esc_url(home_url('/facility/asaka/')); ?>">東上プライベートホール朝霞</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">東上プライベートホール東松山</a>
+                <a href="<?php echo esc_url(home_url('/facility/higasimatuyama/')); ?>">東上プライベートホール東松山</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">提携社葬式場&公営斎場式場のご案内</a>
+                <a href="<?php echo esc_url(home_url('/facility/')); ?>">提携社葬式場&公営斎場式場のご案内</a>
               </li>
             </ul>
           </nav>
@@ -131,29 +131,29 @@
 
             <ul class="footer-nav__list">
               <li class="footer-nav__item">
-                <a href="#">葬儀の流れ</a>
+                <a href="<?php echo esc_url(home_url('/flow/')); ?>">葬儀の流れ</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">事前相談・終活</a>
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>">事前相談・終活</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">お客様の声・事例紹介</a>
+                <a href="<?php echo esc_url(home_url('/voice/')); ?>">お客様の声・事例紹介</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">コラム・お知らせ</a>
+                <a href="<?php echo esc_url(home_url('/category/news/')); ?>">コラム・お知らせ</a>
               </li>
             </ul>
           </nav>
           <nav class="footer-nav footer-nav-05">
             <ul class="footer-nav__list">
               <li class="footer-nav__item">
-                <a href="#">葬式の知識</a>
+                <a href="https://tojoceremo.jp/knowledge/" target="_blank" rel="noopener">葬式の知識</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">ネット葬儀社について</a>
+                <a href="<?php echo esc_url(home_url('/online-funeral/')); ?>">ネット葬儀社について</a>
               </li>
               <li class="footer-nav__item">
-                <a href="#">よくある質問</a>
+                <a href="<?php echo esc_url(home_url('/faq/')); ?>">よくある質問</a>
               </li>
             </ul>
           </nav>
@@ -195,11 +195,11 @@
         <span>24時間365日対応</span>
       </div>
     </a>
-    <a class="floating-contact__link floating-contact__link--request" href="#">
+    <a class="floating-contact__link floating-contact__link--request" href="<?php echo esc_url(home_url('/contact/')); ?>">
       <span class="floating-contact__link-text">資料請求</span>
       <span class="floating-contact__link-text">お見積り</span>
     </a>
-    <a class="floating-contact__link floating-contact__link--consult" href="#">
+    <a class="floating-contact__link floating-contact__link--consult" href="<?php echo esc_url(home_url('/contact/')); ?>">
       <span class="floating-contact__link-text">お葬儀の</span>
       <span class="floating-contact__link-text">事前相談</span>
     </a>

@@ -1,0 +1,13 @@
+@use 'foundation'as *;
+
+.page-facility{
+    margin-top: prem(60);
+    padding-bottom: prem(60);
+    border-top: 1px solid $color-theme;
+    @include mq("md"){
+        margin-top: prem(144);
+        padding-bottom: prem(115);
+
+    }
+}
+

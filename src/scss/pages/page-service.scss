@@ -1,0 +1,7 @@
+@use 'foundation'as *;
+.page-service{
+    padding-bottom: prem(16);
+    @include mq("md"){
+        padding-bottom: prem(227);
+    }
+}

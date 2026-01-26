@@ -3,6 +3,14 @@
  * Functions
  */
 
+// セッション開始（お問い合わせフォーム用）
+add_action('init', 'soukessou_start_session', 1);
+function soukessou_start_session() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}
+
 // 基本設定
 get_template_part('parts/functions-lib/func-base');
 

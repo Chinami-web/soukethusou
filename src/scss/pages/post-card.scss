@@ -2,13 +2,21 @@
 
 .post-card__img {
   width: 100%;
-  aspect-ratio: 400 / 300;
 }
+.post-card__title{
+  font-size: prem(15);
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  @include mq("md"){
+    font-size: prem(26);
 
+  }
+}
 .post-card__img img {
-  width: 100%;
+  aspect-ratio: 446 / 283;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
 }
 
 .post-card__body {

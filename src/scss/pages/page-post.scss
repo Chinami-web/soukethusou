@@ -1,0 +1,63 @@
+@use 'foundation'as *;
+.post-mv {
+    margin-top: prem(60);
+    background: linear-gradient(180deg, #d3c2c2 0%, #ebe5e6 100%);
+    position: relative;
+    overflow: hidden;
+    @include mq("md"){
+        margin-top: prem(149);
+    }
+}
+
+.post-mv::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/common/ribon-right.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: prem(578);
+    height: prem(396);
+    opacity: 0.3;
+}
+.post-mv__inner {
+    padding-top: prem(80);
+    padding-bottom: prem(80);
+    @include mq("md"){
+        padding-top: prem(129);
+        padding-bottom: prem(110);
+    }
+
+
+}
+
+.post-mv__title {
+    position: relative;
+    font-weight: 400;
+    font-size: prem(25);
+    width: fit-content;
+    margin-inline: auto;
+    font-weight: 400;
+    color: #624349;
+
+    @include mq("md"){
+        font-size: prem(40);
+    }
+}
+.post-mv__title .main-border{
+    top:initial;
+    bottom: 0;
+}
+.post-mv__title .main-border::before,
+.post-mv__title .main-border::after{
+    background-color: #ebe5e6;
+}
+.post-mv__title-text {
+
+}
+
+

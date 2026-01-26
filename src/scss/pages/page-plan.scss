@@ -1,0 +1,249 @@
+@use 'foundation'as *;
+.page-plan .plan-card__list{
+    display: flex;
+    flex-direction: column;
+    gap: prem(62);
+    @include mq("md"){
+        max-width:prem(1100);
+        margin-inline: auto;
+    }
+}
+.page-plan .plan-card__item{
+    padding-bottom: prem(46);
+}
+.page-plan .plan-card__item::after{
+    background: transparent;
+}
+
+// 追加スタイル
+.page-plan .plan-card__title-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: prem(20);
+    padding: prem(20);
+    border-bottom: 1px solid $color-theme;
+
+    @include mq("md") {
+        grid-template-columns: 1fr auto;
+        column-gap: prem(20);
+        row-gap: prem(40);
+        padding: prem(30) prem(40);
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.page-plan .plan-card__title-left {
+    display: flex;
+    flex-direction: column;
+    gap: prem(10);
+    margin-bottom:auto;
+}
+
+.page-plan .plan-card__title-subtitle {
+    font-size: prem(13);
+    color: $color-theme;
+    letter-spacing: 0.1em;
+
+    @include mq("md") {
+        font-size: prem(16);
+    }
+}
+
+.page-plan .plan-card__title-text {
+    font-size: prem(24);
+    font-weight: $regular;
+    line-height: 1;
+
+    @include mq("md") {
+        font-size: prem(32);
+    }
+}
+
+.page-plan .plan-card__title-description {
+    font-size: prem(14);
+
+    @include mq("md") {
+        font-size: prem(16);
+    }
+}
+
+.page-plan .plan-card__title-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: prem(20);
+
+    @include mq("md") {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: prem(20);
+        row-gap: prem(0);
+    }
+}
+
+.page-plan .plan-card__price-normal-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color-theme;
+
+    @include mq("md") {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+.page-plan .plan-card__price-label {
+    font-size: prem(12);
+    margin: 0;
+
+    @include mq("md") {
+        font-size: prem(20);
+    }
+}
+
+.page-plan .plan-card__price-amount-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: prem(5);
+    margin: 0;
+    line-height: 1;
+}
+
+.page-plan .plan-card__price-amount {
+    font-size: prem(20);
+    text-decoration: line-through;
+    font-family: $font-family-heisei;
+    @include mq("md") {
+        font-size: prem(25);
+    }
+}
+
+.page-plan .plan-card__price-tax {
+    font-size: prem(12);
+    color: $color-black;
+}
+
+.page-plan .plan-card__price-tax-in {
+    font-size: prem(12);
+    margin: 0;
+    color: $color-black;
+    text-align: left;
+}
+
+.page-plan .plan-card__price-arrow {
+    display: none;
+
+    @include mq("md") {
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: prem(20) 0 prem(20) prem(15);
+        border-color: transparent transparent transparent $color-theme;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
+.page-plan .plan-card__price-special-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include mq("md") {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+}
+
+.page-plan .plan-card__discount-banner {
+    background-color: $color-theme;
+    color: $color-white;
+    font-size: prem(12);
+    padding: prem(5) prem(10);
+    text-align: center;
+    margin-bottom: prem(5);
+
+    @include mq("md") {
+        font-size: prem(14);
+        padding: prem(0) prem(10);
+
+    }
+}
+
+.page-plan .plan-card__price-special-content {
+    display: flex;
+    align-items: center;
+    gap: prem(10);
+    background-color: $color-white;
+}
+
+.page-plan .plan-card__price-special-label {
+    background-color: $color-theme;
+    color: $color-white;
+    font-size: prem(10);
+    padding: prem(5);
+    text-align: center;
+    line-height: 1.2;
+
+    @include mq("md") {
+        font-size: prem(12);
+    }
+}
+
+.page-plan .plan-card__price-special-amount-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: prem(5);
+    color: $color-theme;
+    line-height: 1.65;
+}
+
+.page-plan .plan-card__price-special-amount {
+    font-size: prem(28);
+
+    @include mq("md") {
+        font-size: prem(36);
+    }
+}
+
+.page-plan .plan-card__price-special-tax {
+    font-size: prem(12);
+    color: $color-black;
+
+    @include mq("md") {
+        font-size: prem(14);
+    }
+}
+
+.page-plan .plan-card__price-special-tax-in {
+    font-size: prem(12);
+    margin: 0;
+    text-align: right;
+
+    @include mq("md") {
+        font-size: prem(14);
+    }
+}
+
+.page-plan .plan-card__price-note {
+    font-size: prem(10);
+    color: rgba($color-black, 0.6);
+    margin: prem(10) 0 0;
+
+    @include mq("md") {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        text-align: right;
+        margin-top: prem(10);
+    }
+}
+.page-plan .plan-card__title-wrapper{
+    grid-template-areas:
+        "subtitle price"
+        "title price";
+        margin-top: prem(0);
+}
+

@@ -123,8 +123,9 @@
 
 .wpcf7-form-control-wrap:has(select) {
   position: relative;
+}
 
-  &::after {
+.wpcf7-form-control-wrap:has(select)::after {
     content: "";
     position: absolute;
     top: 55%;
@@ -140,6 +141,27 @@
       right: prem(37);
       border-width: prem(18) prem(13) 0 prem(13);
     }
+}
+
+.contact__select-wrap {
+  position: relative;
+}
+
+.contact__select-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: prem(20);
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: prem(10) prem(8) 0 prem(8);
+  border-color: #4a4a4a transparent transparent transparent;
+  pointer-events: none;
+  @include mq("md"){
+    right: prem(37);
+    border-width: prem(18) prem(13) 0 prem(13);
   }
 }
 
@@ -162,19 +184,29 @@
   }
 
   input {
-    width: 100% !important;
-  }
-
-  input::placeholder {
-    color: #D1C2C5;
+    width: 100%;
   }
 }
+
+.contact__input-wrap {
+  width: 100%;
+  @include mq("md") {
+    width: 50%;
+  }
+}
+
+.contact__input-group input::placeholder {
+  color: #D1C2C5;
+}
+
 .contact__input input::placeholder {
   color: #D1C2C5;
 }
+
 .contact__input textarea::placeholder {
   color: #D1C2C5;
 }
+
 .contact__submit {
   margin-top: prem(30);
   width:100%;
@@ -183,27 +215,26 @@
   font-size: prem(15);
   text-align: center;
   transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
   @include mq("md"){
     margin-top: prem(120);
     width: prem(697);
   }
+}
 
-
-  input[type="submit"] {
-    border-radius: 10px;
-    background: linear-gradient(360deg, #957b80 75%, #b59f94 100%);
-    color: $color-white;
-    border: none;
-    padding: prem(15) prem(40);
-    font-size: prem(15);
-    border-radius: 0;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 100%;
-    @include mq("md") {
-        font-size: prem(23);
-        padding: prem(20) prem(40);
-    }
+.contact__submit input[type="submit"],
+.contact__submit-btn {
+  border-radius: 10px;
+  background: linear-gradient(360deg, #957b80 75%, #b59f94 100%);
+  color: $color-white;
+  border: none;
+  padding: prem(15) prem(40);
+  font-size: prem(15);
+  cursor: pointer;
+  width: 100%;
+  @include mq("md") {
+      font-size: prem(23);
+      padding: prem(20) prem(40);
   }
 }
 
@@ -215,7 +246,7 @@
       background-repeat: no-repeat;
       width:prem(20);
       height:prem(10);
-      top: 36%;
+      top: 50%;
       right:5% ;
       transform: translateY(-50%);
       z-index: 0;
@@ -227,5 +258,204 @@
 
 }
 .contact__submit:hover {
+  transform: scale(1.01);
+  opacity: 0.8;
+}
+
+/* エラー表示 */
+.contact__error {
+  color: #d32f2f;
+  font-size: prem(12);
+  margin-top: prem(5);
+  @include mq("md") {
+    font-size: prem(14);
+  }
+}
+
+.contact__input input.is-error,
+.contact__input select.is-error,
+.contact__input textarea.is-error {
+  border-color: #d32f2f;
+}
+
+/* 確認ページ */
+.contact-confirm {
+  margin-top: prem(46);
+  @include mq("md") {
+    margin-top: prem(77);
+  }
+}
+
+.contact__list--confirm {
+  gap: prem(0);
+}
+
+.contact__item--confirm {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #D1C2C5;
+  padding-block: prem(20);
+  @include mq("md") {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: prem(19);
+    padding-block: prem(25);
+  }
+}
+
+.contact__item--confirm .contact__label {
+  width: 100%;
+  background-color: transparent;
+  color: $color-theme;
+  border: none;
+  padding: 0;
+  font-size: prem(14);
+  justify-content: flex-start;
+  border-radius: 0;
+  @include mq("md") {
+    width: prem(294);
+    flex-shrink: 0;
+    font-size: prem(17);
+  }
+}
+
+.contact__value {
+  width: 100%;
+  font-size: prem(15);
+  line-height: 1.75;
+  margin-top: prem(8);
+  color: #333;
+  @include mq("md") {
+    margin-top: 0;
+    flex-grow: 1;
+    font-size: prem(16);
+  }
+}
+
+.contact__value--message {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.contact__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: prem(15);
+  margin-top: prem(40);
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: center;
+    gap: prem(30);
+    margin-top: prem(80);
+  }
+}
+
+.contact__back-btn {
+  display: block;
+  text-align: center;
+  padding: prem(15) prem(40);
+  font-size: prem(15);
+  color: $color-theme;
+  border: 2px solid $color-theme;
+  background-color: $color-white;
+  border-radius: prem(10);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  @include mq("md") {
+    width: prem(300);
+    font-size: prem(18);
+    padding: prem(20) prem(40);
+  }
+}
+
+.contact__send-form {
+  width: 100%;
+  @include mq("md") {
+    width: prem(300);
+  }
+}
+
+.contact__send-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: prem(15) prem(40);
+  font-size: prem(15);
+  color: $color-white;
+  border: none;
+  background: linear-gradient(360deg, #957b80 75%, #b59f94 100%);
+  border-radius: prem(10);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  @include mq("md") {
+    font-size: prem(18);
+    padding: prem(20) prem(40);
+  }
+}
+
+.contact__send-btn:hover {
+  transform: scale(1.01);
+}
+
+/* 完了ページ */
+.contact-thanks {
+  margin-top: prem(46);
+  @include mq("md") {
+    margin-top: prem(77);
+  }
+}
+
+.contact-thanks__content {
+  text-align: center;
+  padding-block: prem(40);
+  @include mq("md") {
+    padding-block: prem(80);
+  }
+}
+
+.contact-thanks__title {
+  font-size: prem(20);
+  color: $color-theme;
+  line-height: 1.5;
+  @include mq("md") {
+    font-size: prem(32);
+  }
+}
+
+.contact-thanks__text {
+  font-size: prem(14);
+  line-height: 1.75;
+  color: #333;
+  margin-top: prem(20);
+  @include mq("md") {
+    font-size: prem(16);
+    margin-top: prem(30);
+  }
+}
+
+.contact-thanks__btn {
+  margin-top: prem(40);
+  @include mq("md") {
+    margin-top: prem(60);
+  }
+}
+
+.contact-thanks__btn .button {
+  display: inline-block;
+  text-align: center;
+  padding: prem(15) prem(60);
+  font-size: prem(15);
+  color: $color-white;
+  background: linear-gradient(360deg, #957b80 75%, #b59f94 100%);
+  border-radius: prem(10);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  @include mq("md") {
+    font-size: prem(18);
+    padding: prem(20) prem(80);
+  }
+}
+
+.contact-thanks__btn .button:hover {
   transform: scale(1.01);
 }

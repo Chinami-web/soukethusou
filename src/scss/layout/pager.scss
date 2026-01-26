@@ -1,7 +1,53 @@
-﻿@use 'foundation' as *;
+@use 'foundation' as *;
 
 .pager {
   margin-top: prem(32);
 }
 
+.pager .pagination .nav-links ul.page-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
 
+.pager .pagination .nav-links ul.page-numbers li .page-numbers {
+  display: block;
+  font-family: $font-family-mincho;
+  font-size: prem(20);
+  color: $color-black;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.pager .pagination .nav-links ul.page-numbers li .page-numbers.current {
+  color: $color-theme;
+}
+
+.pager .pagination .nav-links ul.page-numbers li .page-numbers.dots {
+  font-size: 0; // 元のテキスト「…」を消すための強力な方法
+  color: transparent;
+  position: relative;
+  width: 3em;
+  text-align: center;
+  overflow: visible; // はみ出しても見えるようにする
+  margin: 0 prem(50); // 数字とドットの間隔を広げる
+}
+
+.pager .pagination .nav-links ul.page-numbers li .page-numbers.dots::before {
+  content: "・・・・・・"; // 6個のドット
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $color-black;
+  font-family: $font-family-mincho;
+  font-size: prem(16); // ここでフォントサイズを復活させる
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  display: block; // ブロック要素にして確実に表示
+}
+
+.pager .pagination .nav-links ul.page-numbers li .page-numbers:hover:not(.current):not(.dots) {
+  opacity: 0.7;
+}
