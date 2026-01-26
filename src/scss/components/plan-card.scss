@@ -7,18 +7,39 @@
     border-radius: 10px 0 10px 10px;
     background-color: $color-white;
     position: relative;
-    padding-bottom: prem(5);
     transition: z-index 0.3s;
-    padding-bottom: prem(60);
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
 
 @include mq("md"){
-    padding-bottom: prem(145);
+    padding-bottom: 0;
 
     border-radius: 20px 0 20px 20px;
 
 }
     &.is-active {
         z-index: 2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.65);
+        opacity: 0.65;
+        transition: opacity 0.3s linear;
+        pointer-events: none;
+        z-index: 11;
+        border-radius: 10px 0 10px 10px;
+
+        @include mq("md"){
+            border-radius: 20px 0 20px 20px;
+        }
+    }
+
+    &.is-active::after {
+        opacity: 0;
     }
 
 }
@@ -31,6 +52,12 @@
     @include mq("md") {
         padding: prem(38) prem(20) prem(0) prem(29);
     }
+}
+.plan-card__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap:prem(21);
+    padding: prem(21) prem(20) prem(0) prem(20);
 }
 
 .plan-card__img img {
@@ -215,23 +242,19 @@
 
 .plan-card__drawer {
     border-top: 1px solid $color-white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    z-index: 10;
+    margin-top: auto;
 }
 
 .plan-card__drawer-wrapper {
-    background-color: $color-theme;
+    border-top: 1px solid $color-theme;
     padding-block: prem(20);
     cursor: pointer;
     position: relative;
     transition: background-color 0.3s;
-    border-radius: 0 0 8px 8px;
     @include mq("md"){
         padding-block: prem(40);
-        border-radius: 0 0 20px 20px;
+
     }
 }
 
@@ -241,8 +264,8 @@
         display: block;
         width: prem(15);
         height: prem(15);
-        border-right: 2px solid $color-white;
-        border-bottom: 2px solid $color-white;
+        border-right: 2px solid $color-theme;
+        border-bottom: 2px solid $color-theme;
         transform: rotate(45deg);
         position: absolute;
         top: 40%;
@@ -258,8 +281,8 @@
         display: block;
         width: prem(15);
         height: prem(15);
-        border-right: 2px solid $color-white;
-        border-bottom: 2px solid $color-white;
+        border-right: 2px solid $color-theme;
+        border-bottom: 2px solid $color-theme;
         transform: rotate(45deg);
         position: absolute;
         top: 40%;
@@ -282,7 +305,7 @@
     }
 
 .plan-card__drawer-text {
-    color: $color-white;
+    color: $color-theme;
     font-size: prem(15);
     font-weight: $regular;
     line-height: 1.67;
@@ -299,26 +322,19 @@
     display: none;
     padding: prem(5);
     background-color: #fff;
-    border: 1px solid $color-theme;
-    border-top: none;
-    position: absolute;
-    top: 92%;
-    left: 0px;
+    border-top: 1px solid $color-theme;
     width:100%;
-    z-index: 20;
-    border-radius: 0 0 20px 20px;
     @include mq("md"){
         padding: prem(20);
     }
 }
 
 .plan-card__icon-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: prem(0);
-    justify-content: center;
-
+    display: none;
     @include mq("md") {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
         gap: prem(20);
     }
 }
@@ -335,6 +351,46 @@
         height: auto;
         object-fit: contain;
     }
+}
+/* SP用スライダーのアイコンスタイル */
+.plan-card__icon-slider {
+    padding-bottom: prem(20);
+    .splide__pagination {
+        bottom: 0;
+    }
+    .splide__arrow {
+        background: none;
+        width: prem(30);
+        height: prem(30);
+        &--prev {
+            left: prem(-10);
+            background-image: url(../images/common/slide-arrow.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(180deg) translateY(50%);
+        }
+        &--next {
+            right: prem(-10);
+            background-image: url(../images/common/slide-arrow.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translateY(-50%);
+        }
+        svg {
+            display: none;
+        }
+    }
+}
+
+.plan-card__icon-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: prem(15);
+    justify-items: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .plan-card__label {
@@ -378,11 +434,13 @@
         margin:initial;
     }
 }
+/*
 #plan-card-slider .splide__track.is-drawer-open{
     z-index: 3;
     padding-bottom: prem(500);
     margin-bottom: prem(-500);
 }
+*/
 #plan-card-slider .splide__arrow {
     background: none;
     width: 80px;

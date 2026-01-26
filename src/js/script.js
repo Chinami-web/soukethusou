@@ -153,6 +153,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       ).mount();
     }
+
+    // 関連記事スライダー
+    if (document.querySelector('#post-connect-slider')) {
+      new Splide('#post-connect-slider', {
+        type: 'slide',
+        perPage: 3,
+        perMove: 1,
+        gap: '20px',
+        pagination: false,
+        arrows: true,
+        autoplay: false,
+        breakpoints: {
+          767: {
+            perPage: 1,
+            gap: '16px',
+            padding: { right: '20%' }, // SPで次のスライドを少し見せる
+          }
+        }
+      }).mount();
+    }
+
     if (document.querySelector('#gallery')) {
       const gallerySlider = new Splide('#gallery',
         {
@@ -339,65 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       mainCardSlider.on('mounted move', updateMainCardStatus);
 
-      // デバッグ用ログ
-      mainCardSlider.on('mounted', () => {
-        const isSP = window.innerWidth <= 767;
-        const track = document.querySelector('#main-card-slider .splide__track');
-        const list = document.querySelector('#main-card-slider .splide__list');
-        const firstSlide = document.querySelector('#main-card-slider .splide__slide');
-
-        console.log('=== Splide mounted ===');
-        console.log('isSP:', isSP);
-        console.log('windowWidth:', window.innerWidth);
-        console.log('perPage:', mainCardSlider.options.perPage);
-        console.log('paddingLeft:', mainCardSlider.options.paddingLeft);
-        console.log('paddingRight:', mainCardSlider.options.paddingRight);
-        console.log('padding:', mainCardSlider.options.padding);
-        console.log('gap:', mainCardSlider.options.gap);
-        console.log('type:', mainCardSlider.options.type);
-        console.log('rewind:', mainCardSlider.options.rewind);
-        console.log('--- DOM要素のスタイル ---');
-        if (track) {
-          console.log('track paddingRight:', window.getComputedStyle(track).paddingRight);
-          console.log('track paddingLeft:', window.getComputedStyle(track).paddingLeft);
-        }
-        if (list) {
-          console.log('list gap:', window.getComputedStyle(list).gap);
-        }
-        if (firstSlide) {
-          console.log('firstSlide width:', window.getComputedStyle(firstSlide).width);
-          console.log('firstSlide marginRight:', window.getComputedStyle(firstSlide).marginRight);
-        }
-        console.log('====================');
-      });
-
-      mainCardSlider.on('move', (newIndex, prevIndex, destIndex) => {
-        console.log('Splide move:', {
-          newIndex,
-          prevIndex,
-          destIndex,
-          currentIndex: mainCardSlider.index,
-          length: mainCardSlider.length
-        });
-      });
-
-      mainCardSlider.on('moved', (newIndex, prevIndex, destIndex) => {
-        console.log('Splide moved:', {
-          newIndex,
-          prevIndex,
-          destIndex,
-          currentIndex: mainCardSlider.index,
-          length: mainCardSlider.length
-        });
-      });
-
-      mainCardSlider.on('visible', (Slide) => {
-        console.log('Splide visible:', {
-          index: Slide.index,
-          currentIndex: mainCardSlider.index
-        });
-      });
-
       if (mainCardPrev) {
         mainCardPrev.addEventListener('click', () => {
           mainCardSlider.go('<');
@@ -426,20 +388,6 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       }
-
-      // mount前の設定確認
-      const isSP = window.innerWidth <= 767;
-      console.log('=== Splide mount前 ===');
-      console.log('isSP:', isSP);
-      console.log('windowWidth:', window.innerWidth);
-      console.log('設定値（breakpoints適用前）:', {
-        perPage: mainCardSlider.options.perPage,
-        paddingLeft: mainCardSlider.options.paddingLeft,
-        paddingRight: mainCardSlider.options.paddingRight,
-        gap: mainCardSlider.options.gap,
-        type: mainCardSlider.options.type,
-        rewind: mainCardSlider.options.rewind
-      });
 
       mainCardSlider.mount();
 
@@ -537,38 +485,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
 
-      // mount後の設定確認
-      setTimeout(() => {
-        const track = document.querySelector('#main-card-slider .splide__track');
-        const list = document.querySelector('#main-card-slider .splide__list');
-        const firstSlide = document.querySelector('#main-card-slider .splide__slide');
-
-        console.log('=== Splide mount後 ===');
-        console.log('設定値（breakpoints適用後）:', {
-          perPage: mainCardSlider.options.perPage,
-          paddingLeft: mainCardSlider.options.paddingLeft,
-          paddingRight: mainCardSlider.options.paddingRight,
-          padding: mainCardSlider.options.padding,
-          gap: mainCardSlider.options.gap,
-          type: mainCardSlider.options.type,
-          rewind: mainCardSlider.options.rewind
-        });
-        console.log('--- DOM要素のスタイル ---');
-        if (track) {
-          console.log('track paddingRight:', window.getComputedStyle(track).paddingRight);
-          console.log('track paddingLeft:', window.getComputedStyle(track).paddingLeft);
-          console.log('track width:', window.getComputedStyle(track).width);
-        }
-        if (list) {
-          console.log('list gap:', window.getComputedStyle(list).gap);
-          console.log('list width:', window.getComputedStyle(list).width);
-        }
-        if (firstSlide) {
-          console.log('firstSlide width:', window.getComputedStyle(firstSlide).width);
-          console.log('firstSlide marginRight:', window.getComputedStyle(firstSlide).marginRight);
-        }
-        console.log('====================');
-      }, 100);
     }
     // plan-card (plan)
     if (document.querySelector('#plan-card-slider')) {
@@ -645,6 +561,33 @@ document.addEventListener('DOMContentLoaded', function() {
       window.addEventListener('resize', adjustArrowPosition);
       window.addEventListener('load', adjustArrowPosition);
     }
+
+    // plan-card icon slider (SP only)
+    if (document.querySelectorAll('.js-plan-icon-slider').length > 0) {
+      var planIconSliders = document.querySelectorAll('.js-plan-icon-slider');
+      planIconSliders.forEach(function(slider) {
+        new Splide(slider, {
+          type: 'slide',
+          perPage: 1,
+          arrows: true,
+          pagination: true,
+          gap: '20px',
+        }).mount();
+      });
+    }
+
+    // plan-facility-slider (plan page bottom)
+    // if (document.querySelector('#plan-facility-slider')) {
+    //   new Splide('#plan-facility-slider', {
+    //     type: 'slide',
+    //     perPage: 1,
+    //     arrows: true,
+    //     pagination: false,
+    //     autoplay: false,
+    //     gap: '20px',
+    //   }).mount();
+    // }
+
     if (document.querySelector('#relation-parts-slider')) {
       const relationPartsSlider = new Splide('#relation-parts-slider',
         {
@@ -912,30 +855,7 @@ jQuery(function ($) {
         $wrapper.toggleClass('is-open');
         $wrapper.closest('.plan-card__item').toggleClass('is-active');
 
-        // 開く動作かどうか
-        const isOpening = $wrapper.hasClass('is-open');
-
-        // もし開くなら、アニメーション開始前にトラックを広げる
-        if (isOpening) {
-             $('#plan-card-slider .splide__track').addClass('is-drawer-open');
-        }
-
-        $content.slideToggle({
-            duration: 300,
-            complete: function() {
-                // アニメーション完了後に状態を再チェック
-                const $track = $('#plan-card-slider .splide__track');
-                if ($track.length) {
-                    // まだ開いているドロワーがあるか確認
-                    const hasOpen = $('.plan-card__drawer-wrapper.is-open').length > 0;
-                    // もし開いているものがなければ、クラスを外す
-                    // (閉じるアニメーション完了後にここで外れるため、ガタつきが防げる)
-                    if (!hasOpen) {
-                        $track.removeClass('is-drawer-open');
-                    }
-                }
-            }
-        });
+        $content.slideToggle(300);
     });
 });
 
@@ -981,40 +901,109 @@ jQuery(function ($) {
     const $modal = $('#movie-modal');
     const $video = $('#modal-video');
     const $thumbnails = $('.movie-modal__thumbnail');
+    if (!$modal.length || !$video.length) return;
+
+    const getDefaultSrc = () => {
+      const firstThumbSrc = $thumbnails.first().data('src');
+      return firstThumbSrc || $modal.data('default-src') || $video.find('source').attr('src');
+    };
+    const setVideoSource = (src) => {
+      if (!src) return;
+      $video.find('source').attr('src', src);
+      $video[0].load();
+    };
+    const pauseOtherVideos = () => {
+      console.log('[movie-modal] pauseOtherVideos');
+      document.querySelectorAll('video, audio').forEach((video) => {
+        if (video === $video[0]) return;
+        
+        // 単純に停止するだけにする
+        video.pause();
+        if (video.tagName.toLowerCase() === 'video') {
+            video.muted = true;
+        }
+      });
+    };
+    const resumeOtherVideos = () => {
+      console.log('[movie-modal] resumeOtherVideos');
+      document.querySelectorAll('video').forEach((video) => {
+        if (video === $video[0]) return;
+        
+        if (video.closest('.movie-modal__thumbnail')) {
+            return; 
+        }
+        
+        if (video.hasAttribute('autoplay')) {
+            video.muted = true;
+            video.play().catch(() => {});
+        }
+      });
+    };
+
+    const resetActiveThumbnail = () => {
+      if (!$thumbnails.length) return;
+      $thumbnails.removeClass('is-active');
+      $thumbnails.first().addClass('is-active');
+    };
+
+    // 再生開始時に他の動画を停止
+    $video.on('play', function() {
+        console.log('[movie-modal] modal video play');
+        pauseOtherVideos();
+    });
 
     // 開く
     $('#mv-modal').on('click', function() {
+        console.log('[movie-modal] open by #mv-modal');
+        pauseOtherVideos();
         $modal.addClass('is-open');
         $modal.animate({ opacity: 1 }, 300);
-        // デフォルト動画（最初のサムネイルの動画）をセットして停止状態で表示
-        const defaultSrc = $thumbnails.first().data('src');
-        $video.find('source').attr('src', defaultSrc);
-        $video[0].load();
+        // デフォルト動画をセットして停止状態で表示
+        const defaultSrc = getDefaultSrc();
+        console.log('[movie-modal] default src:', defaultSrc);
+        setVideoSource(defaultSrc);
+        $video[0].pause();
+        $video[0].currentTime = 0;
+        resetActiveThumbnail();
+    });
 
-        $thumbnails.removeClass('is-active');
-        $thumbnails.first().addClass('is-active');
+    // メインの再生ボタンでも再生する
+    $('.movie-modal__thumbnail-play--main').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('[movie-modal] click main play button');
+        pauseOtherVideos();
+        if ($video[0].paused) {
+          $video[0].play();
+        } else {
+          $video[0].pause();
+        }
     });
 
     // 閉じる
     $('.movie-modal__close, .movie-modal__overlay').on('click', function() {
+        console.log('[movie-modal] close');
         $modal.animate({ opacity: 0 }, 300, function() {
              $modal.removeClass('is-open');
              $video[0].pause();
              $video[0].currentTime = 0;
+             resumeOtherVideos();
         });
     });
 
     // 動画切り替え
     $thumbnails.on('click', function() {
+        console.log('[movie-modal] click thumbnail');
         // クリックされたのがすでにアクティブな場合は何もしない
         if ($(this).hasClass('is-active')) return;
 
         const src = $(this).data('src');
+        if (!src) return;
+        console.log('[movie-modal] switch src:', src);
         $thumbnails.removeClass('is-active');
         $(this).addClass('is-active');
 
-        $video.find('source').attr('src', src);
-        $video[0].load();
+        setVideoSource(src);
         $video[0].play();
     });
 
@@ -1023,23 +1012,26 @@ jQuery(function ($) {
         const src = $(this).data('movie-src');
         if (!src) return;
 
+        console.log('[movie-modal] open by .js-open-movie-modal src:', src);
+        pauseOtherVideos();
         $modal.addClass('is-open');
         $modal.animate({ opacity: 1 }, 300);
 
         // 動画をセット
-        $video.find('source').attr('src', src);
-        $video[0].load();
+        setVideoSource(src);
         $video[0].play();
 
         // サムネイルのアクティブ状態を同期
-        $thumbnails.removeClass('is-active');
-        $thumbnails.each(function() {
-            // URLの一部が一致するか確認
-            const thumbSrc = $(this).data('src');
-            if (thumbSrc && src.indexOf(thumbSrc.split('/').pop()) !== -1) {
-                $(this).addClass('is-active');
-            }
-        });
+        if ($thumbnails.length) {
+          $thumbnails.removeClass('is-active');
+          $thumbnails.each(function() {
+              // URLの一部が一致するか確認
+              const thumbSrc = $(this).data('src');
+              if (thumbSrc && src.indexOf(thumbSrc.split('/').pop()) !== -1) {
+                  $(this).addClass('is-active');
+              }
+          });
+        }
     });
   });
 
@@ -1048,7 +1040,6 @@ jQuery(function ($) {
     function initFooterNavToggle() {
       // SPのみで動作するように判定
       const isSP = window.matchMedia("(max-width: 767px)").matches;
-      console.log('initFooterNavToggle - isSP:', isSP);
 
       if (isSP) {
         $('.js-footer-nav-toggle').off('click.footerNav mouseleave.footerNav').on('click.footerNav', function() {
@@ -1058,9 +1049,6 @@ jQuery(function ($) {
 
           // 現在の状態を確認
           const wasOpen = $title.hasClass('is-open');
-          console.log('クリック前の状態 - is-open:', wasOpen);
-          console.log('$title要素:', $title[0]);
-          console.log('$list要素:', $list[0]);
 
           // 開閉動作
           $title.toggleClass('is-open');
@@ -1068,34 +1056,21 @@ jQuery(function ($) {
 
           // 変更後の状態を確認
           const isNowOpen = $title.hasClass('is-open');
-          console.log('クリック後の状態 - is-open:', isNowOpen);
-          console.log('$titleのクラス:', $title[0].className);
 
           // SP時はCSS変数で制御（ホバーは不要）
           if (!isNowOpen) {
             // 閉じた時は強制的に45度に戻す
             $title[0].style.setProperty('--arrow-rotate', '45deg');
-            console.log('閉じた時 - arrow-rotateを45degに設定');
           } else {
             // 開いた時は225度
             $title[0].style.setProperty('--arrow-rotate', '225deg');
-            console.log('開いた時 - arrow-rotateを225degに設定');
           }
 
-          $list.slideToggle(300, function() {
-            console.log('アニメーション完了 - is-open:', $title.hasClass('is-open'));
-            console.log('リストの表示状態:', $list.is(':visible'));
-          });
+          $list.slideToggle(300);
         });
 
-        // 初期状態を確認
-        $('.js-footer-nav-toggle').each(function() {
-          const $title = $(this);
-          console.log('初期状態 - 要素:', $title[0], 'is-open:', $title.hasClass('is-open'));
-        });
       } else {
         // PCの場合は開閉機能を無効化し、常に表示
-        console.log('PC表示モード - 開閉機能を無効化');
         $('.js-footer-nav-toggle').off('click.footerNav');
         $('.footer-nav__list').show();
         $('.js-footer-nav-toggle').removeClass('is-open');
@@ -1108,7 +1083,6 @@ jQuery(function ($) {
 
     // リサイズ時に再初期化
     $(window).on('resize', function() {
-      console.log('リサイズイベント');
       initFooterNavToggle();
     });
   });
@@ -1289,3 +1263,182 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+// 提携式場＆公営斎場のご案内 タブ・エリア切り替え
+jQuery(function($) {
+  // 都道府県タブ切り替え
+  $('.js-public-tab').on('click', function() {
+    const pref = $(this).data('pref');
+
+    // タブのアクティブ切り替え
+    $('.js-public-tab').removeClass('is-active');
+    $(this).addClass('is-active');
+
+    // エリアリストの表示切り替え
+    $('.js-public-area-list').removeClass('is-active');
+    $('#area-' + pref).addClass('is-active');
+
+    // 選択された都道府県の最初のエリアボタンを自動クリック（またはリセット）
+    const $activeAreaList = $('#area-' + pref);
+    let $targetBtn = $activeAreaList.find('.js-public-area-btn[data-city="kawagoe"]'); // 埼玉なら川越優先
+    if ($targetBtn.length === 0) {
+      $targetBtn = $activeAreaList.find('.js-public-area-btn').first(); // なければ最初
+    }
+
+    if ($targetBtn.length) {
+      $targetBtn.trigger('click');
+    } else {
+        // ボタンがない場合はリストも空にする
+        $('.js-public-item').removeClass('is-active');
+    }
+  });
+
+  // エリアボタン切り替え
+  $(document).on('click', '.js-public-area-btn', function() {
+    const pref = $(this).data('pref');
+    const city = $(this).data('city');
+
+    // 同じ都道府県内のボタンのアクティブ切り替え
+    $('#area-' + pref + ' .js-public-area-btn').removeClass('is-active');
+    $(this).addClass('is-active');
+
+    // 施設リストの表示切り替え
+    $('.js-public-item').removeClass('is-active');
+    // data-prefとdata-cityが一致するものを表示
+    $('.js-public-item[data-pref="' + pref + '"][data-city="' + city + '"]').addClass('is-active');
+  });
+});
+
+// お問い合わせフォーム バリデーション
+jQuery(function($) {
+  var $contactForm = $('#contact-form');
+  if (!$contactForm.length) return;
+
+  // エラーメッセージを表示
+  function showError($field, message) {
+    var fieldId = $field.attr('id');
+    var $error = $('#error-' + fieldId);
+    $error.text(message);
+    $field.addClass('is-error');
+  }
+
+  // エラーメッセージをクリア
+  function clearError($field) {
+    var fieldId = $field.attr('id');
+    var $error = $('#error-' + fieldId);
+    $error.text('');
+    $field.removeClass('is-error');
+  }
+
+  // 全エラークリア
+  function clearAllErrors() {
+    $contactForm.find('.contact__error').text('');
+    $contactForm.find('input, select, textarea').removeClass('is-error');
+  }
+
+  // バリデーション関数
+  function validateField($field) {
+    var value = $field.val().trim();
+    var fieldId = $field.attr('id');
+    var isRequired = $field.prop('required');
+    var type = $field.attr('type') || $field.prop('tagName').toLowerCase();
+
+    clearError($field);
+
+    // 必須チェック
+    if (isRequired && !value) {
+      var label = $field.closest('.contact__item').find('.contact__label').text().replace('必須', '').trim();
+      showError($field, label + 'を入力してください。');
+      return false;
+    }
+
+    // 値がない場合はこれ以上チェックしない
+    if (!value) return true;
+
+    // メールアドレスの形式チェック
+    if (fieldId === 'your-email') {
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(value)) {
+        showError($field, '正しいメールアドレスを入力してください。');
+        return false;
+      }
+    }
+
+    // 電話番号の形式チェック
+    if (fieldId === 'your-tel') {
+      var telPattern = /^[0-9\-]+$/;
+      if (!telPattern.test(value)) {
+        showError($field, '正しい電話番号を入力してください。');
+        return false;
+      }
+    }
+
+    // 郵便番号の形式チェック
+    if (fieldId === 'your-zip') {
+      var zipPattern = /^[0-9]{3}-?[0-9]{4}$/;
+      if (!zipPattern.test(value)) {
+        showError($field, '正しい郵便番号を入力してください。');
+        return false;
+      }
+    }
+
+    // フリガナのカタカナチェック
+    if (fieldId === 'your-kana-sei' || fieldId === 'your-kana-mei') {
+      var kanaPattern = /^[ァ-ヶー　\s]+$/;
+      if (!kanaPattern.test(value)) {
+        showError($field, 'カタカナで入力してください。');
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  // フォーム全体のバリデーション
+  function validateForm() {
+    var isValid = true;
+    var $firstError = null;
+
+    // 全フィールドをチェック
+    $contactForm.find('input, select, textarea').each(function() {
+      var $field = $(this);
+      if (!validateField($field)) {
+        isValid = false;
+        if (!$firstError) {
+          $firstError = $field;
+        }
+      }
+    });
+
+    // 最初のエラーフィールドにフォーカス
+    if ($firstError) {
+      $firstError.focus();
+      $('html, body').animate({
+        scrollTop: $firstError.offset().top - 100
+      }, 300);
+    }
+
+    return isValid;
+  }
+
+  // リアルタイムバリデーション（フォーカスアウト時）
+  $contactForm.find('input, select, textarea').on('blur', function() {
+    validateField($(this));
+  });
+
+  // 入力時にエラークリア
+  $contactForm.find('input, select, textarea').on('input change', function() {
+    clearError($(this));
+  });
+
+  // フォーム送信時
+  $contactForm.on('submit', function(e) {
+    clearAllErrors();
+    if (!validateForm()) {
+      e.preventDefault();
+      return false;
+    }
+    return true;
+  });
+});
+

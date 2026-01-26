@@ -460,7 +460,7 @@
 
 
     <!-- モーダル -->
-    <div id="movie-modal" class="movie-modal">
+    <div id="movie-modal" class="movie-modal" data-default-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4">
         <div class="movie-modal__overlay"></div>
         <div class="movie-modal__content">
             <button class="movie-modal__close" aria-label="閉じる">
@@ -477,9 +477,7 @@
             <ul class="movie-modal__thumbnails">
                 <li class="movie-modal__thumbnail is-active" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg">
                     <div class="movie-modal__thumbnail-content">
-                        <video muted playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg">
-                            <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4" type="video/mp4">
-                        </video>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg" alt="「祖母の手」篇">
                         <span class="movie-modal__thumbnail-play">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play-w.png" alt="play movie" width="141" height="141">
                         </span>
@@ -488,9 +486,7 @@
                 </li>
                 <li class="movie-modal__thumbnail" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg">
                     <div class="movie-modal__thumbnail-content">
-                        <video muted playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg">
-                            <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" type="video/mp4">
-                        </video>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg" alt="「もう一度孫から」篇">
                         <span class="movie-modal__thumbnail-play">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play-w.png" alt="play movie" width="141" height="141">
                         </span>

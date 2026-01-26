@@ -1,0 +1,39 @@
+@use 'foundation'as *;
+.page-contact-confirm.page-contact {
+    margin-top: prem(46);
+    @include mq("md") {
+        margin-top: prem(250);
+    }
+}
+.page-contact-confirm .page-title__main {
+    font-size: prem(20);
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    color: $color-theme;
+    @include mq("md") {
+        font-size: prem(40);
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+}
+.page-contact-confirm .contact__list{
+    margin-top: prem(100);
+
+}
+.page-contact-confirm .contact__description{
+    margin-top: prem(40);
+    text-align: center;
+    @include mq("md"){
+        margin-top: prem(80);
+    }
+}
+.page-contact-confirm .contact__btn{
+    margin-top: prem(16);
+    text-align: center;
+    @include mq("md"){
+        margin-top: prem(100);
+    }
+
+}

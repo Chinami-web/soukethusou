@@ -287,15 +287,12 @@ margin-top: prem(10);
     display: block;
     margin-left: auto;
     margin-top: prem(19);
-    padding-left: prem(10);
-
 
     @include mq("md"){
+        padding-left: prem(30);
         margin-top: 0;
         width: prem(148);
-
-        text-align: center;
-
+        font-size: prem(15);
     }
 }
 .top-voice__link::after {

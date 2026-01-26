@@ -17,31 +17,31 @@
             <ul class="mv__nav-list">
               <p class="mv__nav-title">東上セレモの想結葬</p>
               <li class="mv__nav-item">
-                <a class="mv__nav-item-link" href="#">東上セレモの想結葬</a>
+                <a class="mv__nav-item-link" href="<?php echo esc_url(home_url('/about/')); ?>">東上セレモの想結葬</a>
               </li>
               <li class="mv__nav-item">
-                <a class="mv__nav-item-link" href="#">プラン・費用</a>
+                <a class="mv__nav-item-link" href="<?php echo esc_url(home_url('/plan/')); ?>">プラン・費用</a>
               </li>
               <li class="mv__nav-item">
-                <a class="mv__nav-item-link" href="#">葬儀場を探す</a>
+                <a class="mv__nav-item-link" href="<?php echo esc_url(home_url('/facility/')); ?>">葬儀場を探す</a>
               </li>
               <li class="mv__nav-item">
-                <a class="mv__nav-item-link" href="#">各種サービス</a>
+                <a class="mv__nav-item-link" href="<?php echo esc_url(home_url('/service/')); ?>">各種サービス</a>
               </li>
             </ul>
           </nav>
           <nav class="mv__nav">
             <ul class="mv__nav-list">
               <li class="mv__nav-item">
-                <a class="mv__nav-item-link" href="#">運営会社</a>
+                <a class="mv__nav-item-link" href="https://tojoceremo.jp/company/" target="_blank" rel="noopener">運営会社</a>
               </li>
               <li class="mv__nav-item">
-                <a class="mv__nav-item-link" href="#">お問い合わせ</a>
+                <a class="mv__nav-item-link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
               </li>
             </ul>
           </nav>
           <div class="mv__nav-btn">
-            <a class="mv__nav-btn-link" href="#">
+            <a class="mv__nav-btn-link" href="<?php echo esc_url(home_url('/contact/')); ?>">
               <span>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/flower.png" alt="生花の依頼のこちら">
               </span>
@@ -73,7 +73,7 @@
   </section>
   <div class="mv__nav-btn-wrap sp-only">
     <div class="mv__nav-btn">
-      <a class="mv__nav-btn-link" href="#">
+      <a class="mv__nav-btn-link" href="<?php echo esc_url(home_url('/contact/')); ?>">
         <span>
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/flower.png" alt="生花の依頼のこちら">
         </span>
@@ -330,27 +330,11 @@
                     </ul>
                   </div>
                   <div class="plan-card__btn pc-only">
-                    <a class="button button-solid" href="#">
+                    <a class="button button-solid" href="<?php echo esc_url(home_url('/plan/')); ?>">
                       <span></span>
                       <span></span>
                       全プランをみる
                     </a>
-                  </div>
-                </div>
-                <div class="plan-card__drawer">
-                  <div class="plan-card__drawer-wrapper">
-                    <p class="plan-card__drawer-text">
-                      含まれるもの
-                    </p>
-                  </div>
-                  <div class="plan-card__drawer-content">
-                    <ul class="plan-card__icon-list">
-                      <?php for ($i = 1; $i <= 23; $i++): ?>
-                        <li class="plan-card__icon-item">
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
-                        </li>
-                      <?php endfor; ?>
-                    </ul>
                   </div>
                 </div>
                 <div class="plan-card__label">
@@ -399,7 +383,7 @@
                     </ul>
                   </div>
                   <div class="plan-card__btn pc-only">
-                    <a class="button button-solid" href="#">
+                    <a class="button button-solid" href="<?php echo esc_url(home_url('/plan/')); ?>">
                       <span></span>
                       <span></span>
                       プラン詳細をみる
@@ -469,27 +453,11 @@
                     </ul>
                   </div>
                   <div class="plan-card__btn pc-only">
-                    <a class="button button-solid" href="#">
+                    <a class="button button-solid" href="<?php echo esc_url(home_url('/plan/')); ?>">
                       <span></span>
                       <span></span>
                       プラン詳細をみる
                     </a>
-                  </div>
-                </div>
-                <div class="plan-card__drawer">
-                  <div class="plan-card__drawer-wrapper">
-                    <p class="plan-card__drawer-text">
-                      含まれるもの
-                    </p>
-                  </div>
-                  <div class="plan-card__drawer-content">
-                    <ul class="plan-card__icon-list">
-                      <?php for ($i = 1; $i <= 27; $i++): ?>
-                        <li class="plan-card__icon-item">
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
-                        </li>
-                      <?php endfor; ?>
-                    </ul>
                   </div>
                 </div>
                 <div class="plan-card__label">
@@ -538,27 +506,11 @@
                     </ul>
                   </div>
                   <div class="plan-card__btn pc-only">
-                    <a class="button button-solid" href="#">
+                    <a class="button button-solid" href="<?php echo esc_url(home_url('/plan/')); ?>">
                       <span></span>
                       <span></span>
                       プラン詳細をみる
                     </a>
-                  </div>
-                </div>
-                <div class="plan-card__drawer">
-                  <div class="plan-card__drawer-wrapper">
-                    <p class="plan-card__drawer-text">
-                      含まれるもの
-                    </p>
-                  </div>
-                  <div class="plan-card__drawer-content">
-                    <ul class="plan-card__icon-list">
-                      <?php for ($i = 1; $i <= 27; $i++): ?>
-                        <li class="plan-card__icon-item">
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facility/icon/icon<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>.png" alt="アイコン">
-                        </li>
-                      <?php endfor; ?>
-                    </ul>
                   </div>
                 </div>
                 <div class="plan-card__label">
@@ -568,7 +520,7 @@
               </li>
             </ul>
             <div class="top-plan__btn">
-              <a class="button" href="#">
+              <a class="button button--wide" href="<?php echo esc_url(home_url('/plan/')); ?>">
                 <span></span>
                 <span></span>
                 プラン詳細をみる
@@ -688,7 +640,7 @@
             $pin_label = $pin['label'];
             // ラベルから投稿スラッグを取得（投稿スラッグをそのまま使用）
             $pin_slug = isset($facility_label_to_slug_map[$pin_label]) ? $facility_label_to_slug_map[$pin_label] : $pin['image'];
-            $pin_href = '#' . esc_attr($pin_slug);
+            $pin_href = home_url('/facility/' . esc_attr($pin_slug) . '/');
           ?>
             <a href="<?php echo $pin_href; ?>" class="facility-pin" style="--x:<?php echo esc_attr($pin['x']); ?>; --y:<?php echo esc_attr($pin['y']); ?>;" data-facility-slug="<?php echo esc_attr($pin_slug); ?>">
               <span class="facility-pin__label"><?php echo esc_html($pin_label); ?></span>
@@ -924,7 +876,7 @@
         <span class="main-border"></span>
       </div>
       <div class="comparison__btn">
-        <a class="button button-solid" href="#">
+        <a class="button button-solid" href="<?php echo esc_url(home_url('/online-funeral/')); ?>">
           <span></span>
           <span></span>
           ネット葬儀社について
@@ -989,7 +941,7 @@
           </ul>
         </div>
         <div class="top-staff__btn">
-          <a class="button button--wide" href="#">
+          <a class="button button--wide" href="<?php echo esc_url(home_url('/director/')); ?>">
             <span></span>
             <span></span>
             葬祭ディレクターの詳細
@@ -1088,7 +1040,7 @@
         <?php endif; ?>
       </div>
       <div class="top-voice__btn">
-        <a class="button button--wide" href="#">
+        <a class="button button--wide" href="<?php echo esc_url(home_url('/voice/')); ?>">
           <span></span>
           <span></span>
           もっと見る
@@ -1118,7 +1070,7 @@
             地元の皆さまと共に、「ありがとう」や「想い出」を分かち合えるような、終活イベント,感謝祭,地域貢献,学校連携など、さまざまな取り組みを行っています。
           </p>
           <div class="top-info__btn">
-            <a class="button button-solid" href="#">
+            <a class="button button-solid" href="https://tojoceremo.jp/relation/" target="_blank" rel="noopener">
               <span></span>
               <span></span>
               地域との取り組みを見る
@@ -1179,12 +1131,12 @@
           <?php endif; ?>
         </ul>
         <div class="top-post-news__btn">
-          <a class="button button-solid" href="#">
+          <a class="button button-solid" href="<?php echo home_url('/category/news'); ?>">
             <span></span>
             <span></span>
             お知らせ
           </a>
-          <a class="button button-solid" href="#">
+          <a class="button button-solid" href="<?php echo home_url('/category/column'); ?>">
             <span></span>
             <span></span>
             コラム
@@ -1212,7 +1164,7 @@
           </div>
         </div>
         <div class="top-info__container-03-btn">
-          <a class="button button-solid" href="#">
+          <a class="button button-solid" href="<?php echo esc_url(home_url('/contact/')); ?>">
             <span></span>
             <span></span>
             事前相談
@@ -1236,13 +1188,13 @@
             資料請求・お見積り・ご相談はすべて無料です。葬儀が初めての方にも、やさしく丁寧にご案内いたします。
           </p>
           <div class="top-contact__btn-list">
-            <a class="top-contact__btn" href="#">
+            <a class="top-contact__btn" href="<?php echo esc_url(home_url('/contact/')); ?>">
               資料請求
             </a>
-            <a class="top-contact__btn" href="#">
+            <a class="top-contact__btn" href="<?php echo esc_url(home_url('/contact/')); ?>">
               見積り依頼
             </a>
-            <a class="top-contact__btn" href="#">
+            <a class="top-contact__btn" href="<?php echo esc_url(home_url('/contact/')); ?>">
               事前相談
             </a>
           </div>
@@ -1251,7 +1203,7 @@
 
   <!-- モーダル -->
 
-  <div id="movie-modal" class="movie-modal">
+  <div id="movie-modal" class="movie-modal" data-default-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4">
     <div class="movie-modal__overlay"></div>
     <div class="movie-modal__content">
       <button class="movie-modal__close" aria-label="閉じる">
@@ -1268,9 +1220,7 @@
       <ul class="movie-modal__thumbnails">
         <li class="movie-modal__thumbnail is-active" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg">
           <div class="movie-modal__thumbnail-content">
-            <video muted playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg">
-              <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv01.mp4" type="video/mp4">
-            </video>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy01.jpg" alt="「祖母の手」篇">
             <span class="movie-modal__thumbnail-play">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play-w.png" alt="play movie" width="141" height="141">
             </span>
@@ -1279,9 +1229,7 @@
         </li>
         <li class="movie-modal__thumbnail" data-src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg">
           <div class="movie-modal__thumbnail-content">
-            <video muted playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg">
-              <source src="<?php echo get_template_directory_uri(); ?>/assets/movie/modalmv02.mp4" type="video/mp4">
-            </video>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/modal-dummy02.jpg" alt="「もう一度孫から」篇">
             <span class="movie-modal__thumbnail-play">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/play-w.png" alt="play movie" width="141" height="141">
             </span>

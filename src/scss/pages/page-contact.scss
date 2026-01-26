@@ -1,10 +1,14 @@
 @use 'foundation'as *;
 
 .page-contact {
+    padding-bottom: prem(80);
+
     @include mq("md"){
         max-width: prem(1148);
         margin-inline: auto;
         margin-top: prem(80);
+        padding-bottom: prem(203);
+        
     }
 }
 .page-contact__description {

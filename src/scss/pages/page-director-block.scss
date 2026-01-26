@@ -3,6 +3,7 @@
 .page-director-block{
     @include mq("md"){
         display: flex;
+        border-bottom: 1px solid $color-theme;
     }
 }
 
@@ -10,6 +11,13 @@
     @include mq("md"){
         padding-inline:prem(95);
     }
+}
+.page-director-block__container{
+    padding-bottom: prem(80);
+    @include mq("md"){
+        padding-bottom: prem(160);
+    }
+
 }
 .page-director-block__container-wrapper {
     @include mq("md") {

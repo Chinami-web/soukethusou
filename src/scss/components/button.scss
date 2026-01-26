@@ -27,13 +27,14 @@
   background-size: contain;
   background-image: url(../images/common/arrow-circle.png);
   background-repeat: no-repeat;
-  width: prem(9);
+  width: prem(23);
   height: prem(15);
   top: 50%;
-  right: 24px;
+  right: 12px;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
   @include mq("md"){
+    right: 24px;
     width: prem(58);
     height: prem(58);
   }
@@ -116,7 +117,9 @@
   }
 }
 .button--wide::after{
+  background-image: url(../images/common/arrow-solid.png);
   @include mq("md"){
+    background-image: url(../images/common/arrow-circle.png);
     right: 49px;
   }
 }

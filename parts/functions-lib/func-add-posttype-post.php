@@ -1,18 +1,18 @@
 <?php
 /*
- *「投稿」のラベルを「イベント」に変更
+ *「投稿」のラベルを「ニュース」に変更
 */
 function Change_menulabel() {
 global $menu;
 global $submenu;
-$name = 'イベント';
+$name = 'ニュース';
 $menu[5][0] = $name;
 $submenu['edit.php'][5][0] = $name.'一覧';
 $submenu['edit.php'][10][0] = '新しい'.$name;
 }
 function Change_objectlabel() {
 global $wp_post_types;
-$name = 'イベント';
+$name = 'ニュース';
 $labels = &$wp_post_types['post']->labels;
 $labels->name = $name;
 $labels->singular_name = $name;
