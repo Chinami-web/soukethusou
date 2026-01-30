@@ -16,3 +16,8 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# Large video files (exceed GitHub's 100MB limit)
+*.mp4
+assets/movie/*.mp4
+src/movie/*.mp4
