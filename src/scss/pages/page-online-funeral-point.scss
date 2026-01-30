@@ -1,0 +1,162 @@
+@use 'foundation'as *;
+
+.page-online-funeral-point {
+    padding-top: prem(45);
+    padding-bottom: prem(147);
+
+    @include mq("md") {
+        padding-top: prem(120);
+        padding-bottom: prem(168);
+    }
+}
+.page-online-funeral-point .l-inner {
+    @include mq("md"){
+        max-width:prem(1151) ;
+        margin-inline: auto;
+        position: relative;
+        padding-bottom: prem(30);
+        
+    }
+}
+.page-online-funeral-point .main-border {
+    top:initial;
+    bottom:0;
+
+}
+.page-online-funeral-point__list{
+    margin-top: prem(14);
+    @include mq("md"){
+        margin-top: prem(24);
+
+    }
+
+}
+
+.page-online-funeral-point__title {
+    font-size: prem(20);
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: $color-theme;
+    font-weight: $regular;
+    position: relative;
+    padding-bottom: prem(45);
+
+
+    @include mq("md") {
+        padding-bottom: prem(38);
+
+        font-size: prem(32);
+        line-height: 1.72
+    }
+}
+
+.page-online-funeral-point__title-sub {
+    display: block;
+    font-size: prem(17);
+    color: $color-black;
+    margin-top: prem(19);
+
+    line-height: 1.65;
+
+    @include mq("md") {
+        font-size: prem(20);
+        margin-top: prem(17);
+
+    }
+}
+.page-online-funeral-point__title .main-border {
+    top:initial;
+    bottom:0;
+}
+
+.page-online-funeral-point__item {
+    padding-bottom: prem(14);
+    @include mq("md"){
+        padding-bottom: prem(28);
+    }
+}
+.page-online-funeral-point__item:not(:first-child) {
+    padding-top: prem(24);
+    @include mq("md"){
+        padding-top: prem(54);
+    }
+}
+
+.page-online-funeral-point__item:not(:last-child) {
+    border-bottom: 1px solid $color-theme;
+}
+
+.page-online-funeral-point__item-label {
+    background-color: $color-theme;
+    color: $color-white;
+    font-size: prem(17);
+    max-width: prem(181);
+    margin-inline: auto;
+    text-align: center;
+    border-radius: 30px;
+    font-family: $font-family-mincho;
+    text-transform: uppercase;
+    min-height: prem(44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mq("md"){
+        font-size: prem(20);
+        line-height:1.65;
+        min-height: prem(53);
+    }
+
+
+
+}
+
+.page-online-funeral-point__item-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include mq("md"){
+        justify-content: space-between;
+        flex-direction: row;
+        max-width: prem(1077);
+        margin-inline: auto;
+        margin-top: prem(28);
+    }
+}
+    .page-online-funeral-point__item-container::before {
+            content: "";
+            position: absolute;
+            left: 20.5%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: prem(74);
+            width: 1px;
+            background-color: $color-theme;
+        }
+
+
+.page-online-funeral-point__item-container-title {
+    font-size: prem(18);
+    line-height:1.94;
+    color: $color-theme;
+     font-weight: $regular;
+    @include mq("md"){
+        font-size: prem(25);
+        line-height:1.4;
+        text-align: center;
+        flex-basis:17%;
+    }
+}
+
+.page-online-funeral-point__item-container-text {
+    font-size: prem(15);
+    @include mq("md"){
+        font-size: prem(17);
+        line-height:2.65;
+        flex-basis: 76%;
+
+    }
+
+}

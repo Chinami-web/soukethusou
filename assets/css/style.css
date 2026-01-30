@@ -4845,28 +4845,210 @@ a {
   line-height: 2;
 }
 
+.page-online-funeral-point {
+  padding-bottom: 147px;
+  padding-bottom: 9.8rem;
+  padding-top: 45px;
+  padding-top: 3rem;
+}
+
+.page-online-funeral-point .main-border {
+  bottom: 0;
+  top: auto;
+  top: initial;
+}
+
+.page-online-funeral-point__list {
+  margin-top: 13.999px;
+  margin-top: 0.9333333333rem;
+}
+
+.page-online-funeral-point__title {
+  color: #957B80;
+  font-size: 19.999px;
+  font-size: 1.3333333333rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+  padding-bottom: 45px;
+  padding-bottom: 3rem;
+  position: relative;
+  text-align: center;
+}
+
+.page-online-funeral-point__title-sub {
+  color: #000;
+  display: block;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  line-height: 1.65;
+  margin-top: 19px;
+  margin-top: 1.2666666667rem;
+}
+
+.page-online-funeral-point__title .main-border {
+  bottom: 0;
+  top: auto;
+  top: initial;
+}
+
+.page-online-funeral-point__item {
+  padding-bottom: 13.999px;
+  padding-bottom: 0.9333333333rem;
+}
+
+.page-online-funeral-point__item:not(:first-child) {
+  padding-top: 24px;
+  padding-top: 1.6rem;
+}
+
+.page-online-funeral-point__item:not(:last-child) {
+  border-bottom: 1px solid #957B80;
+}
+
+.page-online-funeral-point__item-label {
+  align-items: center;
+  background-color: #957B80;
+  border-radius: 30px;
+  color: #fff;
+  display: flex;
+  font-family: "Sawarabi Mincho", sans-serif;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 181px;
+  max-width: 12.0666666667rem;
+  min-height: 43.999px;
+  min-height: 2.9333333333rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page-online-funeral-point__item-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-online-funeral-point__item-container::before {
+  background-color: #957B80;
+  content: "";
+  height: 73.999px;
+  height: 4.9333333333rem;
+  left: 20.5%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+}
+
+.page-online-funeral-point__item-container-title {
+  color: #957B80;
+  font-size: 18px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.94;
+}
+
+.page-online-funeral-point__item-container-text {
+  font-size: 15px;
+  font-size: 1rem;
+}
+
+.page-online-funeral-trouble {
+  padding-bottom: 40px;
+  padding-bottom: 2.6666666667rem;
+  padding-top: 60px;
+  padding-top: 4rem;
+}
+
+.page-online-funeral-trouble__title-wrapper {
+  text-align: center;
+}
+
+.page-online-funeral-trouble__title-main {
+  font-size: 19.999px;
+  font-size: 1.3333333333rem;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.6;
+}
+
+.page-online-funeral-trouble__title-sub {
+  display: block;
+  font-size: 16.999px;
+  font-size: 1.1333333333rem;
+  margin-top: 24px;
+  margin-top: 1.6rem;
+}
+
+.page-online-funeral-trouble__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+  margin-top: 2rem;
+  grid-gap: 31.999px;
+  gap: 31.999px;
+  gap: 2.1333333333rem;
+}
+
+.page-online-funeral-trouble__list-item {
+  border: 1px solid #957B80;
+  border-radius: 10px;
+}
+
 .page-online-funeral-trouble__list-item-title {
   align-items: center;
   display: flex;
-  gap: 10px;
-  gap: 0.6666666667rem;
+  gap: 12px;
+  gap: 0.8rem;
 }
 
 .page-online-funeral-trouble__list-item-title-icon {
-  height: 54px;
-  height: 3.6rem;
-  width: 58.999px;
-  width: 3.9333333333rem;
+  height: 40.999px;
+  height: 2.7333333333rem;
+  width: 40px;
+  width: 2.6666666667rem;
 }
 
 .page-online-funeral-trouble__list-item-title-text {
   background-color: #957B80;
   color: #fff;
-  font-family: "Sawarabi Mincho", sans-serif;
+  font-family: "DFPHSMincho", sans-serif;
   font-size: 16.999px;
   font-size: 1.1333333333rem;
   padding: 10px 16px;
   padding: 0.6666666667rem 1.0666666667rem;
+  text-align: center;
+  width: 100%;
+}
+
+.page-online-funeral-trouble__list-item-text {
+  font-size: 15px;
+  font-size: 1rem;
+  line-height: 2;
+  margin-top: 13.999px;
+  margin-top: 0.9333333333rem;
+}
+
+.page-online-funeral-trouble__description {
+  border: 1px solid #957B80;
+  color: #957B80;
+  font-size: 15px;
+  font-size: 1rem;
+  line-height: 1.67;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 61px;
+  margin-top: 4.0666666667rem;
+  max-width: 1159px;
+  max-width: 77.2666666667rem;
+  padding: 18px 13px;
+  padding: 1.2rem 0.8666666667rem;
+  text-align: center;
 }
 
 .page-plan .plan-card__list {
@@ -10788,19 +10970,145 @@ a {
     margin-top: 0.7333333333rem;
     text-align: left;
   }
+  .page-online-funeral-point {
+    padding-bottom: 168px;
+    padding-bottom: 11.2rem;
+    padding-top: 120px;
+    padding-top: 8rem;
+  }
+  .page-online-funeral-point .l-inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1150.999px;
+    max-width: 76.7333333333rem;
+    padding-bottom: 30px;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+  .page-online-funeral-point__list {
+    margin-top: 24px;
+    margin-top: 1.6rem;
+  }
+  .page-online-funeral-point__title {
+    font-size: 31.999px;
+    font-size: 2.1333333333rem;
+    line-height: 1.72;
+    padding-bottom: 37.999px;
+    padding-bottom: 2.5333333333rem;
+  }
+  .page-online-funeral-point__title-sub {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+    margin-top: 16.999px;
+    margin-top: 1.1333333333rem;
+  }
+  .page-online-funeral-point__item {
+    padding-bottom: 28px;
+    padding-bottom: 1.8666666667rem;
+  }
+  .page-online-funeral-point__item:not(:first-child) {
+    padding-top: 54px;
+    padding-top: 3.6rem;
+  }
+  .page-online-funeral-point__item-label {
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+    line-height: 1.65;
+    min-height: 52.999px;
+    min-height: 3.5333333333rem;
+  }
+  .page-online-funeral-point__item-container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 28px;
+    margin-top: 1.8666666667rem;
+    max-width: 1077px;
+    max-width: 71.8rem;
+  }
+  .page-online-funeral-point__item-container-title {
+    flex-basis: 17%;
+    font-size: 25px;
+    font-size: 1.6666666667rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .page-online-funeral-point__item-container-text {
+    flex-basis: 76%;
+    font-size: 16.999px;
+    font-size: 1.1333333333rem;
+    line-height: 2.65;
+  }
+  .page-online-funeral-trouble {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1392px;
+    max-width: 92.8rem;
+    padding-bottom: 120px;
+    padding-bottom: 8rem;
+    padding-top: 178px;
+    padding-top: 11.8666666667rem;
+  }
+  .page-online-funeral-trouble__title-main {
+    font-size: 31.999px;
+    font-size: 2.1333333333rem;
+    line-height: 1.72;
+  }
+  .page-online-funeral-trouble__title-sub {
+    color: #957B80;
+    font-size: 19.999px;
+    font-size: 1.3333333333rem;
+    line-height: 1.75;
+    margin-top: 19px;
+    margin-top: 1.2666666667rem;
+  }
   .page-online-funeral-trouble__list {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 19.999px;
-    gap: 19.999px;
-    gap: 1.3333333333rem;
+    -moz-column-gap: 2.5333333333rem;
+         column-gap: 2.5333333333rem;
+    margin-top: 70px;
+    margin-top: 4.6666666667rem;
+    row-gap: 31.999px;
+    row-gap: 2.1333333333rem;
+  }
+  .page-online-funeral-trouble__list-item {
+    min-height: 390px;
+    min-height: 26rem;
+    padding: 33px;
+    padding: 2.2rem;
+  }
+  .page-online-funeral-trouble__list-item-title {
+    gap: 4px;
+    gap: 0.2666666667rem;
+  }
+  .page-online-funeral-trouble__list-item-title-icon {
+    height: 61px;
+    height: 4.0666666667rem;
+    width: 58.999px;
+    width: 3.9333333333rem;
   }
   .page-online-funeral-trouble__list-item-title-text {
     border-radius: 10px;
     font-size: 25px;
     font-size: 1.6666666667rem;
-    padding: 16px 19.999px;
-    padding: 1.0666666667rem 1.3333333333rem;
+    padding: 0px 19.999px;
+    padding: 0rem 1.3333333333rem;
+  }
+  .page-online-funeral-trouble__list-item-text {
+    font-size: 16.999px;
+    font-size: 1.1333333333rem;
+    letter-spacing: 0.12em;
+    line-height: 2.65;
+    margin-top: 16px;
+    margin-top: 1.0666666667rem;
+  }
+  .page-online-funeral-trouble__description {
+    font-size: 22.999px;
+    font-size: 1.5333333333rem;
+    line-height: 2.39;
+    margin-top: 70.999px;
+    margin-top: 4.7333333333rem;
   }
   .page-plan .plan-card__list {
     margin-left: auto;
