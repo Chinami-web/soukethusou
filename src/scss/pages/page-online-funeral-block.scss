@@ -1,0 +1,133 @@
+@use 'foundation'as *;
+.page-online-funeral-block {
+    display: flex;
+
+}
+
+
+.page-online-funeral-block__container {
+    @include mq("md"){
+        max-width: prem(1101);
+        margin-inline: auto;
+    }
+
+}
+
+.page-online-funeral-block__container-list-wrapper {
+
+}
+
+.page-online-funeral-block__container-list-title {
+
+}
+
+.page-online-funeral-block__container-list-title-main {
+    font-size: prem(20);
+    font-family: $font-family-mincho;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    color: $color-theme;
+    font-weight: $regular;
+    @include mq("md"){
+        font-size: prem(32);
+        line-height: 1.72;
+        letter-spacing: 0.1em;
+    }
+}
+
+.page-online-funeral-block__container-list-title-sub {
+    display: block;
+    color: $color-black;
+    font-size: prem(20);
+
+    @include mq("md"){
+        margin-top: prem(20);
+
+    }
+
+
+}
+
+.page-online-funeral-block__container-list {
+    margin-top: prem(30);
+    @include mq("md"){
+        margin-top: prem(52);
+
+    }
+
+
+}
+
+.page-online-funeral-block__container-list-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: prem(16);
+    border-top: 1px solid $color-theme;
+    @include mq("md"){
+        grid-template-columns: 0.32fr 1fr;
+        min-height: prem(232);
+    }
+}
+.page-online-funeral-block__container-list:last-child{
+    border-bottom: 1px solid $color-theme;
+}
+
+.page-online-funeral-block__container-list-item-image-wrapper {
+    @include mq("md"){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+.page-online-funeral-block__container-list-item-image {
+    width: 100%;
+}
+
+.page-online-funeral-block__container-list-item-image img {
+    width: 100%;
+    aspect-ratio: 263/176;
+    object-fit: cover;
+    height: auto;
+}
+
+.page-online-funeral-block__container-list-item-text-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.page-online-funeral-block__container-list-item-text-title {
+    font-size: prem(20);
+    font-family: $font-family-mincho;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-align: center;
+    @include mq("md"){
+        font-size: prem(25);
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+        text-align: left;
+    }
+
+}
+
+.page-online-funeral-block__container-list-item-text {
+    font-size: prem(15);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    @include mq("md"){
+        font-size: prem(17);
+        line-height: 2.65;
+        letter-spacing: 0.12em;
+        text-align: left;
+        margin-top: prem(11);
+
+    }
+
+}
+
+

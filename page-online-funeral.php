@@ -98,9 +98,9 @@
 
         <section class="page-online-funeral-trouble">
             <div class="page-online-funeral-trouble__title-wrapper">
-                <h3 class="page-online-funeral-trouble__title-main">
+                <h3 class="page-online-funeral-trouble__title-main mincho">
                     「安い」だけで選ぶ前に知っておきたいこと
-                    <span class="page-online-funeral-trouble__title-sub">
+                    <span class="page-online-funeral-trouble__title-sub mincho">
                         「安い」だけで選ぶ前に知っておきたいこと
                     </span>
                 </h3>
@@ -126,10 +126,11 @@
                                 width="59"
                                 height="54">
                         </span>
-                        <span class="page-online-funeral-trouble__list-item-title-text">表示価格より高くなる「追加費用」</span>
+                        <span class="page-online-funeral-trouble__list-item-title-text">実際の担当者に会えない</span>
                     </div>
                     <p class="page-online-funeral-trouble__list-item-text">
-                        ネットで表示されている料金は、最低限の内容だけを示していることが多く、搬送費・安置料・式場費・火葬場の使用料などが別途かかる場合があります。「○○万円から」と書かれていても、最終的には倍以上になるケースも。契約前に「何が含まれていて、何が別料金なのか」を必ず確認しましょう。
+                        電話やチャットだけで契約が進み、葬儀当日に初めて現場の担当者と会うケースもあります。<br>
+                        担当者と顔を合わせていないと、希望が正しく伝わらなかったり、不安やトラブルが起きても相談しづらくなります。依頼する前に、担当者と直接話ができるかを確認しましょう。
                     </p>
                 </li>
                 <li class="page-online-funeral-trouble__list-item">
@@ -139,10 +140,11 @@
                                 width="59"
                                 height="54">
                         </span>
-                        <span class="page-online-funeral-trouble__list-item-title-text">表示価格より高くなる「追加費用」</span>
+                        <span class="page-online-funeral-trouble__list-item-title-text">委託・下請け業者に丸投げされる</span>
                     </div>
                     <p class="page-online-funeral-trouble__list-item-text">
-                        ネットで表示されている料金は、最低限の内容だけを示していることが多く、搬送費・安置料・式場費・火葬場の使用料などが別途かかる場合があります。「○○万円から」と書かれていても、最終的には倍以上になるケースも。契約前に「何が含まれていて、何が別料金なのか」を必ず確認しましょう。
+                        ネット葬儀社の多くは、全国対応のために地域の葬儀社へ依頼を再委託しています。結果として、契約した会社とは別の業者が当日対応することもあります。<br>
+                        担当者が変わると説明と実際の内容が違ったり、対応品質に差が出ることも。「自社で葬儀を行うのか」「委託先があるのか」を確認しておくと安心です。
                     </p>
                 </li>
                 <li class="page-online-funeral-trouble__list-item">
@@ -152,13 +154,74 @@
                                 width="59"
                                 height="54">
                         </span>
-                        <span class="page-online-funeral-trouble__list-item-title-text">表示価格より高くなる「追加費用」</span>
+                        <span class="page-online-funeral-trouble__list-item-title-text">契約・返金トラブル</span>
                     </div>
                     <p class="page-online-funeral-trouble__list-item-text">
-                        ネットで表示されている料金は、最低限の内容だけを示していることが多く、搬送費・安置料・式場費・火葬場の使用料などが別途かかる場合があります。「○○万円から」と書かれていても、最終的には倍以上になるケースも。契約前に「何が含まれていて、何が別料金なのか」を必ず確認しましょう。
+                        「オンラインで申し込んだがキャンセルできない」「返金されない」など、契約や支払いに関するトラブルも増えています。<br>
+                        支払い前に、キャンセル条件・返金の有無・特定商取引法の表記をチェック。<br>
+                        不明点がある場合は、書面やメールで回答をもらうようにしましょう。
                     </p>
                 </li>
             </ul>
+            <div class="page-online-funeral-trouble__description mincho">
+                安さやスピードだけで判断せず、<br>
+                内容をしっかり確認して納得できる葬儀社を選ぶことが大切です。
+            </div>
+        </section>
+
+        <section class="page-online-funeral-point">
+            <div class="l-inner">
+            <span class="main-border"></span>
+                <h2 class="page-online-funeral-point__title mincho">
+                    信頼できる葬儀社を選ぶため<br>
+                    ～東上セレモの３つのポイント～
+                    <span class="page-online-funeral-point__title-sub">迷ったときはここをチェック。<br class="sp-only">
+                        失敗しない葬儀社選びのコツ。</span>
+                    <span class="main-border"></span>
+                </h2>
+                <ol class="page-online-funeral-point__list">
+                    <li class="page-online-funeral-point__item">
+                        <div class="page-online-funeral-point__item-label">
+                            point01
+                        </div>
+                        <div class="page-online-funeral-point__item-container">
+                            <h3 class="page-online-funeral-point__item-container-title heisei">
+                                地域での実績と歴史
+                            </h3>
+                            <p class="page-online-funeral-point__item-container-text">
+                                1967年の創業以来、約60年間にわたり埼玉・練馬・板橋エリアで、14万件以上のお手伝いをしてきた東上セレモ。長年の経験と地域密着の実績に基づき、施設・スタッフ・地域ネットワークがしっかりと整っておりますので、安心してお葬式を任せていただけます。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="page-online-funeral-point__item">
+                        <div class="page-online-funeral-point__item-label">
+                            point02
+                        </div>
+                        <div class="page-online-funeral-point__item-container">
+                            <h3 class="page-online-funeral-point__item-container-title heisei">
+                            費用の明確さ
+                            </h3>
+                            <p class="page-online-funeral-point__item-container-text">
+                            東上セレモでは、事前に費用の内訳を丁寧にご説明し、追加料金の有無も含めて明確にご説明します。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="page-online-funeral-point__item">
+                        <div class="page-online-funeral-point__item-label">
+                            point03
+                        </div>
+                        <div class="page-online-funeral-point__item-container">
+                            <h3 class="page-online-funeral-point__item-container-title heisei">
+                            担当者の対応力
+                            </h3>
+                            <p class="page-online-funeral-point__item-container-text">
+                            お葬式は「人」が支えるサービスです。東上セレモでは、お電話やご見学の際、丁寧にご案内をさせていただきます。不安なことをお伺いしながら、しっかりとご対応いたします。
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
         </section>
     </div>
 </main>

@@ -1,0 +1,147 @@
+@use 'foundation'as *;
+
+.page-online-funeral-trouble {
+    padding-top: prem(60);
+    padding-bottom: prem(40);
+
+    @include mq("md") {
+        padding-top: prem(178);
+        padding-bottom: prem(120);
+        max-width: prem(1392);
+        margin-inline: auto;
+    }
+
+
+}
+
+.page-online-funeral-trouble__title-wrapper {
+    text-align: center;
+
+}
+
+.page-online-funeral-trouble__title-main {
+    font-size: prem(20);
+    line-height: 1.6;
+    letter-spacing: .015em;
+    font-weight: 400;
+
+    @include mq("md") {
+        font-size: prem(32);
+        line-height: 1.72;
+
+    }
+}
+
+.page-online-funeral-trouble__title-sub {
+    display: block;
+    margin-top: prem(24);
+
+    font-size: prem(17);
+
+    @include mq("md") {
+        color: $color-theme;
+        font-size: prem(20);
+        line-height: 1.75;
+        margin-top: prem(19);
+
+
+    }
+
+
+
+}
+
+.page-online-funeral-trouble__list {
+    margin-top: prem(30);
+    display: grid;
+    grid-template-columns:1fr;
+    gap: prem(32);
+    @include mq("md") {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: prem(38);
+        row-gap: prem(32);
+        margin-top: prem(70);
+
+    }
+
+}
+
+.page-online-funeral-trouble__list-item {
+    border-radius: 10px;
+    border: 1px solid $color-theme;
+    @include mq("md"){
+        padding:prem(33);
+        min-height: prem(390);
+    }
+}
+
+
+.page-online-funeral-trouble__list-item-title {
+    display: flex;
+    align-items: center;
+    gap: prem(12);
+    @include mq("md"){
+        gap: prem(4);
+    }
+
+}
+
+.page-online-funeral-trouble__list-item-title-icon {
+    width: prem(40);
+    height: prem(41);
+    @include mq("md"){
+        width: prem(59);
+        height: prem(61);
+    }
+}
+
+.page-online-funeral-trouble__list-item-title-text {
+    background-color: $color-theme;
+    color: $color-white;
+    font-size: prem(17);
+    font-family: $font-family-heisei;
+    padding: prem(10) prem(16);
+    width: 100%;
+    text-align: center;
+
+    @include mq("md") {
+        font-size: prem(25);
+        padding: prem(0) prem(20);
+        border-radius: 10px;
+    }
+
+}
+
+.page-online-funeral-trouble__list-item-text {
+    font-size: prem(15);
+    margin-top: prem(14);
+
+    line-height: 2;
+    @include mq("md"){
+        font-size: prem(17);
+        line-height:2.65;
+        letter-spacing: 0.12em;
+        margin-top: prem(16);
+
+
+    }
+
+}
+.page-online-funeral-trouble__description{
+    border: 1px solid $color-theme;
+    max-width: prem(1159);
+    margin-inline: auto;
+    margin-top: prem(61);
+    font-size: prem(15);
+    line-height:1.67;
+    padding: prem(18) prem(13);
+    text-align: center;
+    color: $color-theme;
+    
+    @include mq("md"){
+        line-height:2.39;
+        font-size: prem(23);
+        margin-top: prem(71);
+    }
+
+}
